@@ -1,0 +1,11 @@
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<SplitPane xmlns:fx="http://javafx.com/fxml"
+           dividerPositions="0.5"
+           orientation="VERTICAL"
+           xmlns="http://javafx.com/javafx"
+           stylesheets="@alterationTriggerEditor.css">
+    <BorderPane fx:id="triggerEditorPane"/>
+    <ScrollPane fx:id="timeLineContainer"/>
+</SplitPane>

@@ -1,0 +1,19 @@
+.status-red {
+    -fx-background-color:rgba(255,113,116,0.7);
+}
+.status-green {
+    -fx-background-color:rgba(0,128,0,0.7);
+}
+.status-blue {
+    -fx-background-color:rgba(61,170,235,0.7);
+}
+.status-grey {
+    -fx-background-color: linear-gradient(
+            from 0px .75em to .75em 0px,
+            repeat,
+            #D3D3D3 30%,
+            #D3D3D3 69%,
+            derive(#D3D3D3, 60%) 40%,
+            derive(#D3D3D3, 60%) 99%
+    );
+}

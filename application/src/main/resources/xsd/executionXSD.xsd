@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="execution">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="recording" type="xs:string"/>
+                <xs:element ref="schemas"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="schemas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="schema" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

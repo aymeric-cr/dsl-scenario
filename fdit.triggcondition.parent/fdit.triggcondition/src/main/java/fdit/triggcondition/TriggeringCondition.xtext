@@ -1,0 +1,205 @@
+grammar fdit.triggcondition.TriggeringCondition with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate triggeringCondition "http://www.triggcondition.fdit/TriggeringCondition"
+
+Model:
+    T_EVAL expression=Expression
+;
+
+Expression:
+    TimeWindow
+    (({AndOrTimeWindow.left=current} op=(T_OR|T_AND)) right=TimeWindow)*
+;
+
+TimeWindow returns Expression:
+    {ASAPTimeWindow} => T_ASAP T_OPEN_PAR expr=ContextExpr T_CLOSE_PAR |
+    {WhenTimeWindow} => T_WHEN T_OPEN_PAR expr=ContextExpr T_CLOSE_PAR |
+    {NotWhenTimeWindow} => T_NOT_WHEN T_OPEN_PAR expr=ContextExpr T_CLOSE_PAR |
+    {UntilTimeWindow} => T_UNTIL T_OPEN_PAR expr=ContextExpr T_CLOSE_PAR |
+    T_OPEN_PAR Expression T_CLOSE_PAR
+;
+
+ContextExpr:
+    Prefixed
+    (({AndOrExpression.left=current} op=(T_OR|T_AND)) right=Prefixed)*
+;
+
+Prefixed returns ContextExpr:
+    {BooleanNegation} => T_NOT T_OPEN_PAR expression=ContextExpr T_CLOSE_PAR  |
+    SingleExpr
+;
+
+SingleExpr returns ContextExpr:
+    {LowerThan} prop=AircraftProperty T_LT expr=ArithmExpr
+ | {GreaterThan} prop=AircraftProperty T_GT expr=ArithmExpr
+ | {LowerThanOrEq} prop=AircraftProperty T_LTE expr=ArithmExpr
+ | {GreaterThanOrEq} prop=AircraftProperty T_GTE  expr=ArithmExpr
+ | {Equals} prop=AircraftProperty T_EQUALS expr=ArithmExpr
+ | {Different} prop=AircraftProperty T_DIFFERENT expr=ArithmExpr
+ | {Area} context=ContextType eventType=ASTAreaPositionType area=ASTArea
+ | T_OPEN_PAR ContextExpr T_CLOSE_PAR
+;
+
+ArithmExpr:
+    PlusOrMinus
+;
+
+PlusOrMinus returns ArithmExpr:
+    MulOrDiv (
+            ({Plus.left=current} '+' | {Minus.left=current} '-')
+            right=MulOrDiv
+    )*
+;
+
+MulOrDiv returns ArithmExpr:
+    Primary (
+            ({MulOrDiv.left=current} op=('*'|'/'))
+            right=Primary
+    )* ;
+
+Primary returns ArithmExpr:
+    T_OPEN_PAR ArithmExpr T_CLOSE_PAR
+    | Atomic
+;
+
+Atomic returns ArithmExpr:
+    Number
+    | {StringLiteral} value=T_STRING_LITERAL
+    | {BooleanLiteral} value=('true'|'false')
+    | {CommonStaticProperty}  context=ContextType T_DOT value=ASTCommonStaticParameterType
+;
+
+Number:
+    {IntLiteral} value=T_INTEGER_LITERAL |
+    {DoubleLiteral} value=T_DOUBLE_LITERAL
+;
+
+ASTArea
+:     {Prism} T_PRISM T_WITH_VERTICES coordinates=ASTVertices T_AND T_ALTITUDE T_FROM lowerAltitude=Number T_TO upperAltitude=Number
+    | {ReferencedArea} T_AREA name=T_STRING_LITERAL
+;
+
+ASTVertices
+: vertices+=ASTCoordinates T_COMMA vertices+=ASTCoordinates (T_COMMA vertices+=ASTCoordinates)+
+;
+
+ASTCoordinates
+: T_OPEN_PAR latitude=Number T_COMMA longitude=Number T_CLOSE_PAR
+;
+
+AircraftProperty hidden():
+    {AircraftStaticProperty}  context=ContextType T_DOT value=ASTStaticParameterType |
+    {AircraftDynamicProperty} context=ContextType T_DOT value=ASTDynamicParameterType
+;
+
+ContextType:
+    type=ContextTypeEnum |
+    {ReferencedFilter} filtername=T_STRING_LITERAL
+;
+
+enum ContextTypeEnum:
+    AIRCRAFT="AIRCRAFT"
+    | RAP="RAP"
+;
+
+enum ASTAreaPositionType:
+    INSIDE="INSIDE" | OUTSIDE="OUTSIDE";
+
+enum ASTCommonStaticParameterType:
+    MIN_ALTITUDE="MIN_ALTITUDE"|
+    MAX_ALTITUDE="MAX_ALTITUDE"|
+    MEAN_ALTITUDE="MEAN_ALTITUDE"|
+    MIN_LATITUDE="MIN_LATITUDE"|
+    MAX_LATITUDE="MAX_LATITUDE"|
+    MEAN_LATITUDE="MEAN_LATITUDE"|
+    MIN_LONGITUDE="MIN_LONGITUDE"|
+    MAX_LONGITUDE="MAX_LONGITUDE"|
+    MEAN_LONGITUDE="MEAN_LONGITUDE"|
+    MIN_GROUNDSPEED="MIN_GROUNDSPEED"|
+    MAX_GROUNDSPEED="MAX_GROUNDSPEED"|
+    MEAN_GROUNDSPEED="MEAN_GROUNDSPEED";
+
+enum ASTStaticParameterType:
+    CALLSIGN="CALLSIGN"|
+    ICAO="ICAO"|
+    TRACK="TRACK"|
+    KNOWN_POSITIONS="KNOWN_POSITIONS"|
+    MIN_ALTITUDE="MIN_ALTITUDE"|
+    MAX_ALTITUDE="MAX_ALTITUDE"|
+    MEAN_ALTITUDE="MEAN_ALTITUDE"|
+    MIN_LATITUDE="MIN_LATITUDE"|
+    MAX_LATITUDE="MAX_LATITUDE"|
+    MEAN_LATITUDE="MEAN_LATITUDE"|
+    MIN_LONGITUDE="MIN_LONGITUDE"|
+    MAX_LONGITUDE="MAX_LONGITUDE"|
+    MEAN_LONGITUDE="MEAN_LONGITUDE"|
+    MIN_GROUNDSPEED="MIN_GROUNDSPEED"|
+    MAX_GROUNDSPEED="MAX_GROUNDSPEED"|
+    MEAN_GROUNDSPEED="MEAN_GROUNDSPEED";
+
+enum ASTDynamicParameterType:
+    ALTITUDE="ALTITUDE"|
+    EMERGENCY="EMERGENCY"|
+    GROUND_SPEED="GROUNDSPEED"|
+    LATITUDE="LATITUDE"|
+    LONGITUDE="LONGITUDE"|
+    SPI="SPI"|
+    SQUAWK="SQUAWK"|
+    ALERT = "ALERT"|
+    IS_ON_GROUND = "IS_ON_GROUND"|
+    VERTICAL_RATE = "VERTICAL_RATE";
+
+terminal T_AREA            : 'area';
+terminal T_EVAL            : 'eval';
+terminal T_ASAP            : 'as_soon_as';
+terminal T_ALTITUDE        : 'altitude';
+terminal T_AND             : 'and';
+terminal T_OR              : 'or';
+terminal T_PRISM           : 'prism';
+terminal T_COMMA           : ',';
+terminal T_DOT             : '.';
+terminal T_DIFFERENT       : '<>';
+terminal T_EQUALS          : '==';
+terminal T_FROM            : 'from';
+terminal T_WHEN            : 'when';
+terminal T_NOT_WHEN        : 'not_when';
+terminal T_OPEN_PAR        : '(';
+terminal T_CLOSE_PAR       : ')';
+terminal T_LT              : '<';
+terminal T_GT              : '>';
+terminal T_LTE             : '<=';
+terminal T_GTE             : '>=';
+terminal T_NOT             : 'not';
+terminal T_TO              : 'to';
+terminal T_UNTIL           : 'until';
+terminal T_WITH_VERTICES   : 'with_vertices';
+
+terminal T_INTEGER_LITERAL returns ecore::EInt : (('-'?) '1'..'9' '0'..'9'*) | '0';
+
+terminal T_DOUBLE_LITERAL returns ecore::EDouble   : (('-'? '1'..'9' '0'..'9'*) | '0') '.' '0'..'9' '0'..'9'*;
+
+terminal T_STRING_LITERAL returns ecore::EString:
+    '"' ( ESCAPE_SEQUENCE | !('\\'|'"') )* '"'
+;
+
+terminal fragment ESCAPE_SEQUENCE
+:   '\\' ('b'|'t'|'n'|'f'|'r'|'\"'|'\''|'\\')
+    |   UNICODE_ESCAPE
+    |   OCTAL_ESCAPE
+;
+
+terminal fragment OCTAL_ESCAPE
+:   '\\' ('0'..'3') ('0'..'7') ('0'..'7')
+    |   '\\' ('0'..'7') ('0'..'7')
+    |   '\\' ('0'..'7')
+;
+
+terminal fragment UNICODE_ESCAPE
+:   '\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+;
+
+terminal fragment HEX_DIGIT
+: ('0'..'9'|'a'..'f'|'A'..'F')
+;

@@ -1,0 +1,277 @@
+/*
+.scenarioListCell:filled:selected:focused, .scenarioListCell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.scenarioListCell:even {
+    -fx-background-color: white;
+}
+
+.scenarioListCell:hover {
+    -fx-background-color: #F3EFEF;
+}
+
+.scenarioListCell .scroll-bar:horizontal .increment-arrow,
+    .filebrowserScenarioListCell .scroll-bar:horizontal .decrement-arrow,
+    .filebrowserScenarioListCell .scroll-bar:horizontal .increment-button,
+    .filebrowserScenarioListCell .scroll-bar:horizontal .decrement-button {
+        -fx-padding:0;
+}
+
+.listCell:filled:selected:focused, .listCell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.listCell:even {
+    -fx-background-color: white;
+}
+
+.listCell:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
+
+.tree-cell:selected {
+    -fx-font-weight: bold ;
+    -fx-text-fill: white ;
+    -fx-background-color:#b6dbfb;
+}
+
+.filebrowserScenarioListCell {
+    -fx-border-color:gray;
+    -fx-border-radius:3;
+ }
+
+.filebrowserScenarioListCell .scroll-bar:horizontal .increment-arrow,
+    .filebrowserScenarioListCell .scroll-bar:horizontal .decrement-arrow,
+    .filebrowserScenarioListCell .scroll-bar:horizontal .increment-button,
+    .filebrowserScenarioListCell .scroll-bar:horizontal .decrement-button {
+        -fx-padding:0;
+}
+*/
+
+
+/*
+
+.button,
+.combo-box-base,
+.combo-box-base:editable,
+.combo-box-base:showing {
+    -fx-background-color:
+        rgba(0,0,0,0.08),
+        linear-gradient(#9a9a9a, #909090),
+        linear-gradient(white 0%, #d9d9d9 50%, #d9d9d9 51%, #f2f2f2 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 12px;
+}
+*/
+
+
+/*
+.button:hover,
+.combo-box-base:hover {
+    -fx-background-color:
+            -fx-focus-color,
+            linear-gradient(#9a9a9a, #909090),
+            linear-gradient(white 0%, #f3f3f3 50%, #ececec 51%, #f2f2f2 100%);
+    -fx-background-insets: -0.25, 0.75, 1,0, 2.6;
+    -fx-background-radius: 3,3,3,3,4;
+}
+
+
+
+
+.button:focused,
+.combo-box-base:focused {
+     -fx-background-color:
+                 -fx-focus-color,
+                 linear-gradient(#9a9a9a, #909090),
+                 linear-gradient(white 0%, #d9d9d9 50%, #d9d9d9 51%, #f2f2f2 100%);
+      -fx-background-insets: -0.25, 0.75, 1, 0, 2.6;
+      -fx-background-radius: 3,3,3,3,4;
+}
+*/
+/*.button:default {
+    -fx-background-color:
+            rgba(0,0,0,0.08),
+            linear-gradient(#5a61af, #51536d),
+            linear-gradient(#e4fbff 0%,#cee6fb 10%, #a5d3fb 50%, #88c6fb 51%, #d5faff 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-text-fill: #242d35;
+}*/
+
+/*
+.button:default:hover {
+    -fx-background-color:
+           -fx-focus-color,
+           linear-gradient(#5a61af, #51536d),
+           linear-gradient(#e4fbff 0%,#e7f3fd 10%, #cee7fd 50%, #b5dbfc 51%, #d5faff 100%);
+    -fx-background-insets: -0.25, 0.75, 1,0, 2.6;
+    -fx-background-radius: 3,3,3,3,4;
+}
+
+.button:default:focused {
+    -fx-background-color:
+        -fx-focus-color,
+        linear-gradient(#5a61af, #51536d),
+        linear-gradient(#e4fbff 0%,#cee6fb 10%, #a5d3fb 50%, #88c6fb 51%, #d5faff 100%);
+    -fx-background-insets: -0.25, 0.75, 1,0, 2.6;
+          -fx-background-radius: 3,3,3,3,4;
+}
+*/
+/*******************************************************************************
+ *                                                                             *
+ * SplitPane                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.split-pane > .Split-pane-divider {
+    -fx-padding: 0 0.25em 0 0.25em; /* 0 3 0 3 */
+}
+/* horizontal the two nodes are placed to the left/right of each other. */
+.split-pane:horizontal > .Split-pane-divider {
+   -fx-background-color: silver;
+   -fx-border-width:0.75;
+   -fx-background-insets: 0, 0 1 0 1;
+}
+/* vertical the two nodes are placed on top of each other. */
+.split-pane:vertical > .Split-pane-divider {
+   -fx-background-color: silver;
+
+   -fx-border-width:0.75;
+   -fx-background-insets: 0, 1 0 1 0;
+}
+
+.next-divider-position {
+    -fx-opacity:0.8;
+    -fx-fill:white;
+    -fx-stroke:black;
+    -fx-stroke-width:0.75;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * TabPane                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+/*
+.tab-pane{
+   -fx-alignment: CENTER;
+   -fx-background-color: #FFFFFF
+ }
+
+.tab-header-background {
+    -fx-background-color: #828282
+}
+
+.tab-pane {
+    -fx-tab-min-width:90px;
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-radius: 3 3 0 0, 0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #e6e6e6;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #FFFFFF;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #039ed3;
+}
+
+.tab-content-area {
+    -fx-background-color: #FFFFFF;
+}
+*/
+
+/*******************************************************************************
+ *                                                                             *
+ * TableView                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.fdit-table-view {
+    -fx-padding: 5px;
+}
+
+
+.fdit-table-view .column-header-background{
+    -fx-background-color: #828282;
+}
+
+
+.fdit-table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.fdit-table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.fdit-table-view .table-cell{
+    -fx-text-fill: #828282;
+}
+
+.table-row-cell{
+    -fx-background-color: white;
+    -fx-border-color: white #828282 #828282 #828282;
+    -fx-border-width: 1;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: white;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-row-cell:selected .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: white;
+    -fx-border-width: 0px;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+.fdit-table-view > .virtual-flow > .scroll-bar:vertical,
+.fdit-table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.fdit-table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.fdit-table-view > .virtual-flow > .scroll-bar:horizontal,
+.fdit-table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.fdit-table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}

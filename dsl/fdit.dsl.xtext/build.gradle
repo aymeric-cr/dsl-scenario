@@ -1,0 +1,70 @@
+configurations {
+    mwe2.extendsFrom compile
+}
+
+dependencies {
+    testCompile "junit:junit:4.12"
+    testCompile "org.eclipse.xtext:org.eclipse.xtext.testing:${xtextVersion}"
+    testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${xtextVersion}"
+    compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
+    compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
+    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.10.0'
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.2'
+    compile group: 'org.eclipse.epsilon', name: 'epsilon-core', version: '1.5.1'
+    compile group: 'org.eclipse.epsilon', name: 'epsilon-emf', version: '1.5.1'
+}
+
+dependencies {
+    mwe2 "org.eclipse.emf:org.eclipse.emf.mwe2.launch:2.9.0.201605261059"
+    mwe2 "org.eclipse.xtext:org.eclipse.xtext.common.types:${xtextVersion}"
+    mwe2 "org.eclipse.xtext:org.eclipse.xtext.xtext.generator:${xtextVersion}"
+    mwe2 "org.eclipse.xtext:xtext-antlr-generator:[2.1.1, 3)"
+}
+
+task generateXtextLanguage(type: JavaExec) {
+    main = 'org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher'
+    classpath = configurations.mwe2
+    inputs.file "src/main/java/fdit/dsl/Generate${grammarName}.mwe2"
+    inputs.file "src/main/java/fdit/dsl/${grammarName}.xtext"
+    outputs.dir "src/main/xtext-gen"
+    args += "src/main/java/fdit/dsl/Generate${grammarName}.mwe2"
+    args += "-p"
+    args += "rootPath=/${projectDir}/.."
+}
+
+clean {
+    delete "${projectDir}/model"
+    delete "${projectDir}/src/main/java/fdit/dsl/generator/"
+    delete "${projectDir}/src/main/java/fdit/dsl/scoping/"
+    delete "${projectDir}/src/main/java/fdit/dsl/validation/"
+    delete "${projectDir}/src/main/java/fdit/dsl/${grammarName}RunTimeModule.xtend"
+    delete "${projectDir}/src/main/java/fdit/dsl/${grammarName}StandaloneSetup.xtend"
+}
+
+cleanGenerateXtext.dependsOn(cleanGenerateXtextLanguage)
+clean.dependsOn(cleanGenerateXtext)
+
+generateXtext.dependsOn(generateXtextLanguage)
+compileJava.dependsOn(generateXtext)
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.4'
+        classpath 'org.xtext:xtext-gradle-plugin:1.0.2'
+    }
+}
+apply plugin: 'org.xtext.xtend'
+
+publishing.publications {
+    dslXtext(MavenPublication) {
+        groupId = group
+        artifactId = 'fdit.dsl.xtext'
+        version = fditVersion
+        artifact source: fditLibLocation + dslXtextJarName, extension: 'jar'
+        pom.withXml {
+            asString().replace(0, asString().length() - 1, new File(dslPomXtext).text)
+        }
+    }
+}

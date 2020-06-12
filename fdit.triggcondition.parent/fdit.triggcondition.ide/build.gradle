@@ -1,0 +1,19 @@
+dependencies {
+    compile project(':fdit.triggcondition.parent:fdit.triggcondition')
+    compile "org.eclipse.xtext:org.eclipse.xtext.ide:${xtextVersion}"
+    compile "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:${xtextVersion}"
+    testCompile "junit:junit:4.12"
+    testCompile "org.eclipse.xtext:org.eclipse.xtext.testing:${xtextVersion}"
+    testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${xtextVersion}"
+    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.10.0'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.xtext:xtext-gradle-plugin:1.0.2'
+    }
+}
+apply plugin: 'org.xtext.xtend'

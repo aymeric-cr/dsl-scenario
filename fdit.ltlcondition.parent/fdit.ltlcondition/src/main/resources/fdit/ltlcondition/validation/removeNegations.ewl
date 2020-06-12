@@ -1,0 +1,15 @@
+wizard MakeBold {
+  guard : self.isKindOf(Model!LTLCondition::BooleanNegation)
+  title : 'Test Epsilon'
+  do {
+    var newExpr : new LowerThan;
+    if (self.expression.isKindOf(Model!LTLCondition::GreaterThan)) {
+        var oldExpr : Expression;
+        oldExpr = self.expression;
+        newExpr.left = oldExpr.left;
+        newExpr.right = oldExr.right;
+        oldExpr.eContainer.expression = newExpr;
+        newExpr.econtainer = oldExpr.eContainer;
+    }
+  }
+}

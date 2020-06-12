@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="zone" type="zone"/>
+    <xs:complexType name="zone">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="lowerAlt" type="xs:string"/>
+            <xs:element name="upperAlt" type="xs:string"/>
+            <xs:choice>
+                <xs:element ref="polygon"/>
+                <xs:element ref="circle"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="circle">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="radius" type="xs:string"/>
+                <xs:element ref="vertex"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="polygon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vertices"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vertices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vertex" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vertex">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="lat" type="xs:string"/>
+                <xs:element name="lon" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,21 @@
+group = group + ".metamodel"
+
+dependencies {
+    compile "org.apache.commons:commons-math3:$commonsMathVersion"
+    compile "org.gavaghan:geodesy:$geodesyVersion"
+    compile "com.google.guava:guava:$guavaVersion"
+    compile "com.google.code.findbugs:annotations:$findBugsVersion"
+    compile project(':tools')
+}
+
+publishing.publications {
+    metamodel(MavenPublication) {
+        groupId = group
+        artifactId = 'metamodel'
+        version = fditVersion
+        artifact source: fditLibLocation + metamodelJarName, extension: 'jar'
+        pom.withXml {
+            asString().replace(0, asString().length() - 1, new File(metamodelPom).text)
+        }
+    }
+}

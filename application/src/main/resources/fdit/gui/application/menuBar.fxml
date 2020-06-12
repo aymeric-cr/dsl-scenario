@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<MenuBar xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111"
+         fx:controller="fdit.gui.application.FditMenuBarController"
+         fx:id="menuBar">
+    <Menu fx:id="fileMenu" mnemonicParsing="false">
+        <MenuItem fx:id="openMenuItem"/>
+        <MenuItem fx:id="importFileItem"/>
+        <SeparatorMenuItem/>
+        <MenuItem fx:id="invalidateCacheItem"/>
+    </Menu>
+    <Menu fx:id="editMenu" mnemonicParsing="false">
+        <MenuItem fx:id="undoMenuItem"/>
+        <MenuItem fx:id="redoMenuItem"/>
+        <MenuItem fx:id="deleteMenuItem"/>
+    </Menu>
+    <Menu fx:id="settingsMenu" mnemonicParsing="false">
+        <Menu fx:id="languageMenu"/>
+    </Menu>
+    <Menu fx:id="aboutMenu" mnemonicParsing="false">
+        <Menu fx:id="versionMenu"/>
+    </Menu>
+</MenuBar>

@@ -1,0 +1,28 @@
+.keyword {
+    -fx-fill: purple;
+}
+
+.constant {
+    -fx-fill: purple;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.enum {
+    -fx-fill: #4195f4;
+    -fx-font-weight: bold;
+}
+
+.string {
+    -fx-fill: green;
+    -fx-font-weight: bold;
+}
+
+.number {
+    -fx-fill: #CC6600;
+}
+
+.syntax-error{
+    -rtfx-underline-color : red;
+    -rtfx-underline-width: 1px;
+}

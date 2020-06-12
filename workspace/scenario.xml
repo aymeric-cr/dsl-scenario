@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<execution>
+    <scenario textual="true"/>
+    <recording>journal-data-lux-15min-190419-330pm.bst</recording>
+    <schemas>
+        <schema>
+            <textualScenario/>
+        </schema>
+        <schema>
+            <textualScenario/>
+        </schema>
+    </schemas>
+</execution>

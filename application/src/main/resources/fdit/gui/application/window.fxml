@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="325.0" prefWidth="493.0"
+            xmlns="http://javafx.com/javafx/8.0.111" fx:controller="fdit.gui.application.WindowController"
+            stylesheets="@fdit.css">
+    <top>
+        <fx:include source="menuBar.fxml"/>
+    </top>
+    <center>
+        <SplitPane fx:id="verticalSplitPane" dividerPositions="0.10183299389002037">
+            <TreeView fx:id="treeView" maxWidth="1500" minWidth="0" prefHeight="546.0" prefWidth="0.0"
+                      SplitPane.resizableWithParent="false"/>
+            <StackPane fx:id="editorStackPane" SplitPane.resizableWithParent="false"/>
+        </SplitPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,256 @@
+buildscript {
+
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath 'gradle.plugin.com.github.jlouns:gradle-cross-platform-exec-plugin:0.5.0'
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.8'
+    }
+}
+
+apply plugin: 'base'
+apply plugin: 'com.github.jlouns.cpe'
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'jacoco'
+
+    jacoco {
+        toolVersion = "0.8.4"
+    }
+
+    group project.groupId
+    version project.getProperties().get("VERSION") + "-" + project.getProperties().get("BUILD_TYPE")
+}
+
+ext {
+    productZipName = 'fdit.zip'
+    productRootDir = 'fdit'
+    productLocation = "${buildDir}"
+    fditVersion = project.getProperties().get("VERSION") + "-" + project.getProperties().get("BUILD_TYPE")
+    launcherShName = 'fdit.sh'
+    launcherBatName = 'fdit.bat'
+    jvmMemoryAllocationPool = '6g'
+    fditJarLocation = "${project(':fdit.application').buildDir}/jfx/"
+    fditJarName = 'fdit.' + fditVersion + '.jar'
+    launcherShContent = "java -Xms$jvmMemoryAllocationPool -Xmx$jvmMemoryAllocationPool -Dprism.order=sw -jar $fditJarName"
+    launcherBatContent = "start javaw -Xms$jvmMemoryAllocationPool -Xmx$jvmMemoryAllocationPool -Dprism.order=sw -jar $fditJarName"
+}
+
+task product(type: Zip, dependsOn: [':fdit.application:jfxJar']) {
+    final def launcherShFile = file("$productLocation/$launcherShName")
+    final def launcherBatFile = file("$productLocation/$launcherBatName")
+
+    doFirst {
+        file("$productLocation").mkdirs()
+        launcherShFile.text = "$launcherShContent"
+        launcherBatFile.text = "$launcherBatContent"
+    }
+
+    doLast {
+        launcherShFile.delete()
+        launcherBatFile.delete()
+    }
+
+    from "$fditJarLocation"
+    from launcherShFile
+    from launcherBatFile
+    include '*'
+    include '*/*'
+    into "$productRootDir"
+    archiveName "$productZipName"
+    destinationDir file("$productLocation")
+}
+
+clean.doFirst {
+    delete "$productLocation"
+}
+
+def allTestCoverageFile = "$buildDir/jacoco/allTestCoverage.exec"
+
+jacocoTestReport {
+    executionData = project.fileTree(dir: '.', include: '**/build/jacoco/*.exec')
+    classDirectories = project.fileTree(dir: '.', include: '**/build/classes/main/**/*', excludes: ['**/test-tools/**',
+                                                                                                    '**/tools/**',
+                                                                                                    '**/worldfx/**',
+                                                                                                    '**/test-metamodel/**'])
+    sourceDirectories = project.fileTree(dir: '.', include: '**/src/main/java/**/*', excludes: ['**/test-tools/**',
+                                                                                                '**/tools/**',
+                                                                                                '**/worldfx/**',
+                                                                                                '**/test-metamodel/**'])
+}
+
+task jacocoMergeTest(type: JacocoMerge) {
+    destinationFile = file(allTestCoverageFile)
+    executionData = project.fileTree(dir: '.', include: '**/build/jacoco/test.exec')
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'jacoco'
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    test {
+        jvmArgs '-Duser.language=en'
+        testLogging.showStandardStreams = true
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        // external libraries
+        configuration2Version = '2.0'
+        commonsMathVersion = '3.0'
+        commonsIoVersion = '2.5'
+        commonsLangVersion = '2.6'
+        controlsFXVersion = '8.40.12'
+        emfMwe2LauncherVersion = '2.8.3'
+        gsonVersion = '2.8.5'
+        guavaVersion = '21.0'
+        h2Version = '1.4.197'
+        ikonliVersion = '1.9.0'
+        jdom2Version = '2.0.6'
+        jdomVersion = '1.1'
+        jaxenVersion = '1.1.6'
+        jimfsVersion = '1.1'
+        libFXVersion = '0.3.0'
+        reflectionsVersion = '0.9.10'
+        richTextFXVersion = '0.7-M5'
+        vecmathVersion = '1.5.2'
+        xtextVersion = '2.20.0'
+        nettyVersion = '4.1.44.Final'
+        jmetroVersion = '8.6.9'
+        mapjfxVersion = '1.31.0'
+
+        // external test libraries
+        junitVersion = '4.12'
+        xmlunitVersion = '2.5.1'
+        mockitoVersion = '1.10.19'
+        powermockitoVersion = '1.6.6'
+    }
+
+    // force version of dependencies in case of version conflict
+    configurations.all {
+        resolutionStrategy {
+            force 'org.eclipse.platform:org.eclipse.equinox.common:3.10.0'
+        }
+    }
+
+    configurations {
+        // external libraries
+        configuration2
+        commonsMath
+        commonsIo
+        commonsLang
+        controlsFX
+        gson
+        guava
+        h2
+        ikonli
+        libFX
+        jdom2
+        jdom
+        jaxen
+        jimfs
+        reflections
+        richTextFX
+        vecmath
+        netty
+        jmetro
+        mapjfx
+
+        // external test libraries
+        junit
+        mockito
+        powermockito
+
+        // FDI-T modules
+        application
+        database
+        dsl
+        ltlcondition
+        metamodel
+        triggcondition
+        tools
+        worldfx
+        leafletmap
+
+        // FDI-T test modules
+        testDatabase
+        testMetamodel
+        testTools
+
+        testCompile.extendsFrom hamcrest, junit, mockito, powermockito, xmlunit
+    }
+
+    configurations.compile { transitive = false }
+
+    dependencies {
+        // external libraries
+        configuration2 "org.apache.commons:commons-configuration2:$configuration2Version"
+        commonsMath "org.apache.commons:commons-math3:$commonsMathVersion"
+        commonsIo "commons-io:commons-io:$commonsIoVersion"
+        commonsLang "commons-lang:commons-lang:$commonsLangVersion"
+        controlsFX "org.controlsfx:controlsfx:$controlsFXVersion"
+        gson "com.google.code.gson:gson:$gsonVersion"
+        guava "com.google.guava:guava:$guavaVersion"
+        h2 "com.h2database:h2:$h2Version"
+        ikonli "org.kordamp.ikonli:ikonli-core:$ikonliVersion"
+        ikonli "org.kordamp.ikonli:ikonli-javafx:$ikonliVersion"
+        ikonli "org.kordamp.ikonli:ikonli-materialdesign-pack:$ikonliVersion"
+        jdom2 "org.jdom:jdom2:$jdom2Version"
+        jdom "jdom:jdom:$jdomVersion"
+        jaxen "jaxen:jaxen:$jaxenVersion"
+        jimfs "com.google.jimfs:jimfs:$jimfsVersion"
+        libFX "org.codefx.libfx:LibFX:$libFXVersion"
+        reflections "org.reflections:reflections:$reflectionsVersion"
+        richTextFX "org.fxmisc.richtext:richtextfx:$richTextFXVersion"
+        vecmath "javax.vecmath:vecmath:$vecmathVersion"
+        netty "io.netty:netty-all:$nettyVersion"
+        jmetro "org.jfxtras:jmetro:$jmetroVersion"
+        mapjfx "com.sothawo:mapjfx:$mapjfxVersion"
+
+        // test external libraries
+        hamcrest "org.hamcrest:hamcrest-all:1.3"
+        junit "junit:junit:$junitVersion"
+        xmlunit "org.xmlunit:xmlunit-core:$xmlunitVersion"
+        xmlunit "org.xmlunit:xmlunit-matchers:$xmlunitVersion"
+        mockito "org.mockito:mockito-all:$mockitoVersion"
+        powermockito "org.powermock:powermock-module-junit4:$powermockitoVersion"
+        powermockito "org.powermock:powermock-api-mockito:$powermockitoVersion"
+
+        // FDI-T modules
+        application project(':fdit.application')
+        metamodel project(':fdit.metamodel')
+        database project(':fdit.database')
+        dsl project(':fdit.dsl:fdit.dsl.xtext.standalone')
+        ltlcondition project(':fdit.ltlcondition.parent:fdit.ltlcondition.ide')
+        triggcondition project(':fdit.triggcondition.parent:fdit.triggcondition.ide')
+        tools project(':fdit.tools')
+        worldfx project(':worldfx')
+        worldfx project(':leafletmap')
+
+        // FDI-T test modules
+        testDatabase project(':fdit.testDatabase')
+        testMetamodel project(':fdit.testMetamodel')
+        testTools project(':fdit.testTools')
+    }
+}

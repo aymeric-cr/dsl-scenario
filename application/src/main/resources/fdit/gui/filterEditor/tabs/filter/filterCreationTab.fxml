@@ -1,0 +1,40 @@
+<!--<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          stylesheets="@filterCreationTab.css"
+          fx:id="filterEditorPane"
+          hgap="10" vgap="10">
+    <GridPane GridPane.columnIndex="0"
+              GridPane.rowIndex="0"
+              hgap="10" vgap="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Button GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="okButton"/>
+        <Button GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="deleteButton"/>
+        <Label GridPane.columnIndex="2" GridPane.rowIndex="0" fx:id="applyToLabel"/>
+        <ComboBox GridPane.columnIndex="3" GridPane.rowIndex="0" fx:id="recordingComboBox"/>
+    </GridPane>
+    <GridPane GridPane.hgrow="ALWAYS"
+              GridPane.vgrow="ALWAYS"
+              GridPane.columnIndex="0"
+              GridPane.rowIndex="1"
+              hgap="10" vgap="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <CodeArea GridPane.vgrow="ALWAYS"
+                  GridPane.hgrow="ALWAYS"
+                  GridPane.rowIndex="0"
+                  GridPane.columnIndex="0"
+                  fx:id="codeArea"/>
+        <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="aircraftsVBox">
+            <Label fx:id="aircraftsLabel"/>
+        </VBox>
+    </GridPane>
+</GridPane>-->
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            stylesheets="@filterCreationTab.css"
+            fx:id="filterEditorPane">
+</BorderPane>

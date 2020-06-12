@@ -1,0 +1,21 @@
+dependencies {
+    compile project(':fdit.dsl:fdit.dsl.xtext')
+    compile "org.eclipse.xtext:org.eclipse.xtext.ide:${xtextVersion}"
+    compile "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:${xtextVersion}"
+}
+
+clean {
+    delete "${projectDir}/src/main/xtext-gen/"
+}
+
+publishing.publications {
+    dslIde(MavenPublication) {
+        groupId = group
+        artifactId = 'fdit.dsl.xtext.ide'
+        version = fditVersion
+        artifact source: fditLibLocation + dslIdeJarName, extension: 'jar'
+        pom.withXml {
+            asString().replace(0, asString().length() - 1, new File(dslPomIde).text)
+        }
+    }
+}

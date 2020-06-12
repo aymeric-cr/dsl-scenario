@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="content">let $filters = { "filt_lowalt", "filt_prism" },
+let $triggers = { "trig_altgs", "trig_prism" },
+
+hide all_planes satisfying $filters 
+at 0 seconds triggered_by $triggers</entry>
+<entry key="description"/>
+</properties>

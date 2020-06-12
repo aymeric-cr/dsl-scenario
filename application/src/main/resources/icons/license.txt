@@ -1,0 +1,34 @@
+CC3.0
+add-configuration.png : provided by https://www.iconfinder.com/icons/11935/gear_plus_icon#size=16
+arrow_down.png : provided by https://www.iconfinder.com/icons/352466/arrow_down_keyboard_icon#size=16
+arrow_right.png : provided by https://www.iconfinder.com/icons/352468/arrow_keyboard_right_icon#size=16
+alteration.png : provided by https://www.iconfinder.com/icons/14684/alert_attention_triangle_warning_icon#size=16
+custom.png provided by https://www.iconfinder.com/icons/14684/alert_attention_triangle_warning_icon#size=16 and https://www.iconfinder.com/icons/211751/gear_icon#size=16
+directory.png : provided by https://www.iconfinder.com/icons/299060/folder_icon#size=16
+error.png : provided by https://www.iconfinder.com/icons/299045/error_sign_icon#size=32
+sbs.png : provided by https://www.iconfinder.com/icons/43315/antenna_icon#size=32
+remove-configuration.png : provided by https://www.iconfinder.com/icons/26387/gear_minus_icon#size=16
+success.png : provided by https://www.iconfinder.com/icons/1930264/check_complete_done_green_success_valid_icon#size=32
+warning.png : provided by https://www.iconfinder.com/icons/1055096/alert_attention_caution_danger_error_exclamation_warning_icon#size=32
+zones.png : provided by https://www.iconfinder.com/icons/26524/layer_polygon_shape_icon#size=16
+flight-plans.png : provided by https://www.iconfinder.com/icons/2315981/flight_plane_ticket_transportation_icon#size=16
+clock.png provided by https://www.iconfinder.com/icons/326483/access_clock_time_icon#size=16
+OFL
+aircraft-appli.png : provided by https://www.iconfinder.com/icons/1608794/plane_icon#size=64
+aircraft.png : provided by https://www.iconfinder.com/icons/1608794/plane_icon#size=64
+export.png : provided by https://www.iconfinder.com/icons/103049/export_icon#size=16
+filter.png : provided by https://www.iconfinder.com/icons/1608702/filter_icon#size=16
+loading.png : provided by https://www.iconfinder.com/icons/293686/loading_icon#size=32
+trigger.png : provided by https://www.iconfinder.com/icons/510928/alarm_clock_event_schedule_time_icon#size=16
+gear.png : provided by https://www.iconfinder.com/icons/103170/gear_preferences_settings_tools_icon#size=16
+speed-alteration.png : provided by https://www.iconfinder.com/icons/103170/gear_preferences_settings_tools_icon#size=16
+label-green.png : provided by https://www.iconfinder.com/icons/5208400/label_price_tag_icon
+label-red.png : provided by https://www.iconfinder.com/icons/5208400/label_price_tag_icon
+
+Free for commercial use
+delete_cross.png : provided by https://www.iconfinder.com/icons/1398920/circle_close_cross_delete_incorrect_invalid_x_icon#size=16
+plus.png : provided by https://www.iconfinder.com/icons/728898/add_create_file_folder_new_page_plus_icon#size=16
+schema.png : provided by https://www.iconfinder.com/icons/728933/document_edit_file_page_paper_sheet_text_icon#size=16
+start-execution.png : provided by https://www.iconfinder.com/icons/106223/play_icon#size=16
+stop-execution.png : provided by https://www.iconfinder.com/icons/106221/stop_icon#size=16
+message-alteration.png : provided by https://www.iconfinder.com/icons/2318464/email_envelope_letter_mail_message_icon#size=16

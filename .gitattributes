@@ -1,0 +1,12 @@
+**/*.jar filter=lfs diff=lfs merge=lfs -content
+**/*.png filter=lfs diff=lfs merge=lfs -content
+**/*.bmp filter=lfs diff=lfs merge=lfs -content
+**/*.jpg filter=lfs diff=lfs merge=lfs -content
+**/*.zip filter=lfs diff=lfs merge=lfs -content
+**/*.gz filter=lfs diff=lfs merge=lfs -content
+**/*.dll filter=lfs diff=lfs merge=lfs -content
+**/*.so filter=lfs diff=lfs merge=lfs -content
+**/*.dylib filter=lfs diff=lfs merge=lfs -content
+**/*.exe filter=lfs diff=lfs merge=lfs -content
+**/*.sbs filter=lfs diff=lfs merge=lfs -content
+**/*.bst filter=lfs diff=lfs merge=lfs -content

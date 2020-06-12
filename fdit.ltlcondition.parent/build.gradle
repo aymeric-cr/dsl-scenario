@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.8'
+        classpath: 'org.eclipse.xtext:org.eclipse.xtext.smap:2.15.0'
+    }
+}
+configurations {
+    compile.extendsFrom metamodel
+}
+subprojects {
+    apply plugin: 'org.xtext.xtend'
+    apply plugin: 'java'
+    ext.xtextVersion = '2.20.0'
+    repositories {
+        jcenter()
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/xtext-gen']
+            resources.srcDirs = ['src/main/resources', 'src/main/xtext-gen']
+            xtendOutputDir = 'src/main/xtend-gen'
+        }
+        test {
+            java.srcDirs = ['src/test/java', 'src/test/xtext-gen']
+            resources.srcDirs = ['src/test/resources', 'src/test/xtext-gen']
+            xtendOutputDir = 'src/test/xtend-gen'
+        }
+    }
+
+    jar {
+        from('model') {
+            into('model')
+        }
+        from(sourceSets.main.allSource) {
+            include '**/*.xtext'
+        }
+        manifest {
+            attributes 'Bundle-SymbolicName': project.name
+        }
+    }
+
+    ext {
+        grammarName = 'LTLCondition'
+    }
+
+    configurations.all {
+        exclude group: 'asm'
+    }
+}

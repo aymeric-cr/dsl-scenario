@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1"
+           dividerPositions="0.8"
+           orientation="VERTICAL"
+           xmlns="http://javafx.com/javafx/8.0.111"
+           stylesheets="@filterEditor.css">
+    <TabPane xmlns:fx="http://javafx.com/fxml"
+             fx:id="filterTabPane" tabClosingPolicy="ALL_TABS" SplitPane.resizableWithParent="false">
+        <Tab fx:id="createFilterTab" closable="false"/>
+    </TabPane>
+    <ScrollPane fitToWidth="true" fitToHeight="true">
+        <TableView styleClass="fdit-table-view" fx:id="filtersTableView">
+            <columns>
+                <TableColumn fx:id="filterNameColumn"/>
+            </columns>
+        </TableView>
+    </ScrollPane>
+</SplitPane>

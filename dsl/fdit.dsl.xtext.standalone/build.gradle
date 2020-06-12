@@ -1,0 +1,21 @@
+configurations {
+    compile.extendsFrom metamodel, tools
+    testCompile.extendsFrom testTools
+}
+
+dependencies {
+    //compile project(':fdit.dsl:fdit.dsl.xtext')
+    compile project(':fdit.dsl:fdit.dsl.xtext.ide')
+}
+
+publishing.publications {
+    dslStandalone(MavenPublication) {
+        groupId = group
+        artifactId = 'fdit.dsl.xtext.standalone'
+        version = fditVersion
+        artifact source: fditLibLocation + dslStandaloneJarName, extension: 'jar'
+        pom.withXml {
+            asString().replace(0, asString().length() - 1, new File(dslPomStandalone).text)
+        }
+    }
+}

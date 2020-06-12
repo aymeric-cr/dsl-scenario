@@ -1,0 +1,10 @@
+group 'eu.hansolo.fx'
+version '1.0-SNAPSHOT'
+
+configurations {
+    // module dependencies
+    compile.extendsFrom tools
+
+    // external libraries dependencies
+    compile.extendsFrom ikonli, gson
+}

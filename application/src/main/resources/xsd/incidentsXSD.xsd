@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="schema">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="record" type="xs:string"/>
+                <xs:element name="firstDate" type="xs:long" minOccurs="0"/>
+                <xs:element name="filter" type="xs:string"/>
+                <xs:element ref="action" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name='action'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="scope"/>
+                <xs:element name="parameters">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="target" maxOccurs="unbounded"/>
+                            <xs:element ref="trajectory" minOccurs="0"/>
+                            <xs:element name="recordPath" minOccurs="0"/>
+                            <xs:element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="alterationType" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="ALTERATION"/>
+                        <xs:enumeration value="ALTERATIONSPEED"/>
+                        <xs:enumeration value="ALTERATIONTIMESTAMP"/>
+                        <xs:enumeration value="DELETION"/>
+                        <xs:enumeration value="REPLAY"/>
+                        <xs:enumeration value="CUSTOM"/>
+                        <xs:enumeration value="SATURATION"/>
+                        <xs:enumeration value="REDUCTIONDF"/>
+                        <xs:enumeration value="TRAJECTORY"/>
+                        <xs:enumeration value="CREATION"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- different kind of scope available -->
+    <xs:element name="scope">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <!-- Insert all kind of parameters here -->
+                <xs:element name="lowerAlt" type="xs:string"/>
+                <xs:element name="upperAlt" type="xs:string"/>
+                <xs:element name="lowerBound" type="xs:string"/>
+                <xs:element name="upperBound" type="xs:string"/>
+                <xs:element name="threshold" type="xs:string"/>
+                <xs:element name="thresholdType" type="xs:string"/>
+                <xs:element name="boundType" type="xs:string"/>
+                <xs:element ref="polygon"/>
+                <xs:element name="time" type="xs:string"/>
+            </xs:choice>
+            <xs:attribute name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="trigger"/>
+                        <xs:enumeration value="timeWindow"/>
+                        <xs:enumeration value="geoArea"/>
+                        <xs:enumeration value="geoThreshold"/>
+                        <xs:enumeration value="geoTime"/>
+                        <xs:enumeration value="geoTimeWindow"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="parameter">
+        <xs:complexType>
+            <xs:choice>
+                <xs:sequence>
+                    <xs:element name="key" type="xs:string"/>
+                    <xs:element name="value" type="xs:string"/>
+                    <xs:element name="number" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+                <xs:element name="frequency" type="xs:string"/>
+            </xs:choice>
+            <xs:attribute name="mode">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="simple"/>
+                        <xs:enumeration value="offset"/>
+                        <xs:enumeration value="noise"/>
+                        <xs:enumeration value="drift"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="icao">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:length value="6"/>
+                <xs:pattern value="[A-F0-9][A-F0-9][A-F0-9][A-F0-9][A-F0-9][A-F0-9]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="callsign">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="8"/>
+                <xs:pattern value="[A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9][A-Z0-9]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="squawk">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[0-7][0-7][0-7][0-7]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="icaoRoute">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="([A-Z0-9]\s+)*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="flightId">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z0-9]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="aerodep">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4"/>
+                <xs:pattern value="[A-Z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="aerodest">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="4"/>
+                <xs:pattern value="[A-Z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="aircraftType">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="8"/>
+                <xs:pattern value="[A-Z0-9]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="estimatedOffBlockTime">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="8"/>
+                <xs:pattern
+                        value="[0-9]*[/:-][0-9]{2}[/:-][0-9]*\\s+[0-9]{2}[/:-][0-9]{2}(:[0-9]{2})?"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="nonIcaoAerodep">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="nonIcaoAerodest">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="routeLength">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:pattern value="[0-9]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="wef">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern
+                        value="[0-9]{4}[/:-][0-9]{2}[/:-][0-9]{2}\\s+[0-9]{2}:[0-9]{2}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="unt">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern
+                        value="[0-9]{4}[/:-][0-9]{2}[/:-][0-9]{2}\\s+[0-9]{2}:[0-9]{2}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="searchkKey">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="actionDB">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="target">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="identifier">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="icao"/>
+                                <xs:enumeration value="hexIdent"/>
+                                <xs:enumeration value="callsign"/>
+                                <xs:enumeration value="squawk"/>
+                                <xs:enumeration value="altitude"/>
+                                <xs:enumeration value="groundSpeed"/>
+                                <xs:enumeration value="track"/>
+                                <xs:enumeration value="latitude"/>
+                                <xs:enumeration value="longitude"/>
+                                <xs:enumeration value="verticalRate"/>
+                                <xs:enumeration value="alert"/>
+                                <xs:enumeration value="emergency"/>
+                                <xs:enumeration value="SPI"/>
+                                <xs:enumeration value="isOnGround"/>
+                                <xs:enumeration value="flightId"/>
+                                <xs:enumeration value="aerodep"/>
+                                <xs:enumeration value="aerodest"/>
+                                <xs:enumeration value="aircraftType"/>
+                                <xs:enumeration value="estimatedOffBlockTime"/>
+                                <xs:enumeration value="nonIcaoAerodep"/>
+                                <xs:enumeration value="nonIcaoAerodest"/>
+                                <xs:enumeration value="route"/>
+                                <xs:enumeration value="routeLength"/>
+                                <xs:enumeration value="wef"/>
+                                <xs:enumeration value="unt"/>
+                                <xs:enumeration value="searchkKey"/>
+                                <xs:enumeration value="actionDB"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="time" type="xs:string"/>
+
+    <xs:element name="trigger">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="time"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="timeWindow">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="lowerBound" type="xs:string"/>
+                <xs:element name="upperBound" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="geoThreshold">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="thresholdType" type="xs:string"/>
+                <xs:element name="threshold" type="xs:string"/>
+                <xs:element name="boundType" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="geoArea">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="polygon"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="polygon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element ref="vertices"/>
+                <xs:element name="lowerAlt" type="xs:string"/>
+                <xs:element name="upperAlt" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vertices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vertex" minOccurs="3" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vertex">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="lat" type="xs:string"/>
+                <xs:element name="lon" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="trajectory">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="waypoint" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="waypoint">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vertex"/>
+                <xs:element name="altitude" type="xs:integer"/>
+                <xs:element name="time" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<execution>
+    <recording>journal-data-lux-15min-190419-330pm.bst</recording>
+    <schemas>
+        <schema>schemas/aircraft_disappearrance_attack.scenario</schema>
+    </schemas>
+</execution>

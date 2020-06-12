@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.4'
+    }
+}
+
+subprojects {
+    apply plugin: 'org.xtext.xtend'
+
+    repositories {
+        jcenter()
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/xtext-gen']
+            resources.srcDirs = ['src/main/resources', 'src/main/xtext-gen']
+            xtendOutputDir = 'src/main/xtend-gen'
+        }
+    }
+
+    jar {
+        from('model') {
+            into('model')
+        }
+    }
+
+    ext {
+        grammarName = 'AttackScenarioGrammar'
+    }
+
+    configurations.all {
+        exclude group: 'asm'
+    }
+}

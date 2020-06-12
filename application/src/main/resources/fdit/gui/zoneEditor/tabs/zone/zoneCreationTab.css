@@ -1,0 +1,32 @@
+/*
+.boldLabel {
+    -fx-font-weight: bold
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: #FFFFFF;
+}
+
+.scroll-pane {
+   -fx-background-color: #FFFFFF;
+}
+
+.border-pane {
+    -fx-border-radius: 20;
+    -fx-border-color: #b3b3b3;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.polygon-point-pane {
+    -fx-border-color: #b3b3b3;
+    -fx-padding: 2;
+    -fx-spacing: 1;
+    -fx-border-radius: 5;
+}
+
+.polygon-point-container {
+    -fx-spacing: 1;
+    -fx-pref-width : 100px;
+}
+*/

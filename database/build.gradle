@@ -1,0 +1,7 @@
+configurations {
+    // modules dependencies
+    compile.extendsFrom metamodel, tools
+
+    // external libraries dependencies
+    compile.extendsFrom h2
+}

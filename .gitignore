@@ -1,0 +1,67 @@
+# Intellij project files
+*.iws
+.idea/
+out/
+dsl-standalone.iml
+
+# Gradle generated files
+build/
+.gradle/
+log.txt
+dsl/fdit.dsl.xtext/src/main/java/fdit/dsl/AttackScenarioGrammarRuntimeModule.xtend
+dsl/fdit.dsl.xtext/src/main/java/fdit/dsl/AttackScenarioGrammarStandaloneSetup.xtend
+dsl/fdit.dsl.xtext/src/main/java/fdit/dsl/generator/
+dsl/fdit.dsl.xtext/src/main/java/fdit/dsl/scoping/
+dsl/fdit.dsl.xtext/src/main/java/fdit/dsl/validation/
+
+# Xtext
+model/
+bin/
+src-gen/
+xtend-gen/
+xtext-gen/
+
+# NetBeans specific
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Eclipse
+.metadata
+.classpath
+.project
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.externalToolBuilders/
+*.launch
+*.pydevproject
+.cproject
+.autotools
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+.cache-main
+.scala_dependencies
+.worksheet
+
+# OS
+.DS_Store
+
+# Misc
+release.properties
+pom.xml.releaseBackup
+pom.xml.tag

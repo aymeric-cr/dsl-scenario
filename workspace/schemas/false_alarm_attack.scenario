@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="content">let $start = { 30, 200, 254, 1065 } , 
+let $squawks = { 7500, 7600, 7700 },
+
+alter all_planes satisfying "filt_lat" at $start seconds triggered_by "trig_vertrate" 
+with_values SQUAWK = $squawks</entry>
+<entry key="description"/>
+<entry key="bstPath">../journal-data-lux-15min-190419-330pm.bst</entry>
+</properties>

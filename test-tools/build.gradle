@@ -1,0 +1,10 @@
+configurations {
+    compile.extendsFrom junit, mockito, powermockito, guava, commonsIo, commonsMath, commonsLang, reflections, jimfs, xmlunit
+}
+
+sourceSets {
+    main {
+        java.srcDir file('src/main/java')
+        resources.srcDir file('src/main/resources')
+    }
+}

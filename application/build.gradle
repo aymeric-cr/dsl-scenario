@@ -1,0 +1,66 @@
+apply plugin: 'javafx-gradle-plugin'
+apply plugin: 'kotlin'
+
+buildscript {
+    ext.kotlin_version = '1.3.72'
+    dependencies {
+        repositories {
+            mavenLocal()
+            mavenCentral()
+        }
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+dependencies {
+    // external libraries dependencies
+    compile "org.apache.commons:commons-configuration2:$configuration2Version"
+    compile "org.controlsfx:controlsfx:$controlsFXVersion"
+    compile "org.apache.commons:commons-math3:$commonsMathVersion"
+    compile "commons-lang:commons-lang:$commonsLangVersion"
+    compile "com.google.code.gson:gson:$gsonVersion"
+    compile "com.h2database:h2:$h2Version"
+    compile "org.jdom:jdom2:$jdom2Version"
+    compile "jdom:jdom:$jdomVersion"
+    compile "jaxen:jaxen:$jaxenVersion"
+    compile "org.codefx.libfx:LibFX:$libFXVersion"
+    compile "org.reflections:reflections:$reflectionsVersion"
+    compile "org.fxmisc.richtext:richtextfx:$richTextFXVersion"
+    compile "javax.vecmath:vecmath:$vecmathVersion"
+    compile "io.netty:netty-all:$nettyVersion"
+    compile "org.jfxtras:jmetro:$jmetroVersion"
+    compile "com.sothawo:mapjfx:$mapjfxVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinstdlibVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlinstdlibcommonVersion"
+
+    // modules dependencies
+    compile project(':metamodel')
+    compile project(':database')
+    compile project(':tools')
+    compile project(':fdit.dsl:fdit.dsl.xtext.standalone')
+    compile project(':fdit.ltlcondition.parent:fdit.ltlcondition.ide')
+    compile project(':fdit.triggcondition.parent:fdit.triggcondition.ide')
+}
+
+jfx {
+    mainClass = 'fdit.gui.application.FditApplication'
+    jfxAppOutputDir = "${fditJarLocation}"
+    jfxMainAppJarName = "${fditJarName}"
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

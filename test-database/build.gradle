@@ -1,0 +1,13 @@
+configurations {
+    compile.extendsFrom database, testMetamodel
+}
+
+sourceSets {
+    main {
+        java.srcDir file('src/main/java')
+    }
+    test {
+        java.srcDir file('src/test/java')
+        resources.srcDir file('src/test/resources')
+    }
+}

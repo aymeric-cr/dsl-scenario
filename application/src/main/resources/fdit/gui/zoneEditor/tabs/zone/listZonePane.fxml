@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<ScrollPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="listZone"
+            styleClass="list-zone"
+            xmlns="http://javafx.com/javafx/8.0.111"
+            stylesheets="@listZonePane.css"
+            fitToHeight="true"
+            fitToWidth="true">
+    <TableView styleClass="fdit-table-view" fx:id="zoneTableView">
+        <columns>
+            <TableColumn fx:id="zoneNameColumn"/>
+            <TableColumn fx:id="zoneLowerAltitudeColumn"/>
+            <TableColumn fx:id="zoneUpperAltitudeColumn"/>
+            <TableColumn fx:id="zoneVerticesColumn"/>
+        </columns>
+    </TableView>
+</ScrollPane>

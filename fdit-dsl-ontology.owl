@@ -1,0 +1,3758 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/avernotte/ontologies/2020/2/fdit-dsl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/avernotte/ontologies/2020/2/fdit-dsl">
+    <Prefix name="" IRI="http://www.semanticweb.org/avernotte/ontologies/2020/2/fdit-dsl"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483648"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483649"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483650"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483651"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483652"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483654"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483655"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483657"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483658"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483659"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483660"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483662"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483663"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#ASPProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AircraftProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AllPlaneTarget"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlterationParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlterationSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlwaysFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AndFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AndOrFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AndOrTriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AsSoonAsTriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Assertion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssertionParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AtTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AtomicExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BooleanValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoordinateBasedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CreationParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CreationSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Declaration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeclarationReference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DeletionSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DifferentProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DivExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoubleValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DynamicProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EqualProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventuallyFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Expression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Filter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FilterAssertion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FilterProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FromUntilTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GreaterOrEqThanProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GreaterThanProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InsideZonePropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntegerValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ListDeclaration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerOrEqThanProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowerThanProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MinusExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MulDivExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MulExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NamedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NegExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoneFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NotFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NotPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutsideZonePropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParameterAssertion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParameterizedSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlaneTarget"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlusExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlusMinusExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropertyScope"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropertyType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropertyValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RangeDeclaration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recording"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReplayParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReplaySchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SaturationParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SaturationSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Scenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Schema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StaticProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StraightFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StraightTriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StringValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Target"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrajModSchema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trigger"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TwoChildrenExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UntilTriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ValueDeclaration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Waypoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WhenTriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ZonePropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#HasTriggerExpression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAlterationParameters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAssertFilter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAssertionParameters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAssertions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCreationParameters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCreationProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDeclScenario"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDeclaration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDeclarationReferences"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDeclarations"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasExpression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFiltPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFilter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFilters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMulDivLeft"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMulDivRight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParamPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRecording"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSaturationParameters"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasScenario"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSchemas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSourceRecording"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubExpression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubExpressionLeft"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubExpressionRight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubFilterExpression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubFilterExpressionLeft"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubFilterExpressionRight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationLeft"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationRight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubTriggerExpressionLeft"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubTriggerExpressionRight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTarget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTimeWindow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTriggPropertyEvaluation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTriggers"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWaypoints"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasZone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOfProperty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAltitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBoolValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDeclarationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDoubleValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFilterName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGhostNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIntegerValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLatitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLongitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLowerboundAltitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRecordingName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStartTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStringValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTriggerName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUpperboundAltitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasZoneName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isInsideZone"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isRandomizingIcaos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.ALERT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.CALLSIGN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.EMERGENCY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.ICAO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.IS_ON_GROUND"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.KNOWN_POSITIONS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.SPI"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.SQUAWK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.TRACK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AIRCRAFT.VERTICAL_RATE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.ALERT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.EMERGENCY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.IS_ON_GROUND"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MAX_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MAX_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MAX_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MAX_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MEAN_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MEAN_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MEAN_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MEAN_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MIN_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MIN_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MIN_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.MIN_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.SQUAWK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASP.VERTICAL_RATE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#France"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.ALERT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.EMERGENCY"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.IS_ON_GROUND"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MAX_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MAX_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MAX_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MAX_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MEAN_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MEAN_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MEAN_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MEAN_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MIN_ALTITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MIN_GROUNDSPEED"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MIN_LATITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.MIN_LONGITUDE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.SQUAWK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alt_filt.VERTICAL_RATE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#alter_altitude_schema"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#simple_scenario"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AlterationSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ParameterizedSchema"/>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAlterationParameters"/>
+                <Class IRI="#AlterationParameter"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AndOrFilterExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubFilterExpressionLeft"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AndOrFilterExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubFilterExpressionRight"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubPropertyEvaluationLeft"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubPropertyEvaluationRight"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubTriggerExpressionLeft"/>
+            <Class IRI="#TriggerExpression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubTriggerExpressionRight"/>
+            <Class IRI="#TriggerExpression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BooleanValue"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasValue"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CoordinateBasedEntity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCoordinates"/>
+            <Class IRI="#Coordinate"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CreationSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#ParameterizedSchema"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasTarget"/>
+                    <Class IRI="#Target"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCreationParameters"/>
+                <Class IRI="#CreationParameter"/>
+            </ObjectSomeValuesFrom>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasWaypoints"/>
+                <Class IRI="#Waypoint"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DeclarationReference"/>
+        <ObjectIntersectionOf>
+            <ObjectComplementOf>
+                <DataSomeValuesFrom>
+                    <DataProperty IRI="#hasValue"/>
+                    <Datatype abbreviatedIRI="rdfs:Literal"/>
+                </DataSomeValuesFrom>
+            </ObjectComplementOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasDeclaration"/>
+                <Class IRI="#Declaration"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DoubleValue"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasValue"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Expression"/>
+        <ObjectUnionOf>
+            <Class IRI="#AtomicExpression"/>
+            <Class IRI="#NegExpression"/>
+            <Class IRI="#TwoChildrenExpression"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Filter"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFilterExpression"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FilterAssertion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAssertFilter"/>
+            <Class IRI="#Filter"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FilterExpression"/>
+        <ObjectUnionOf>
+            <Class IRI="#AndOrFilterExpression"/>
+            <Class IRI="#NotFilterExpression"/>
+            <Class IRI="#StraightFilterExpression"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FilterProperty"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFilter"/>
+            <Class IRI="#Filter"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FromUntilTimeWindow"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasEndTime"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#IntegerValue"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasValue"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NamedEntity"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NegExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubExpression"/>
+            <Class IRI="#Expression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NotFilterExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubFilterExpression"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NotPropertyEvaluation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Parameter"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasParamPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ParameterAssertion"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAssertionParameters"/>
+            <Class IRI="#AssertionParameter"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ParameterizedSchema"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasParameters"/>
+            <Class IRI="#Parameter"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PropertyType"/>
+        <ObjectUnionOf>
+            <Class IRI="#DynamicProperty"/>
+            <Class IRI="#StaticProperty"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PropertyValue"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isOfProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Recording"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasRecordingName"/>
+            <Datatype abbreviatedIRI="xsd:Name"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SaturationSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasGhostNumber"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#isRandomizingIcaos"/>
+                <Datatype abbreviatedIRI="xsd:boolean"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Scenario"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSchemas"/>
+            <Class IRI="#Schema"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Scenario"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasRecording"/>
+            <Class IRI="#Recording"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Schema"/>
+        <ObjectUnionOf>
+            <Class IRI="#ParameterizedSchema"/>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Schema"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasScenario"/>
+            <Class IRI="#Scenario"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Schema"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTimeWindow"/>
+            <Class IRI="#TimeWindow"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#StraightFilterExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFiltPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#StraightPropertyEvaluation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#StraightTriggerExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasTriggPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#StringValue"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasValue"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Target"/>
+        <ObjectUnionOf>
+            <Class IRI="#AllPlaneTarget"/>
+            <Class IRI="#PlaneTarget"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasTarget"/>
+            <Class IRI="#Target"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TimeWindow"/>
+        <ObjectUnionOf>
+            <Class IRI="#AtTimeWindow"/>
+            <Class IRI="#FromUntilTimeWindow"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TimeWindow"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasStartTime"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TrajModSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasWaypoints"/>
+                <Class IRI="#Waypoint"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Trigger"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#HasTriggerExpression"/>
+                <Class IRI="#TriggerExpression"/>
+            </ObjectExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasTriggerName"/>
+                <Datatype abbreviatedIRI="xsd:Name"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TwoChildrenExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubExpressionLeft"/>
+            <Class IRI="#Expression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TwoChildrenExpression"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubExpressionRight"/>
+            <Class IRI="#Expression"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Waypoint"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#CoordinateBasedEntity"/>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasCoordinates"/>
+                <Class IRI="#Coordinate"/>
+            </ObjectExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasAltitude"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Zone"/>
+        <ObjectIntersectionOf>
+            <ObjectMinCardinality cardinality="3">
+                <ObjectProperty IRI="#hasCoordinates"/>
+                <Class IRI="#Coordinate"/>
+            </ObjectMinCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasLowerboundAltitude"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasUpperboundAltitude"/>
+                <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasZoneName"/>
+                <Datatype abbreviatedIRI="xsd:Name"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ZonePropertyEvaluation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasZone"/>
+            <Class IRI="#Zone"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#ASPProperty"/>
+        <Class IRI="#PropertyScope"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AircraftProperty"/>
+        <Class IRI="#PropertyScope"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AllPlaneTarget"/>
+        <Class IRI="#Target"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlterationParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlterationSchema"/>
+        <Class IRI="#ParameterizedSchema"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlterationSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasWaypoints"/>
+                    <Class IRI="#Waypoint"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlwaysFilterExpression"/>
+        <Class IRI="#StraightFilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndFilterExpression"/>
+        <Class IRI="#AndOrFilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrFilterExpression"/>
+        <Class IRI="#FilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrFilterExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubFilterExpressionLeft"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrFilterExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubFilterExpressionRight"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubPropertyEvaluationLeft"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubPropertyEvaluationRight"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <Class IRI="#TriggerExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubTriggerExpressionLeft"/>
+            <Class IRI="#TriggerExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubTriggerExpressionRight"/>
+            <Class IRI="#TriggerExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AsSoonAsTriggerExpression"/>
+        <Class IRI="#StraightTriggerExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Assertion"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssertionParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtTimeWindow"/>
+        <Class IRI="#TimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtomicExpression"/>
+        <Class IRI="#Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BooleanValue"/>
+        <Class IRI="#AtomicExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coordinate"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoordinateBasedEntity"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoordinateBasedEntity"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCoordinates"/>
+            <Class IRI="#Coordinate"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CreationParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CreationSchema"/>
+        <Class IRI="#ParameterizedSchema"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Declaration"/>
+        <Class IRI="#NamedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeclarationReference"/>
+        <Class IRI="#AtomicExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DeletionSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasWaypoints"/>
+                    <Class IRI="#Waypoint"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DifferentProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DivExpression"/>
+        <Class IRI="#MulDivExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoubleValue"/>
+        <Class IRI="#AtomicExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DynamicProperty"/>
+        <Class IRI="#PropertyType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EqualProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventuallyFilterExpression"/>
+        <Class IRI="#StraightFilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Expression"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Filter"/>
+        <Class IRI="#NamedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Filter"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasFilterExpression"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FilterAssertion"/>
+        <Class IRI="#Assertion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FilterAssertion"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAssertFilter"/>
+            <Class IRI="#Filter"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FilterExpression"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FilterProperty"/>
+        <Class IRI="#PropertyScope"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FilterProperty"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasFilter"/>
+            <Class IRI="#Filter"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FromUntilTimeWindow"/>
+        <Class IRI="#TimeWindow"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GreaterOrEqThanProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GreaterThanProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InsideZonePropertyEvaluation"/>
+        <Class IRI="#ZonePropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntegerValue"/>
+        <Class IRI="#AtomicExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ListDeclaration"/>
+        <Class IRI="#Declaration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowerOrEqThanProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowerThanProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MinusExpression"/>
+        <Class IRI="#PlusMinusExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MulDivExpression"/>
+        <Class IRI="#TwoChildrenExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MulExpression"/>
+        <Class IRI="#MulDivExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NamedEntity"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NegExpression"/>
+        <Class IRI="#Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoneFilterExpression"/>
+        <Class IRI="#StraightFilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NotFilterExpression"/>
+        <Class IRI="#FilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NotFilterExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubFilterExpression"/>
+            <Class IRI="#FilterExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NotPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NotPropertyEvaluation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrFilterExpression"/>
+        <Class IRI="#AndOrFilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutsideZonePropertyEvaluation"/>
+        <Class IRI="#ZonePropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parameter"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parameter"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasParamPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParameterAssertion"/>
+        <Class IRI="#Assertion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParameterAssertion"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAssertionParameters"/>
+            <Class IRI="#AssertionParameter"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParameterizedSchema"/>
+        <Class IRI="#Schema"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlaneTarget"/>
+        <Class IRI="#Target"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlusExpression"/>
+        <Class IRI="#PlusMinusExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlusMinusExpression"/>
+        <Class IRI="#TwoChildrenExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Property"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PropertyEvaluation"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PropertyScope"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PropertyType"/>
+        <Class IRI="#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PropertyValue"/>
+        <Class IRI="#AtomicExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RangeDeclaration"/>
+        <Class IRI="#Declaration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recording"/>
+        <Class IRI="#NamedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recording"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReplayParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReplaySchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasWaypoints"/>
+                    <Class IRI="#Waypoint"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SaturationParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SaturationSchema"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TargetedFilteredTriggeredSchema"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasWaypoints"/>
+                    <Class IRI="#Waypoint"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scenario"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scenario"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasDeclarations"/>
+            <Class IRI="#Declaration"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scenario"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasRecording"/>
+            <Class IRI="#Recording"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Scenario"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSchemas"/>
+            <Class IRI="#Schema"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Schema"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Schema"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasScenario"/>
+            <Class IRI="#Scenario"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Schema"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTimeWindow"/>
+            <Class IRI="#TimeWindow"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StaticProperty"/>
+        <Class IRI="#PropertyType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StraightFilterExpression"/>
+        <Class IRI="#FilterExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StraightFilterExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasFiltPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StraightPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StraightPropertyEvaluation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasProperty"/>
+            <Class IRI="#Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StraightTriggerExpression"/>
+        <Class IRI="#TriggerExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StraightTriggerExpression"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasTriggPropertyEvaluation"/>
+            <Class IRI="#PropertyEvaluation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StringValue"/>
+        <Class IRI="#AtomicExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Target"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+        <Class IRI="#Schema"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeWindow"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrajModSchema"/>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trigger"/>
+        <Class IRI="#NamedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trigger"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#HasTriggerExpression"/>
+            <Class IRI="#TriggerExpression"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TriggerExpression"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TwoChildrenExpression"/>
+        <Class IRI="#Expression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UntilTriggerExpression"/>
+        <Class IRI="#StraightTriggerExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ValueDeclaration"/>
+        <Class IRI="#Declaration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Waypoint"/>
+        <Class IRI="#CoordinateBasedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Waypoint"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasAltitude"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WhenTriggerExpression"/>
+        <Class IRI="#StraightTriggerExpression"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <Class IRI="#CoordinateBasedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <Class IRI="#NamedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCoordinates"/>
+            <Class IRI="#Coordinate"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasLowerboundAltitude"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasUpperboundAltitude"/>
+            <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZonePropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZonePropertyEvaluation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasZone"/>
+            <Class IRI="#Zone"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ASPProperty"/>
+        <Class IRI="#AircraftProperty"/>
+        <Class IRI="#FilterProperty"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AllPlaneTarget"/>
+        <Class IRI="#PlaneTarget"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AlterationParameter"/>
+        <Class IRI="#AssertionParameter"/>
+        <Class IRI="#CreationParameter"/>
+        <Class IRI="#ReplayParameter"/>
+        <Class IRI="#SaturationParameter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AlwaysFilterExpression"/>
+        <Class IRI="#AndOrFilterExpression"/>
+        <Class IRI="#EventuallyFilterExpression"/>
+        <Class IRI="#NoneFilterExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AndFilterExpression"/>
+        <Class IRI="#OrFilterExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AndOrFilterExpression"/>
+        <Class IRI="#NotFilterExpression"/>
+        <Class IRI="#StraightFilterExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+        <Class IRI="#NotPropertyEvaluation"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+        <Class IRI="#ZonePropertyEvaluation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <Class IRI="#AsSoonAsTriggerExpression"/>
+        <Class IRI="#UntilTriggerExpression"/>
+        <Class IRI="#WhenTriggerExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AndOrTriggerExpression"/>
+        <Class IRI="#StraightTriggerExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Assertion"/>
+        <Class IRI="#Coordinate"/>
+        <Class IRI="#CoordinateBasedEntity"/>
+        <Class IRI="#Expression"/>
+        <Class IRI="#Filter"/>
+        <Class IRI="#FilterExpression"/>
+        <Class IRI="#Parameter"/>
+        <Class IRI="#Property"/>
+        <Class IRI="#PropertyEvaluation"/>
+        <Class IRI="#Recording"/>
+        <Class IRI="#Scenario"/>
+        <Class IRI="#Schema"/>
+        <Class IRI="#Target"/>
+        <Class IRI="#TimeWindow"/>
+        <Class IRI="#Trigger"/>
+        <Class IRI="#TriggerExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Assertion"/>
+        <Class IRI="#NamedEntity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AtTimeWindow"/>
+        <Class IRI="#FromUntilTimeWindow"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AtomicExpression"/>
+        <Class IRI="#TwoChildrenExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Coordinate"/>
+        <Class IRI="#NamedEntity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CreationSchema"/>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DifferentProperty"/>
+        <Class IRI="#EqualProperty"/>
+        <Class IRI="#GreaterOrEqThanProperty"/>
+        <Class IRI="#GreaterThanProperty"/>
+        <Class IRI="#LowerOrEqThanProperty"/>
+        <Class IRI="#LowerThanProperty"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DivExpression"/>
+        <Class IRI="#MulExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DynamicProperty"/>
+        <Class IRI="#StaticProperty"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FilterAssertion"/>
+        <Class IRI="#ParameterAssertion"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FilterExpression"/>
+        <Class IRI="#NamedEntity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InsideZonePropertyEvaluation"/>
+        <Class IRI="#OutsideZonePropertyEvaluation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MinusExpression"/>
+        <Class IRI="#PlusExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MulDivExpression"/>
+        <Class IRI="#PlusMinusExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#Parameter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#Property"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#Scenario"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#Schema"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#Target"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#TimeWindow"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NamedEntity"/>
+        <Class IRI="#TriggerExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NegExpression"/>
+        <Class IRI="#NotFilterExpression"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Waypoint"/>
+        <Class IRI="#Zone"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.ALERT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.ALERT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.CALLSIGN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.CALLSIGN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.EMERGENCY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.EMERGENCY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.ICAO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.ICAO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.IS_ON_GROUND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.IS_ON_GROUND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.KNOWN_POSITIONS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.KNOWN_POSITIONS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MAX_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MEAN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.MIN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.SPI"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.SPI"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.SQUAWK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.SQUAWK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.TRACK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.TRACK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.VERTICAL_RATE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#AIRCRAFT.VERTICAL_RATE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.ALERT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.ALERT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.EMERGENCY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.EMERGENCY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.IS_ON_GROUND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.IS_ON_GROUND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MAX_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MEAN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#StaticProperty"/>
+        <NamedIndividual IRI="#ASP.MIN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.SQUAWK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.SQUAWK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ASPProperty"/>
+        <NamedIndividual IRI="#ASP.VERTICAL_RATE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#ASP.VERTICAL_RATE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Zone"/>
+        <NamedIndividual IRI="#France"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Filter"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.ALERT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.EMERGENCY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DynamicProperty"/>
+        <NamedIndividual IRI="#alt_filt.GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.IS_ON_GROUND"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MAX_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MAX_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MAX_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MAX_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MIN_ALTITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MIN_GROUNDSPEED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MIN_LATITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.MIN_LONGITUDE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.SQUAWK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FilterProperty"/>
+        <NamedIndividual IRI="#alt_filt.VERTICAL_RATE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Schema"/>
+        <NamedIndividual IRI="#alter_altitude_schema"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Scenario"/>
+        <NamedIndividual IRI="#simple_scenario"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.ALERT"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.ALTITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.EMERGENCY"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.GROUNDSPEED"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.IS_ON_GROUND"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.LATITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.LONGITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MAX_ALTITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MAX_GROUNDSPEED"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MAX_LATITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MAX_LONGITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_ALTITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_GROUNDSPEED"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_LATITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MEAN_LONGITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MIN_GROUNDSPEED"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MIN_LATITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.MIN_LONGITUDE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.SQUAWK"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFilter"/>
+        <NamedIndividual IRI="#alt_filt.VERTICAL_RATE"/>
+        <NamedIndividual IRI="#alt_filt"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#alt_filt"/>
+        <Literal>alt_filt</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#HasTriggerExpression"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAlterationParameters"/>
+        <ObjectProperty IRI="#hasParameters"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAssertFilter"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAssertions"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCoordinates"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCreationParameters"/>
+        <ObjectProperty IRI="#hasParameters"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCreationProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDeclScenario"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDeclaration"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDeclarationReferences"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDeclarations"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExpression"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFiltPropertyEvaluation"/>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFilter"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFilterExpression"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFilters"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMulDivLeft"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMulDivRight"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasParamPropertyEvaluation"/>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasParameters"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSaturationParameters"/>
+        <ObjectProperty IRI="#hasParameters"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasScenario"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSchemas"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSourceRecording"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubExpression"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubExpressionLeft"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubExpressionRight"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubFilterExpression"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubFilterExpressionLeft"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubFilterExpressionRight"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubPropertyEvaluation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationLeft"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationRight"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubTriggerExpressionLeft"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubTriggerExpressionRight"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTarget"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTimeWindow"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTriggPropertyEvaluation"/>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTriggers"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasWaypoints"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasZone"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isOfProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasDeclScenario"/>
+        <ObjectProperty IRI="#hasDeclarations"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasDeclaration"/>
+        <ObjectProperty IRI="#hasDeclarationReferences"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasScenario"/>
+        <ObjectProperty IRI="#hasSchemas"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDeclScenario"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasScenario"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSourceRecording"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTarget"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTimeWindow"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDeclarations"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSchemas"/>
+    </InverseFunctionalObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSubFilterExpression"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#HasTriggerExpression"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAlterationParameters"/>
+        <Class IRI="#AlterationSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAssertFilter"/>
+        <Class IRI="#FilterAssertion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAssertionParameters"/>
+        <Class IRI="#ParameterAssertion"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAssertions"/>
+        <Class IRI="#Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCoordinates"/>
+        <Class IRI="#CoordinateBasedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCreationParameters"/>
+        <Class IRI="#CreationSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCreationProperty"/>
+        <Class IRI="#CreationSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDeclScenario"/>
+        <Class IRI="#Declaration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDeclaration"/>
+        <Class IRI="#DeclarationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDeclarationReferences"/>
+        <Class IRI="#Declaration"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDeclarations"/>
+        <Class IRI="#Scenario"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasExpression"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFiltPropertyEvaluation"/>
+        <Class IRI="#FilterExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFilter"/>
+        <Class IRI="#FilterProperty"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFilterExpression"/>
+        <Class IRI="#Filter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFilters"/>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMulDivLeft"/>
+        <Class IRI="#PlusMinusExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMulDivRight"/>
+        <Class IRI="#PlusMinusExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParamPropertyEvaluation"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParameters"/>
+        <Class IRI="#ParameterizedSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProperty"/>
+        <Class IRI="#StraightPropertyEvaluation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+        <ObjectUnionOf>
+            <Class IRI="#Parameter"/>
+            <Class IRI="#StraightFilterExpression"/>
+            <Class IRI="#StraightTriggerExpression"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRecording"/>
+        <Class IRI="#Scenario"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSaturationParameters"/>
+        <Class IRI="#SaturationSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasScenario"/>
+        <Class IRI="#Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSchemas"/>
+        <Class IRI="#Scenario"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSourceRecording"/>
+        <Class IRI="#ReplaySchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubExpression"/>
+        <Class IRI="#NegExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubExpressionLeft"/>
+        <Class IRI="#TwoChildrenExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubExpressionRight"/>
+        <Class IRI="#TwoChildrenExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubFilterExpression"/>
+        <Class IRI="#NotFilterExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubFilterExpressionLeft"/>
+        <Class IRI="#AndOrFilterExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubFilterExpressionRight"/>
+        <Class IRI="#AndOrFilterExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubPropertyEvaluation"/>
+        <Class IRI="#NotPropertyEvaluation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationLeft"/>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationRight"/>
+        <Class IRI="#AndOrPropertyEvaluation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubTriggerExpressionLeft"/>
+        <Class IRI="#AndOrTriggerExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubTriggerExpressionRight"/>
+        <Class IRI="#AndOrTriggerExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTarget"/>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTimeWindow"/>
+        <Class IRI="#Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTriggPropertyEvaluation"/>
+        <Class IRI="#StraightTriggerExpression"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTriggers"/>
+        <Class IRI="#TargetedFilteredTriggeredSchema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWaypoints"/>
+        <Class IRI="#Schema"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasZone"/>
+        <Class IRI="#ZonePropertyEvaluation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOfProperty"/>
+        <Class IRI="#PropertyValue"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#HasTriggerExpression"/>
+        <Class IRI="#TriggerExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAlterationParameters"/>
+        <Class IRI="#AlterationParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAssertFilter"/>
+        <Class IRI="#Filter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAssertionParameters"/>
+        <Class IRI="#AssertionParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAssertions"/>
+        <Class IRI="#Assertion"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCoordinates"/>
+        <Class IRI="#Coordinate"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCreationProperty"/>
+        <Class IRI="#CreationParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDeclScenario"/>
+        <Class IRI="#Scenario"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDeclaration"/>
+        <Class IRI="#Declaration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDeclarationReferences"/>
+        <Class IRI="#DeclarationReference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDeclarations"/>
+        <Class IRI="#Declaration"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasExpression"/>
+        <Class IRI="#Expression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFiltPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFilter"/>
+        <Class IRI="#Filter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFilterExpression"/>
+        <Class IRI="#FilterExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFilters"/>
+        <Class IRI="#Filter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMulDivLeft"/>
+        <Class IRI="#MulDivExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMulDivRight"/>
+        <Class IRI="#MulDivExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParamPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParameters"/>
+        <Class IRI="#Parameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProperty"/>
+        <Class IRI="#Property"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRecording"/>
+        <Class IRI="#Recording"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSaturationParameters"/>
+        <Class IRI="#SaturationParameter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasScenario"/>
+        <Class IRI="#Scenario"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSchemas"/>
+        <Class IRI="#Schema"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSourceRecording"/>
+        <Class IRI="#Recording"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubExpression"/>
+        <Class IRI="#Expression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubExpressionLeft"/>
+        <Class IRI="#Expression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubExpressionRight"/>
+        <Class IRI="#Expression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubFilterExpression"/>
+        <Class IRI="#FilterExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubFilterExpressionLeft"/>
+        <Class IRI="#FilterExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubFilterExpressionRight"/>
+        <Class IRI="#FilterExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationLeft"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubPropertyEvaluationRight"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubTriggerExpressionLeft"/>
+        <Class IRI="#TriggerExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubTriggerExpressionRight"/>
+        <Class IRI="#TriggerExpression"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTarget"/>
+        <Class IRI="#Target"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTimeWindow"/>
+        <Class IRI="#TimeWindow"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTriggPropertyEvaluation"/>
+        <Class IRI="#PropertyEvaluation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTriggers"/>
+        <Class IRI="#Trigger"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWaypoints"/>
+        <Class IRI="#Waypoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasZone"/>
+        <Class IRI="#Zone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOfProperty"/>
+        <Class IRI="#Property"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasBoolValue"/>
+        <DataProperty IRI="#hasValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDeclarationName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDoubleValue"/>
+        <DataProperty IRI="#hasValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEndTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFilterName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasIntegerValue"/>
+        <DataProperty IRI="#hasValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasRecordingName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasStartTime"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasStringValue"/>
+        <DataProperty IRI="#hasValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasTriggerName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasZoneName"/>
+        <DataProperty IRI="#hasName"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isInsideZone"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasName"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAltitude"/>
+        <Class IRI="#Waypoint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBoolValue"/>
+        <Class IRI="#BooleanValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDeclarationName"/>
+        <Class IRI="#Declaration"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDoubleValue"/>
+        <Class IRI="#DoubleValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndTime"/>
+        <Class IRI="#FromUntilTimeWindow"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFilterName"/>
+        <Class IRI="#Filter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasGhostNumber"/>
+        <Class IRI="#SaturationSchema"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasIntegerValue"/>
+        <Class IRI="#IntegerValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLatitude"/>
+        <Class IRI="#Coordinate"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLongitude"/>
+        <Class IRI="#Coordinate"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLowerboundAltitude"/>
+        <Class IRI="#Zone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class IRI="#NamedEntity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRecordingName"/>
+        <Class IRI="#Recording"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStartTime"/>
+        <Class IRI="#TimeWindow"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStringValue"/>
+        <Class IRI="#StringValue"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTriggerName"/>
+        <Class IRI="#Trigger"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUpperboundAltitude"/>
+        <Class IRI="#Zone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasValue"/>
+        <ObjectUnionOf>
+            <Class IRI="#BooleanValue"/>
+            <Class IRI="#DoubleValue"/>
+            <Class IRI="#IntegerValue"/>
+            <Class IRI="#StringValue"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasZoneName"/>
+        <Class IRI="#Zone"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isRandomizingIcaos"/>
+        <Class IRI="#SaturationSchema"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAltitude"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBoolValue"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDeclarationName"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDoubleValue"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEndTime"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFilterName"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasGhostNumber"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIntegerValue"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLatitude"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLongitude"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLowerboundAltitude"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRecordingName"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStartTime"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStringValue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTriggerName"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUpperboundAltitude"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasValue"/>
+        <DataUnionOf>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataUnionOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasZoneName"/>
+        <Datatype abbreviatedIRI="xsd:Name"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isInsideZone"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isRandomizingIcaos"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483648"/>
+        <Literal>Declaration SubClassOf NamedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483648"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483649"/>
+        <Literal>AndOrTriggerExpression DisjointWith StraightTriggerExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483649"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483650"/>
+        <Literal>StraightTriggerExpression EquivalentTo TriggerExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483650"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483651"/>
+        <Literal>AndOrTriggerExpression SubClassOf StraightTriggerExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483651"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483652"/>
+        <Literal>AndOrTriggerExpression DisjointWith TriggerExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483652"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <Literal>AlterationParameter SubClassOf Parameter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483653"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483654"/>
+        <Literal>Parameter SubClassOf hasPropertyEvaluation exactly 1 PropertyEvaluation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483654"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483655"/>
+        <Literal>StraightFilterExpression SubClassOf FilterExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483655"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
+        <Literal>AlterationParameter DisjointWith FilterExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483656"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <Literal>Recording EquivalentTo hasRecordingName exactly 1 Name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483657"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483658"/>
+        <Literal>Scenario EquivalentTo hasRecording exactly 1 Recording</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483658"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483659"/>
+        <Literal>Filter SubClassOf NamedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483659"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483660"/>
+        <Literal>alt_filt.GROUNDSPEED Type FilterProperty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483660"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+        <Literal>hasSchemas Domain Scenario</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483661"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483662"/>
+        <Literal>hasRecording Range Recording</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483662"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483663"/>
+        <Literal>FilterProperty SubClassOf hasFilter only Filter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483663"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+        <Literal>Filter DisjointWith Scenario</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483664"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+        <Literal>alt_filt Type Filter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483665"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483666"/>
+        <Literal>AircraftDynamicProperty SubClassOf DynamicProperty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483666"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483667"/>
+        <Literal>ReplaySchema SubClassOf Schema</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483667"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483668"/>
+        <Literal>AIRCRAFT.IS_ON_GROUND Type AircraftDynamicProperty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483668"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483669"/>
+        <Literal>Property SubClassOf Recording</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483669"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483670"/>
+        <Literal>Property SubClassOf TargetedFilteredTriggeredSchema</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483670"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483671"/>
+        <Literal>Schema SubClassOf Recording</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483671"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483672"/>
+        <Literal>DynamicProperty DisjointWith ReplaySchema</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483672"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483673"/>
+        <Literal>CreationSchema DisjointWith TrajModSchema</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483673"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483674"/>
+        <Literal>Declaration DisjointWith DeclarationReference</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483674"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483675"/>
+        <Literal>hasDeclaration InverseOf hasDeclarationReferences</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483675"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483676"/>
+        <Literal>hasDeclaration Range Declaration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483676"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483677"/>
+        <Literal>hasDeclarationReferences Range Declaration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483677"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483678"/>
+        <Literal>AIRCRAFT.GROUNDSPEED Type AircraftDynamicProperty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483678"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483679"/>
+        <Literal>Property SubClassOf NamedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483679"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483680"/>
+        <Literal>Recording SubClassOf NamedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483680"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483681"/>
+        <Literal>PropertyValue EquivalentTo hasProperty exactly 1 Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483681"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483682"/>
+        <Literal>PropertyValue SubClassOf AtomicExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483682"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483683"/>
+        <Literal>Zone SubClassOf CoordinateBasedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483683"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483684"/>
+        <Literal>Zone SubClassOf NamedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483684"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483685"/>
+        <Literal>PropertyEvaluation SubClassOf AtomicExpression</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483685"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483686"/>
+        <Literal>hasProperty Range Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483686"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnonymousIndividual nodeID="_:genid2147483687"/>
+        <Literal>Property SubClassOf PropertyEvaluation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnonymousIndividual nodeID="_:genid2147483687"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#axiom"/>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#type"/>
+        <AnnotationProperty IRI="http://ainf.aau.at/ontodebug#testCase"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

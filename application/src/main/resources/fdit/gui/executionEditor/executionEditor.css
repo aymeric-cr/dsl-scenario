@@ -1,0 +1,70 @@
+.text-field-error {
+   -fx-focus-color: red;
+   -fx-text-box-border: red;
+   -fx-control-inner-background: #ffe8e8;
+}
+
+.execution-configuration-gridPane {
+    -fx-padding:5px;
+    -fx-background-color:white;
+}
+
+.list-box {
+    -fx-padding: 5px;
+    -fx-background-color: white;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.list-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.terminal-stackPane {
+    -fx-padding: 10;
+    -fx-min-width: 300px;
+    -fx-background-color:white;
+    -fx-border-color: #828282;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.list-scroll-pane {
+    -fx-border-color: #828282;
+    -fx-background-color: white;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.title-label {
+    -fx-underline: true;
+    -fx-text-fill: #828282;
+    -fx-font-family : Calibri, Geneva, sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.8em;
+}
+
+.section {
+    -fx-padding: 6 2 6 2;
+    -fx-hgap: 4px;
+    -fx-border-color : transparent transparent black transparent;
+}
+
+.test-border {
+    -fx-padding: 6 2 6 2;
+    -fx-hgap: 4px;
+    -fx-border-color : black black black black;
+}
+
+.executions-configuration-row-top {
+    -fx-padding: 6 2 6 2;
+    -fx-hgap: 4px;
+}
+
+.combo-box {
+    -fx-pref-width: 250;
+}
+
+.combo-box-popup > .list-view {
+    -fx-pref-width: 250;
+}
