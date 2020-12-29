@@ -1,0 +1,4304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+  <record>C:\Users\aymeric\Nextcloud\phd_ACR\Publication\STTT\workspace\journal-data-lux-15min-190419-330pm.bst</record>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>83000</lowerBound>
+      <upperBound>114000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">440176</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>325000</lowerBound>
+      <upperBound>352000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">440176</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>734000</lowerBound>
+      <upperBound>778000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">440176</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>752262</lowerBound>
+      <upperBound>1050618</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B16BA</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>684573</lowerBound>
+      <upperBound>692573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>717573</lowerBound>
+      <upperBound>739573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>779573</lowerBound>
+      <upperBound>800573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>818573</lowerBound>
+      <upperBound>832573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>845573</lowerBound>
+      <upperBound>846573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>858573</lowerBound>
+      <upperBound>875573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>912573</lowerBound>
+      <upperBound>926573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>938573</lowerBound>
+      <upperBound>963573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>972573</lowerBound>
+      <upperBound>988573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1001573</lowerBound>
+      <upperBound>1015573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1017573</lowerBound>
+      <upperBound>1019573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1048573</lowerBound>
+      <upperBound>1063573</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">39ADED</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>556171</lowerBound>
+      <upperBound>600171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>660171</lowerBound>
+      <upperBound>704171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>739171</lowerBound>
+      <upperBound>755171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>762171</lowerBound>
+      <upperBound>883171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>889171</lowerBound>
+      <upperBound>896171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>908171</lowerBound>
+      <upperBound>958171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>964171</lowerBound>
+      <upperBound>973171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>993171</lowerBound>
+      <upperBound>1000171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1007171</lowerBound>
+      <upperBound>1014171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1020171</lowerBound>
+      <upperBound>1028171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1035171</lowerBound>
+      <upperBound>1041171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1042171</lowerBound>
+      <upperBound>1043171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1048171</lowerBound>
+      <upperBound>1055171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1064171</lowerBound>
+      <upperBound>1065138</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>497456</lowerBound>
+      <upperBound>506456</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">40631D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>507456</lowerBound>
+      <upperBound>508456</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">40631D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>665456</lowerBound>
+      <upperBound>729456</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">40631D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>736456</lowerBound>
+      <upperBound>769456</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">40631D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>836000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">489222</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>854000</lowerBound>
+      <upperBound>862000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">489222</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>60000</lowerBound>
+      <upperBound>123000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>184000</lowerBound>
+      <upperBound>199000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>211000</lowerBound>
+      <upperBound>217000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>244000</lowerBound>
+      <upperBound>260000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>261000</lowerBound>
+      <upperBound>272000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>300000</lowerBound>
+      <upperBound>352000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>410000</lowerBound>
+      <upperBound>416000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>436000</lowerBound>
+      <upperBound>441000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>462000</lowerBound>
+      <upperBound>606000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">459EEB</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>63000</lowerBound>
+      <upperBound>91000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>131000</lowerBound>
+      <upperBound>214000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>295000</lowerBound>
+      <upperBound>339000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>720000</lowerBound>
+      <upperBound>761000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>790000</lowerBound>
+      <upperBound>809000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>834000</lowerBound>
+      <upperBound>847000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>872000</lowerBound>
+      <upperBound>890000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>928000</lowerBound>
+      <upperBound>937000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>951000</lowerBound>
+      <upperBound>966000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>998000</lowerBound>
+      <upperBound>1015000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1039000</lowerBound>
+      <upperBound>1046000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4C31E2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>89000</lowerBound>
+      <upperBound>121000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">71C083</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>155000</lowerBound>
+      <upperBound>224667</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">71C083</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>211000</lowerBound>
+      <upperBound>354000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D00C1</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>47559</lowerBound>
+      <upperBound>231559</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3003AD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>284559</lowerBound>
+      <upperBound>298559</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3003AD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>332559</lowerBound>
+      <upperBound>349559</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3003AD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>630000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">345611</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>700000</lowerBound>
+      <upperBound>714000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">345611</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>748000</lowerBound>
+      <upperBound>882000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">345611</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>870171</lowerBound>
+      <upperBound>872171</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">494105</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>390093</lowerBound>
+      <upperBound>448093</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3946E0</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>232846</lowerBound>
+      <upperBound>330846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>464846</lowerBound>
+      <upperBound>523846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>665846</lowerBound>
+      <upperBound>678846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>709846</lowerBound>
+      <upperBound>783846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>790846</lowerBound>
+      <upperBound>792846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>795846</lowerBound>
+      <upperBound>803846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>808846</lowerBound>
+      <upperBound>817846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>818846</lowerBound>
+      <upperBound>829846</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1042846</lowerBound>
+      <upperBound>1064964</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4692D5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>413812</lowerBound>
+      <upperBound>674812</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B19F7</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>692812</lowerBound>
+      <upperBound>708812</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B19F7</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>68000</lowerBound>
+      <upperBound>86000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>102000</lowerBound>
+      <upperBound>130000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>146000</lowerBound>
+      <upperBound>177000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>205000</lowerBound>
+      <upperBound>239000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>261000</lowerBound>
+      <upperBound>295000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>297000</lowerBound>
+      <upperBound>332000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>334000</lowerBound>
+      <upperBound>357000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>359000</lowerBound>
+      <upperBound>410000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>419000</lowerBound>
+      <upperBound>450000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>634000</lowerBound>
+      <upperBound>662000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>760000</lowerBound>
+      <upperBound>820000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>838000</lowerBound>
+      <upperBound>845000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>952000</lowerBound>
+      <upperBound>975000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>978000</lowerBound>
+      <upperBound>981000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE69</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>194000</lowerBound>
+      <upperBound>469000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3922F3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>237137</lowerBound>
+      <upperBound>240137</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B180A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>321137</lowerBound>
+      <upperBound>322137</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B180A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>371137</lowerBound>
+      <upperBound>372137</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B180A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>536137</lowerBound>
+      <upperBound>543137</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B180A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1061137</lowerBound>
+      <upperBound>1065137</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B180A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>110000</lowerBound>
+      <upperBound>111000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B17DE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>127000</lowerBound>
+      <upperBound>129000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B17DE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>158000</lowerBound>
+      <upperBound>171000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B17DE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>546375</lowerBound>
+      <upperBound>686375</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">40615B</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>798375</lowerBound>
+      <upperBound>887375</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">40615B</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>149223</lowerBound>
+      <upperBound>441223</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407687</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>567223</lowerBound>
+      <upperBound>727223</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407687</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>972223</lowerBound>
+      <upperBound>995223</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407687</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>996223</lowerBound>
+      <upperBound>1042223</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407687</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>396665</lowerBound>
+      <upperBound>414665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>445665</lowerBound>
+      <upperBound>446665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>447665</lowerBound>
+      <upperBound>454665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>477665</lowerBound>
+      <upperBound>492665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>509665</lowerBound>
+      <upperBound>511665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>512665</lowerBound>
+      <upperBound>528665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>534665</lowerBound>
+      <upperBound>539665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>557665</lowerBound>
+      <upperBound>568665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>626665</lowerBound>
+      <upperBound>633665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>723665</lowerBound>
+      <upperBound>733665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>735665</lowerBound>
+      <upperBound>749665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>763665</lowerBound>
+      <upperBound>767665</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>339000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>387000</lowerBound>
+      <upperBound>419000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>442000</lowerBound>
+      <upperBound>460000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>509000</lowerBound>
+      <upperBound>525000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>527000</lowerBound>
+      <upperBound>553000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>629000</lowerBound>
+      <upperBound>646000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>650000</lowerBound>
+      <upperBound>651000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>652000</lowerBound>
+      <upperBound>666000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>698000</lowerBound>
+      <upperBound>701000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>710000</lowerBound>
+      <upperBound>724000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>763000</lowerBound>
+      <upperBound>777000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>791000</lowerBound>
+      <upperBound>832000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>845000</lowerBound>
+      <upperBound>857000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>876000</lowerBound>
+      <upperBound>877000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>878000</lowerBound>
+      <upperBound>893000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>917000</lowerBound>
+      <upperBound>934000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>957000</lowerBound>
+      <upperBound>966000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1020000</lowerBound>
+      <upperBound>1045000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3004B9</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>321503</lowerBound>
+      <upperBound>379503</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">406B90</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>407503</lowerBound>
+      <upperBound>424503</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">406B90</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>841503</lowerBound>
+      <upperBound>868503</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">406B90</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>131000</lowerBound>
+      <upperBound>313000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B169A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>184000</lowerBound>
+      <upperBound>195000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">398902</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>220000</lowerBound>
+      <upperBound>224000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">398902</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>167000</lowerBound>
+      <upperBound>175000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA94D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>370000</lowerBound>
+      <upperBound>380000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA94D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>56000</lowerBound>
+      <upperBound>72000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>190000</lowerBound>
+      <upperBound>203000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>272000</lowerBound>
+      <upperBound>278000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>294000</lowerBound>
+      <upperBound>298000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>311000</lowerBound>
+      <upperBound>324000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>358000</lowerBound>
+      <upperBound>370000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>423000</lowerBound>
+      <upperBound>433000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>435000</lowerBound>
+      <upperBound>447000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>486000</lowerBound>
+      <upperBound>493000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>539000</lowerBound>
+      <upperBound>550000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>554000</lowerBound>
+      <upperBound>562000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>645000</lowerBound>
+      <upperBound>686000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>688000</lowerBound>
+      <upperBound>690000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4007F5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>204000</lowerBound>
+      <upperBound>270000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CACC2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>306000</lowerBound>
+      <upperBound>309000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CACC2</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>206000</lowerBound>
+      <upperBound>220000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>560000</lowerBound>
+      <upperBound>576000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>634000</lowerBound>
+      <upperBound>641000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>684000</lowerBound>
+      <upperBound>697000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>721000</lowerBound>
+      <upperBound>733000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>752000</lowerBound>
+      <upperBound>767000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>781000</lowerBound>
+      <upperBound>792000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>801000</lowerBound>
+      <upperBound>805000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>821000</lowerBound>
+      <upperBound>841000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>857000</lowerBound>
+      <upperBound>870000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>930000</lowerBound>
+      <upperBound>949000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1008000</lowerBound>
+      <upperBound>1022000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA5EC</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>106000</lowerBound>
+      <upperBound>188000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">461E17</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>263000</lowerBound>
+      <upperBound>321000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">461E17</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>335000</lowerBound>
+      <upperBound>405000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">461E17</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>415000</lowerBound>
+      <upperBound>428000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">461E17</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>464000</lowerBound>
+      <upperBound>477000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">461E17</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>844000</lowerBound>
+      <upperBound>851000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">461E17</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>196000</lowerBound>
+      <upperBound>217000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>249000</lowerBound>
+      <upperBound>262000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>264000</lowerBound>
+      <upperBound>267000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>270000</lowerBound>
+      <upperBound>273000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>371000</lowerBound>
+      <upperBound>378000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>449000</lowerBound>
+      <upperBound>450000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>518000</lowerBound>
+      <upperBound>535000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>536000</lowerBound>
+      <upperBound>636000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>661000</lowerBound>
+      <upperBound>672000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>680000</lowerBound>
+      <upperBound>682000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>759000</lowerBound>
+      <upperBound>760000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>844000</lowerBound>
+      <upperBound>865000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>899000</lowerBound>
+      <upperBound>920000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>937000</lowerBound>
+      <upperBound>964000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>70000</lowerBound>
+      <upperBound>159000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>211000</lowerBound>
+      <upperBound>221000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>296000</lowerBound>
+      <upperBound>326000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>508000</lowerBound>
+      <upperBound>533000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>545000</lowerBound>
+      <upperBound>548000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>566000</lowerBound>
+      <upperBound>664000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>777000</lowerBound>
+      <upperBound>778000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>830000</lowerBound>
+      <upperBound>836000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407751</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>51000</lowerBound>
+      <upperBound>73000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">A05B0D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>101000</lowerBound>
+      <upperBound>337000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">A05B0D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>32000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">1015D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>224000</lowerBound>
+      <upperBound>474000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">1015D</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>344835</lowerBound>
+      <upperBound>403835</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">495145</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>477835</lowerBound>
+      <upperBound>533835</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">495145</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>550331</lowerBound>
+      <upperBound>578331</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C0A59</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>623150</lowerBound>
+      <upperBound>670150</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4075FD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>693150</lowerBound>
+      <upperBound>704150</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4075FD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>706150</lowerBound>
+      <upperBound>711150</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4075FD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>948150</lowerBound>
+      <upperBound>976150</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4075FD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>34000</lowerBound>
+      <upperBound>39000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>40000</lowerBound>
+      <upperBound>51000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>55000</lowerBound>
+      <upperBound>59000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>127000</lowerBound>
+      <upperBound>128000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>129000</lowerBound>
+      <upperBound>134000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>149000</lowerBound>
+      <upperBound>159000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>183000</lowerBound>
+      <upperBound>192000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>201000</lowerBound>
+      <upperBound>210000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>84000</lowerBound>
+      <upperBound>126000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">A91A03</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>133000</lowerBound>
+      <upperBound>233000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">A91A03</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>242000</lowerBound>
+      <upperBound>250000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">A91A03</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>189000</lowerBound>
+      <upperBound>198000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CACDD</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>437920</lowerBound>
+      <upperBound>520920</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1A1F</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>862000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA301</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>160000</lowerBound>
+      <upperBound>189000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CAB71</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>192000</lowerBound>
+      <upperBound>311000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CAB71</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>321000</lowerBound>
+      <upperBound>327000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CAB71</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>397000</lowerBound>
+      <upperBound>412000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CAB71</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>288252</lowerBound>
+      <upperBound>1022252</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C670C</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1039252</lowerBound>
+      <upperBound>1047252</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C670C</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>434868</lowerBound>
+      <upperBound>469868</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">48C220</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>486868</lowerBound>
+      <upperBound>487868</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">48C220</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>488868</lowerBound>
+      <upperBound>496868</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">48C220</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>519868</lowerBound>
+      <upperBound>533868</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">48C220</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>638868</lowerBound>
+      <upperBound>644868</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">48C220</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>684868</lowerBound>
+      <upperBound>692868</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">48C220</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>95000</lowerBound>
+      <upperBound>97000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4BAA72</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>243000</lowerBound>
+      <upperBound>250000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4BAA72</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>276000</lowerBound>
+      <upperBound>324000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4BAA72</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>58000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C0A45</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>94000</lowerBound>
+      <upperBound>139000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C0A45</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>198000</lowerBound>
+      <upperBound>285000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C0A45</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>305000</lowerBound>
+      <upperBound>339000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C0A45</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>32000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>53000</lowerBound>
+      <upperBound>68000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>69000</lowerBound>
+      <upperBound>70000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>97000</lowerBound>
+      <upperBound>109000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>139000</lowerBound>
+      <upperBound>144000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>184000</lowerBound>
+      <upperBound>219000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>396000</lowerBound>
+      <upperBound>436000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>451000</lowerBound>
+      <upperBound>493000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>745000</lowerBound>
+      <upperBound>753000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>782000</lowerBound>
+      <upperBound>926000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA9B3</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>694952</lowerBound>
+      <upperBound>764952</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">405633</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>851952</lowerBound>
+      <upperBound>867952</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">405633</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>931952</lowerBound>
+      <upperBound>1007952</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">405633</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1009952</lowerBound>
+      <upperBound>1046952</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">405633</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1041074</lowerBound>
+      <upperBound>1048074</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE6C</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>151000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C6585</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>357794</lowerBound>
+      <upperBound>360794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>488794</lowerBound>
+      <upperBound>489794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>494794</lowerBound>
+      <upperBound>498794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>506794</lowerBound>
+      <upperBound>508794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>669794</lowerBound>
+      <upperBound>675794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>746794</lowerBound>
+      <upperBound>748794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>754794</lowerBound>
+      <upperBound>755794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>819794</lowerBound>
+      <upperBound>821794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>879794</lowerBound>
+      <upperBound>882794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>919794</lowerBound>
+      <upperBound>926794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1019794</lowerBound>
+      <upperBound>1020794</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">7380C5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>146000</lowerBound>
+      <upperBound>153000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">484FDE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>237000</lowerBound>
+      <upperBound>241000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">484FDE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>301000</lowerBound>
+      <upperBound>314000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">484FDE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>336000</lowerBound>
+      <upperBound>352000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">484FDE</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>30000</lowerBound>
+      <upperBound>75000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">440049</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>191000</lowerBound>
+      <upperBound>195000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">440049</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>307000</lowerBound>
+      <upperBound>353000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">440049</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>43000</lowerBound>
+      <upperBound>103000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>122000</lowerBound>
+      <upperBound>143000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>164000</lowerBound>
+      <upperBound>190000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>191000</lowerBound>
+      <upperBound>192000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>200000</lowerBound>
+      <upperBound>230000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>304000</lowerBound>
+      <upperBound>324000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>340000</lowerBound>
+      <upperBound>361000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>377000</lowerBound>
+      <upperBound>380000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>382000</lowerBound>
+      <upperBound>402000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>492000</lowerBound>
+      <upperBound>520000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>564000</lowerBound>
+      <upperBound>629000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>630000</lowerBound>
+      <upperBound>636000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>637000</lowerBound>
+      <upperBound>642000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>662000</lowerBound>
+      <upperBound>665000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>764000</lowerBound>
+      <upperBound>767000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>886000</lowerBound>
+      <upperBound>903000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>937000</lowerBound>
+      <upperBound>945000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>950000</lowerBound>
+      <upperBound>969000</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C5EE5</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>768938</lowerBound>
+      <upperBound>789938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>823938</lowerBound>
+      <upperBound>831938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>842938</lowerBound>
+      <upperBound>847938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>921938</lowerBound>
+      <upperBound>930938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>957938</lowerBound>
+      <upperBound>973938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>976938</lowerBound>
+      <upperBound>979938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1010938</lowerBound>
+      <upperBound>1019938</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D2191</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7500</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3084</lowerBound>
+      <upperBound>330572</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">398902</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>774797</lowerBound>
+      <upperBound>1058917</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA53F</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>771330</lowerBound>
+      <upperBound>1024091</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA7B0</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>463947</lowerBound>
+      <upperBound>1062761</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">10154</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3918</lowerBound>
+      <upperBound>1053617</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>149487</lowerBound>
+      <upperBound>985845</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407666</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>656895</lowerBound>
+      <upperBound>1062140</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3944F1</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>1029811</lowerBound>
+      <upperBound>1063736</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1A1C</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>979171</lowerBound>
+      <upperBound>1065138</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>1187</lowerBound>
+      <upperBound>404016</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D00D6</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>167867</lowerBound>
+      <upperBound>1058414</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">34604C</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>5023</lowerBound>
+      <upperBound>973247</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">489222</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>2015</lowerBound>
+      <upperBound>1064621</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE65</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>301431</lowerBound>
+      <upperBound>450375</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1A28</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>159483</lowerBound>
+      <upperBound>945647</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C56EF</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>295348</lowerBound>
+      <upperBound>1063016</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">484131</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3390</lowerBound>
+      <upperBound>1045121</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1611</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>177178</lowerBound>
+      <upperBound>1064025</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C66B5</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>16347</lowerBound>
+      <upperBound>774854</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>7763</lowerBound>
+      <upperBound>1002182</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">49528A</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>135148</lowerBound>
+      <upperBound>1006640</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">345611</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>2345</lowerBound>
+      <upperBound>945335</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA301</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>488579</lowerBound>
+      <upperBound>1064725</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C56EC</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>65592</lowerBound>
+      <upperBound>1065223</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D0111</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3111</lowerBound>
+      <upperBound>1058274</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C6753</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>846080</lowerBound>
+      <upperBound>1065421</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D02E5</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>958665</lowerBound>
+      <upperBound>1064897</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>820112</lowerBound>
+      <upperBound>1059816</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4402BC</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>8096</lowerBound>
+      <upperBound>819434</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA245</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>437355</lowerBound>
+      <upperBound>1064973</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C65CE</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <firstDate>1555687800013</firstDate>
+</scenario>

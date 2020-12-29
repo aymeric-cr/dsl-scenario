@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario>
+  <record>C:\Users\aymeric\Nextcloud\phd_ACR\Publication\STTT\workspace\journal-data-lux-15min-190419-330pm.bst</record>
+  <action alterationType="ALTERATION">
+    <scope type="timeWindow">
+      <lowerBound>1065000</lowerBound>
+      <upperBound>1065138</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <key>squawk</key>
+        <value>7600</value>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3084</lowerBound>
+      <upperBound>330572</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">398902</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>774797</lowerBound>
+      <upperBound>1058917</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA53F</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>771330</lowerBound>
+      <upperBound>1024091</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA7B0</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>463947</lowerBound>
+      <upperBound>1062761</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">10154</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3918</lowerBound>
+      <upperBound>1053617</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE67</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>149487</lowerBound>
+      <upperBound>985845</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">407666</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>656895</lowerBound>
+      <upperBound>1062140</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3944F1</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>1029811</lowerBound>
+      <upperBound>1063736</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1A1C</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>979171</lowerBound>
+      <upperBound>1065138</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">480C1A</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>1187</lowerBound>
+      <upperBound>404016</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D00D6</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>167867</lowerBound>
+      <upperBound>1058414</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">34604C</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>5023</lowerBound>
+      <upperBound>973247</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">489222</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>2015</lowerBound>
+      <upperBound>1064621</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">44CE65</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>301431</lowerBound>
+      <upperBound>450375</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1A28</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>159483</lowerBound>
+      <upperBound>945647</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C56EF</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>295348</lowerBound>
+      <upperBound>1063016</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">484131</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3390</lowerBound>
+      <upperBound>1045121</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4B1611</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>177178</lowerBound>
+      <upperBound>1064025</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C66B5</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>16347</lowerBound>
+      <upperBound>774854</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">485873</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>7763</lowerBound>
+      <upperBound>1002182</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">49528A</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>135148</lowerBound>
+      <upperBound>1006640</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">345611</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>2345</lowerBound>
+      <upperBound>945335</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA301</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>488579</lowerBound>
+      <upperBound>1064725</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C56EC</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>65592</lowerBound>
+      <upperBound>1065223</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D0111</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>3111</lowerBound>
+      <upperBound>1058274</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C6753</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>846080</lowerBound>
+      <upperBound>1065421</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4D02E5</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>958665</lowerBound>
+      <upperBound>1064897</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA4EC</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>820112</lowerBound>
+      <upperBound>1059816</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4402BC</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>8096</lowerBound>
+      <upperBound>819434</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">4CA245</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <action alterationType="DELETION">
+    <scope type="timeWindow">
+      <lowerBound>437355</lowerBound>
+      <upperBound>1064973</upperBound>
+    </scope>
+    <parameters>
+      <target identifier="hexIdent">3C65CE</target>
+      <parameter mode="simple">
+        <frequency>1</frequency>
+      </parameter>
+    </parameters>
+  </action>
+  <firstDate>1555687800013</firstDate>
+</scenario>
