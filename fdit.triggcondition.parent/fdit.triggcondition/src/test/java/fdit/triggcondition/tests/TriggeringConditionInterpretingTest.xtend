@@ -7,8 +7,8 @@ import fdit.metamodel.aircraft.TimeInterval
 import fdit.metamodel.element.Directory
 import fdit.metamodel.rap.RecognizedAirPicture
 import fdit.metamodel.recording.Recording
-import fdit.triggcondition.interpreter.TriggeringConditionInterpreter
 import fdit.triggcondition.triggeringCondition.Model
+import fdit.triggcondition.interpreter.TriggeringConditionInterpreter
 import java.util.HashMap
 import java.util.List
 import org.eclipse.xtext.testing.InjectWith
@@ -18,6 +18,7 @@ import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import fdit.metamodel.aircraft.TimeInterval.IntervalType
 
 import static com.google.common.collect.Lists.newArrayList
 import static org.junit.Assert.assertEquals
@@ -33,13 +34,8 @@ class TriggeringConditionInterpretingTest {
     @Inject extension ValidationTestHelper
     @Inject extension TriggeringConditionInterpreter
 
-    @Before
-    def void setup() {
-        TimeInterval.setMinimumSize(1000L)
-    }
-
     @Test
-    def void when_rap_minimal () {
+    def void when_rap_minimal() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -54,8 +50,8 @@ class TriggeringConditionInterpretingTest {
         when(ac1.query(2000,AircraftCriterion.LATITUDE)).thenReturn(42.1657)
         when(ac1.query(2000,AircraftCriterion.LONGITUDE)).thenReturn(34.8967)
         when(ac1.query(2000,AircraftCriterion.ALTITUDE)).thenReturn(14020D)
-        when(ac1.timeOfLastAppearance).thenReturn(2000L)
         when(ac1.timeOfFirstAppearance).thenReturn(0L)
+        when(ac1.timeOfLastAppearance).thenReturn(2000L)
         when(ac1.getFirstCriterionAppearance(AircraftCriterion.ALTITUDE)).thenReturn(0D)
         when(ac1.getLastCriterionAppearance(AircraftCriterion.ALTITUDE)).thenReturn(2000D)
 
@@ -77,13 +73,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(2000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,2000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(1000L,2000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L, IntervalType.FALSE), new TimeInterval(1000L,2000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L, IntervalType.FALSE), new TimeInterval(1000L,2000L,IntervalType.TRUE)))
         "eval when (RAP.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void when_aircraft_minimal () {
+    def void when_aircraft_minimal() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -105,13 +101,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(2000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,2000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(1000L,2000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,2000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,2000L)))
         "eval when (AIRCRAFT.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void when_aircraft_minimal_arithm () {
+    def void when_aircraft_minimal_arithm() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -133,13 +129,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(2000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,2000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(1000L,2000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,2000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,2000L,IntervalType.TRUE)))
         "eval when (AIRCRAFT.ALTITUDE > (30000 - 8000 * 2))".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_aircraft_minimal () {
+    def void asap_aircraft_minimal() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -171,14 +167,14 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2,ac3))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(2000L,3000L)))
-        expected.put(ac3,newArrayList())
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
+        expected.put(ac3,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
         "eval as_soon_as (AIRCRAFT.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_aircraft_minimal_2 () {
+    def void asap_aircraft_minimal_2() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -210,14 +206,14 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2,ac3))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(2000L,3000L)))
-        expected.put(ac3,newArrayList(new TimeInterval(1000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
+        expected.put(ac3,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,3000L,IntervalType.TRUE)))
         "eval as_soon_as (AIRCRAFT.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_aircraft_minimal_3 () {
+    def void asap_aircraft_minimal_3() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -233,12 +229,12 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,3000L,IntervalType.TRUE)))
         "eval as_soon_as (AIRCRAFT.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_rap_minimal () {
+    def void asap_rap_minimal() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -266,14 +262,14 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(2000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(2000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
         "eval as_soon_as (RAP.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
 
     }
 
     @Test
-    def void asap_rap_minimal_2 () {
+    def void asap_rap_minimal_2() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -301,13 +297,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList())
-        expected.put(ac2,newArrayList())
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
         "eval as_soon_as (RAP.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_rap_minimal_3 () {
+    def void asap_rap_minimal_3() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -335,13 +331,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
         "eval as_soon_as (RAP.ALTITUDE > 14000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_aircraft_minimal_static () {
+    def void asap_aircraft_minimal_static() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -358,8 +354,8 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac2,newArrayList())
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
         "eval as_soon_as (AIRCRAFT.ICAO == \"10e1\")".assertAlterationIntervals(rap,expected,recording)
     }
 
@@ -380,13 +376,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList())
-        expected.put(ac2,newArrayList())
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
         "eval as_soon_as (AIRCRAFT.ICAO == \"10e2\")".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void asap_rap_minimal_static () { // TEST CHELOU
+    def void asap_rap_minimal_static() { // TEST CHELOU
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
         var ac1 = mock(Aircraft)
@@ -402,13 +398,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
         "eval as_soon_as (RAP.ICAO == \"10e1\")".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void notwhen_aircraft_minimal () {
+    def void notwhen_aircraft_minimal() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -432,13 +428,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L),new TimeInterval(2000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(1000L,2000L),new TimeInterval(3000L,4000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,2000L,IntervalType.TRUE),new TimeInterval(2000L,3000L,IntervalType.FALSE)))
         "eval not_when (AIRCRAFT.LATITUDE > 42.1657)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void notwhen_aircraft_minimal_2 () {
+    def void notwhen_aircraft_minimal_2() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -462,13 +458,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(2000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L),new TimeInterval(2000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
         "eval not_when (AIRCRAFT.LONGITUDE <= 6.85942)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void notwhen_aircraft_medium () {
+    def void notwhen_aircraft_medium() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -492,13 +488,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L),new TimeInterval(2000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
         "eval not_when (AIRCRAFT.LONGITUDE <= 6.85942)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void notwhen_aircraft_medium_arithm () {
+    def void notwhen_aircraft_medium_arithm() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -522,14 +518,14 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L),new TimeInterval(2000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
         "eval not_when (AIRCRAFT.LONGITUDE <= 5.85942 + 1)".assertAlterationIntervals(rap,expected,recording)
     }
 
 
     @Test
-    def void notwhen_aircraft_medium_arithm2 () {
+    def void notwhen_aircraft_medium_arithm2() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -554,13 +550,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L),new TimeInterval(2000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
         "eval not_when (AIRCRAFT.LONGITUDE <= RAP.MAX_LONGITUDE + 1)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void notwhen_aircraft_medium_arithm3 () {
+    def void notwhen_aircraft_medium_arithm3() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -591,13 +587,13 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L),new TimeInterval(2000L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,3000L,IntervalType.TRUE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,2000L,IntervalType.FALSE),new TimeInterval(2000L,3000L,IntervalType.TRUE)))
         "eval when (AIRCRAFT.LONGITUDE > AIRCRAFT.MIN_LONGITUDE)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void until_aircraft_simple () {
+    def void until_aircraft_simple() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -635,14 +631,14 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(3000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2,ac3))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L)))
-        expected.put(ac2,newArrayList())
-        expected.put(ac3,newArrayList(new TimeInterval(0L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.TRUE),new TimeInterval(1000L,3000L,IntervalType.FALSE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.FALSE)))
+        expected.put(ac3,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE)))
         "eval until (AIRCRAFT.ALTITUDE > 12000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void until_rap_simple () {
+    def void until_rap_simple() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -683,14 +679,14 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(4000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2,ac3))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L)))
-        expected.put(ac3,newArrayList(new TimeInterval(0L,3000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE),new TimeInterval(3000L,4000L,IntervalType.FALSE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE),new TimeInterval(3000L,4000L,IntervalType.FALSE)))
+        expected.put(ac3,newArrayList(new TimeInterval(0L,3000L,IntervalType.TRUE),new TimeInterval(3000L,4000L,IntervalType.FALSE)))
         "eval until (RAP.ALTITUDE > 12000)".assertAlterationIntervals(rap,expected,recording)
     }
 
     @Test
-    def void when_rap_aircraft_double () {
+    def void when_rap_aircraft_double() {
         setBeaconInterval(1000)
         var recording = mock(Recording)
         var rap = mock(RecognizedAirPicture)
@@ -742,10 +738,10 @@ class TriggeringConditionInterpretingTest {
         when(rap.relativeDuration).thenReturn(4000L)
         when(recording.aircrafts).thenReturn(newArrayList(ac1,ac2,ac3,ac4))
         var HashMap<Aircraft, List<TimeInterval>> expected = new HashMap<Aircraft,List<TimeInterval>>()
-        expected.put(ac1,newArrayList(new TimeInterval(1000L,2000L),new TimeInterval(4000L,5000L)))
-        expected.put(ac2,newArrayList(new TimeInterval(1000L,2000L),new TimeInterval(3000L,4000L)))
-        expected.put(ac3,newArrayList(new TimeInterval(1000L,2000L)))
-        expected.put(ac4,newArrayList(new TimeInterval(0L,2000L),new TimeInterval(3000L,4000L)))
+        expected.put(ac1,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,2000L,IntervalType.TRUE),new TimeInterval(2000L,4000L,IntervalType.FALSE)))
+        expected.put(ac2,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,2000L,IntervalType.TRUE),new TimeInterval(2000L,3000L,IntervalType.FALSE),new TimeInterval(3000L,4000L,IntervalType.TRUE)))
+        expected.put(ac3,newArrayList(new TimeInterval(0L,1000L,IntervalType.FALSE),new TimeInterval(1000L,2000L,IntervalType.TRUE),new TimeInterval(2000L,4000L,IntervalType.FALSE)))
+        expected.put(ac4,newArrayList(new TimeInterval(0L,2000L,IntervalType.TRUE),new TimeInterval(2000L,3000L,IntervalType.FALSE),new TimeInterval(3000L,4000L,IntervalType.TRUE)))
         "eval when (AIRCRAFT.ALTITUDE > 12000) and not_when (RAP.ALTITUDE > 15000)".assertAlterationIntervals(rap,expected,recording)
     }
 

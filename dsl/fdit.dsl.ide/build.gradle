@@ -1,0 +1,14 @@
+configurations {
+    compile.extendsFrom metamodel, tools
+    testCompile.extendsFrom testTools
+}
+
+dependencies {
+    compile project(':dsl:fdit.dsl')
+    compile "org.eclipse.xtext:org.eclipse.xtext.ide:${xtextVersion}"
+    compile "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:${xtextVersion}"
+}
+
+clean {
+    delete "${projectDir}/src/main/xtext-gen/"
+}

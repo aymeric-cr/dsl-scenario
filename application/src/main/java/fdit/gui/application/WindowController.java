@@ -17,8 +17,6 @@ import fdit.gui.filterEditor.OpenFilterEditorCommand;
 import fdit.gui.schemaEditor.SchemaEditorController;
 import fdit.gui.triggerEditor.ActionTriggerEditorController;
 import fdit.gui.utils.ThreadSafeStringProperty;
-import fdit.gui.zoneEditor.OpenZoneEditorCommand;
-import fdit.gui.zoneEditor.ZoneEditorController;
 import fdit.history.Command;
 import fdit.history.Command.CommandType;
 import fdit.history.FditHistoryListener;
@@ -55,7 +53,6 @@ import static fdit.gui.application.notifications.Notifier.showLoadingNotificatio
 import static fdit.gui.application.treeView.DraggableTreeView.initializeDraggableCellFactory;
 import static fdit.gui.filterEditor.OpenFilterEditorCommand.OpenFilterType.EXISTING_FILTER;
 import static fdit.gui.utils.FXUtils.*;
-import static fdit.gui.zoneEditor.OpenZoneEditorCommand.OpenZoneType.EXISTING_ZONE;
 import static fdit.tools.i18n.MessageTranslator.createMessageTranslator;
 import static javafx.scene.Cursor.DEFAULT;
 import static javafx.scene.Cursor.WAIT;
@@ -234,11 +231,6 @@ public class WindowController implements Initializable {
                 loadTextualScenarioEditor((Schema) element);
                 return;
             }
-            if (element instanceof Zone) {
-                FDIT_MANAGER.getCommandExecutor().execute(
-                        new OpenZoneEditorCommand((Zone) element));
-                return;
-            }
             if (element instanceof Execution) {
                 loadExecutionEditor((Execution) element);
                 return;
@@ -277,9 +269,6 @@ public class WindowController implements Initializable {
                     Platform.runLater(() -> openAlterationTriggerEditor(((LoadAlterationTriggerCommand) command)
                             .getTrigger()));
                 }
-                if (command instanceof OpenZoneEditorCommand) {
-                    Platform.runLater(() -> openZoneEditor((OpenZoneEditorCommand) command));
-                }
                 if (command instanceof OpenFilterEditorCommand) {
                     Platform.runLater(() -> openFilterEditor((OpenFilterEditorCommand) command));
                 }
@@ -305,9 +294,6 @@ public class WindowController implements Initializable {
                 if (command instanceof LoadAlterationTriggerCommand) {
                     Platform.runLater(() -> closeEditor(((LoadAlterationTriggerCommand) command).getTrigger()));
                 }
-                if (command instanceof OpenZoneEditorCommand) {
-                    Platform.runLater(() -> closeZoneEditor());
-                }
                 if (command instanceof OpenFilterEditorCommand) {
                     Platform.runLater(() -> closeFilterEditor());
                 }
@@ -330,9 +316,6 @@ public class WindowController implements Initializable {
                 if (command instanceof LoadAlterationTriggerCommand) {
                     Platform.runLater(() -> openAlterationTriggerEditor(((LoadAlterationTriggerCommand) command)
                             .getTrigger()));
-                }
-                if (command instanceof OpenZoneEditorCommand) {
-                    Platform.runLater(() -> openZoneEditor((OpenZoneEditorCommand) command));
                 }
                 if (command instanceof OpenFilterEditorCommand) {
                     Platform.runLater(() -> openFilterEditor((OpenFilterEditorCommand) command));
@@ -507,41 +490,6 @@ public class WindowController implements Initializable {
                 }
             }
         }
-    }
-
-    private void openZoneEditor(final OpenZoneEditorCommand openZoneEditorCommand) {
-        setCursor(WAIT, editorStackPane);
-        if (zoneEditor != null) {
-            if (zoneEditor == previusEditor) {
-                ((ZoneEditorController) zoneEditor.getController()).editZone(openZoneEditorCommand
-                        .getZoneToOpen());
-            } else {
-                putToFront(zoneEditor);
-            }
-            setCursor(DEFAULT, editorStackPane);
-        } else {
-            try {
-                final ZoneEditorController zoneEditorController = new ZoneEditorController();
-                final Node zoneEditorPane = loadFxml(
-                        getClass().getResource("/fdit/gui/zoneEditor/zoneEditor.fxml"),
-                        zoneEditorController);
-                zoneEditor = new Editor(zoneEditorPane, zoneEditorController);
-                final Editor previousEditorInForeGround = getEditorInForeground();
-                editorStackPane.getChildren().add(zoneEditorPane);
-                editorInForegroundChanged(previousEditorInForeGround, zoneEditor);
-            } catch (final Exception e) {
-                createErrorDialog(TRANSLATOR.getMessage("editor.open.error"), e).showAndWait();
-            } finally {
-                setCursor(DEFAULT, editorStackPane);
-                if (openZoneEditorCommand.getOpenZoneType() == EXISTING_ZONE) {
-                    if (zoneEditor != null) {
-                        ((ZoneEditorController) zoneEditor.getController()).editZone(openZoneEditorCommand
-                                .getZoneToOpen());
-                    }
-                }
-            }
-        }
-        previusEditor = zoneEditor;
     }
 
     private void openFilterEditor(final OpenFilterEditorCommand openFilterEditorCommand) {

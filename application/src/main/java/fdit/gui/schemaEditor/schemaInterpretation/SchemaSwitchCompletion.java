@@ -2,8 +2,8 @@ package fdit.gui.schemaEditor.schemaInterpretation;
 
 import fdit.dsl.attackScenario.*;
 import fdit.dsl.attackScenario.util.AttackScenarioSwitch;
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
-import fdit.dsl.xtext.standalone.CompletionProposal;
+import fdit.dsl.ide.AttackScenarioFacade;
+import fdit.dsl.ide.CompletionProposal;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.Constant;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.ListConstant;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.Memory;
@@ -22,20 +22,19 @@ import java.util.function.Predicate;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static fdit.gui.application.FditManager.FDIT_MANAGER;
-import static fdit.metamodel.alteration.parameters.Characteristic.*;
+import static fdit.metamodel.alteration.parameters.Characteristic.getValidationFunction;
 import static fdit.metamodel.element.DirectoryUtils.*;
 import static fdit.tools.stream.StreamUtils.filter;
-import static java.lang.Double.parseDouble;
 
 public class SchemaSwitchCompletion extends AttackScenarioSwitch<Collection<CompletionProposal>> {
 
     private int offset;
     private Memory memory;
-    private final AttackScenarioDslFacade attackScenarioDslFacade;
+    private final AttackScenarioFacade attackScenarioFacade;
     private Schema schema;
 
-    SchemaSwitchCompletion(final AttackScenarioDslFacade attackScenarioDslFacade) {
-        this.attackScenarioDslFacade = attackScenarioDslFacade;
+    SchemaSwitchCompletion(final AttackScenarioFacade attackScenarioFacade) {
+        this.attackScenarioFacade = attackScenarioFacade;
     }
 
     public Collection<CompletionProposal> processCompletion(final Schema schema,
@@ -46,36 +45,16 @@ public class SchemaSwitchCompletion extends AttackScenarioSwitch<Collection<Comp
         this.memory = memory;
         this.offset = offset;
         try {
-            attackScenarioDslFacade.parse(schema.getContent());
+            attackScenarioFacade.parse(schema.getContent());
         } catch (IOException e) {
             return newArrayList();
         }
-        final Optional<EObject> currentNode = attackScenarioDslFacade.getCurrentNode(offset, selectedTextLength);
+        final Optional<EObject> currentNode = attackScenarioFacade.getCurrentNode(offset, selectedTextLength);
         if (currentNode.isPresent()) {
             return doSwitch(currentNode.get());
         } else {
             return newArrayList();
         }
-    }
-
-    private static boolean isValidConstantCriterion(final ASTBinaryOp object, final Constant constant) {
-        if (object instanceof ASTEqual ||
-                object instanceof ASTIn ||
-                object instanceof ASTDifferent) {
-            switch (object.getName()) {
-                case MAX_ALTITUDE:
-                    return isValidAltitude(constant);
-                case CALLSIGN:
-                    return isValidCallsign(constant);
-                case ICAO:
-                    return isValidIcao(constant);
-                case MIN_ALTITUDE:
-                    return isValidAltitude(constant);
-                case KNOWN_POSITIONS:
-                    return isValidKnowsPositions(constant);
-            }
-        }
-        return false;
     }
 
     private static boolean isValidConstantParameter(final ASTParameter object, final Constant constant) {
@@ -112,56 +91,6 @@ public class SchemaSwitchCompletion extends AttackScenarioSwitch<Collection<Comp
         return !(constant instanceof ListConstant);
     }
 
-    private static boolean isValidKnowsPositions(final Constant knownPositions) {
-        if (knownPositions instanceof RangeConstant) {
-            final Object start = ((RangeConstant<?>) knownPositions).getStart();
-            final Object end = ((RangeConstant<?>) knownPositions).getEnd();
-            return isNumberValid(start.toString()) && isNumberValid(end.toString()) &&
-                    parseDouble(start.toString()) >= 0 && parseDouble(end.toString()) >= 0;
-        }
-        if (knownPositions instanceof ListConstant) {
-            for (final Object value : ((ListConstant<?>) knownPositions).getValues()) {
-                if (isNumberValid(value.toString()) && parseDouble(value.toString()) < 0) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    private static boolean isValidAltitude(final Constant altitude) {
-        if (altitude instanceof RangeConstant) {
-            final Object start = ((RangeConstant<?>) altitude).getStart();
-            final Object end = ((RangeConstant<?>) altitude).getEnd();
-            return isNumberValid(start.toString()) && isNumberValid(end.toString());
-        }
-        return !(altitude instanceof ListConstant);
-    }
-
-    private static boolean isValidCallsign(final Constant callsign) {
-        if (callsign instanceof ListConstant) {
-            for (final Object value : ((ListConstant<?>) callsign).getValues()) {
-                if (!isCallSignValid(value.toString())) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    private static boolean isValidIcao(final Constant icao) {
-        if (icao instanceof ListConstant) {
-            for (final Object value : ((ListConstant<?>) icao).getValues()) {
-                if (!isIcaoValid(value.toString())) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return !(icao instanceof RangeConstant);
-    }
-
     @Override
     public Collection<CompletionProposal> caseASTPlaneFrom(final ASTPlaneFrom object) {
         return recordingCompletion();
@@ -183,7 +112,7 @@ public class SchemaSwitchCompletion extends AttackScenarioSwitch<Collection<Comp
                     recording.getName(),
                     offset + proposal.length() - prefix.length()));
         }
-        for (final ListConstant constant : filter(memory.getConstants(), ListConstant.class)) {
+        for (final ListConstant<?> constant : filter(memory.getConstants(), ListConstant.class)) {
             if (containsAllFilters(constant)) {
                 final String proposal = constant.getName() + ' ';
                 proposals.add(new CompletionProposal(
@@ -263,149 +192,40 @@ public class SchemaSwitchCompletion extends AttackScenarioSwitch<Collection<Comp
         return proposals;
     }
 
-    @Override
-    public Collection<CompletionProposal> caseASTEqual(final ASTEqual object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
-    @Override
-    public Collection<CompletionProposal> caseASTDifferent(final ASTDifferent object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
-    @Override
-    public Collection<CompletionProposal> caseASTLt(final ASTLt object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
-    @Override
-    public Collection<CompletionProposal> caseASTGt(final ASTGt object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
-    @Override
-    public Collection<CompletionProposal> caseASTLte(final ASTLte object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
-    @Override
-    public Collection<CompletionProposal> caseASTGte(final ASTGte object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
-    @Override
-    public Collection<CompletionProposal> caseASTIn(final ASTIn object) {
-        final Collection<CompletionProposal> proposals = newArrayList();
-        for (final Constant constant : memory.getConstants()) {
-            if (isValidConstantCriterion(object, constant)) {
-                final String proposal = constant.getName();
-                final String prefix = getPrefix();
-                proposals.add(new CompletionProposal(
-                        prefix,
-                        proposal,
-                        proposal,
-                        offset + proposal.length() - prefix.length()));
-            }
-        }
-        return proposals;
-    }
-
     private boolean containsAllTriggers(final ListConstant<?> constant) {
         return new ListConstant.ListConstantTypeSwitch<Boolean>() {
             @Override
-            public Boolean visitInteger(final ListConstant<?> listConstant) {
+            public Boolean visitInteger(final ListConstant<Integer> listConstant) {
                 return false;
             }
 
             @Override
-            public Boolean visitDouble(final ListConstant<?> listConstant) {
+            public Boolean visitDouble(final ListConstant<Double> listConstant) {
                 return false;
             }
 
             @Override
-            public Boolean visitFloat(final ListConstant<?> listConstant) {
+            public Boolean visitFloat(final ListConstant<Float> listConstant) {
                 return false;
             }
 
             @Override
-            public Boolean visitString(final ListConstant<?> listConstant) {
+            public Boolean visitString(final ListConstant<String> listConstant) {
                 boolean validTrigger = true;
                 for (final Object value : listConstant.getValues()) {
                     validTrigger &= findActionTrigger((String) value, FDIT_MANAGER.getRoot()).isPresent();
                 }
                 return validTrigger;
+            }
+
+            @Override
+            public Boolean visitOffset(final ListConstant<ASTNumberOffset> listConstant) {
+                return false;
+            }
+
+            @Override
+            public Boolean visitRecordingValue(final ListConstant<ASTRecordingValue> listConstant) {
+                return false;
             }
         }.doSwitch(constant);
     }
@@ -413,27 +233,37 @@ public class SchemaSwitchCompletion extends AttackScenarioSwitch<Collection<Comp
     private boolean containsAllFilters(final ListConstant<?> constant) {
         return new ListConstant.ListConstantTypeSwitch<Boolean>() {
             @Override
-            public Boolean visitInteger(final ListConstant<?> listConstant) {
+            public Boolean visitInteger(final ListConstant<Integer> listConstant) {
                 return false;
             }
 
             @Override
-            public Boolean visitDouble(final ListConstant<?> listConstant) {
+            public Boolean visitDouble(final ListConstant<Double> listConstant) {
                 return false;
             }
 
             @Override
-            public Boolean visitFloat(final ListConstant<?> listConstant) {
+            public Boolean visitFloat(final ListConstant<Float> listConstant) {
                 return false;
             }
 
             @Override
-            public Boolean visitString(final ListConstant<?> listConstant) {
+            public Boolean visitString(final ListConstant<String> listConstant) {
                 boolean validFilter = true;
                 for (final Object value : listConstant.getValues()) {
                     validFilter &= findLTLFilter((String) value, FDIT_MANAGER.getRoot()).isPresent();
                 }
                 return validFilter;
+            }
+
+            @Override
+            public Boolean visitOffset(final ListConstant<ASTNumberOffset> listConstant) {
+                return false;
+            }
+
+            @Override
+            public Boolean visitRecordingValue(final ListConstant<ASTRecordingValue> listConstant) {
+                return false;
             }
         }.doSwitch(constant);
     }

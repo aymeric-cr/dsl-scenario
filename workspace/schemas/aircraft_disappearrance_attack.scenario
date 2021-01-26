@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<entry key="content">let $filters = { "filt_lowalt", "filt_prism" },
-let $triggers = { "trig_altgs", "trig_prism" },
+<entry key="content">let $dates = { 0.2 * REC_DURATION , 0.4 * REC_DURATION , 0.6*REC_DURATION  },
+let $lats = { &gt;&gt;1 , &gt;&gt;2, &gt;&gt;3  },
 
-hide all_planes satisfying $filters 
-at 0 seconds triggered_by $triggers</entry>
+alter all_planes at $dates seconds with_waypoints [ 
+	( $lats,  &gt;&gt;1 ) with_altitude &gt;&gt;1000 at 0.5 * ALT_DURATION seconds ] </entry>
 <entry key="description"/>
+<entry key="bstPath">../journal-data-lux-15min-190419-330pm.bst</entry>
 </properties>

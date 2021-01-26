@@ -92,7 +92,7 @@ public class DirectoryUtils {
         }
     }
 
-    public static Optional<Schema> findTextualScenario(final String name, final Directory father) {
+    public static Optional<Schema> findSchema(final String name, final Directory father) {
         try {
             return of(find(gatherAllTextualScenarios(father), scenario -> scenario.getName().equals(name)));
         } catch (Exception ignored) {
@@ -113,14 +113,6 @@ public class DirectoryUtils {
     public static Optional<Recording> findRecording(final String name, final Directory father) {
         try {
             return of(find(gatherAllRecordings(father), recording -> recording.getName().equals(name)));
-        } catch (Exception ignored) {
-            return empty();
-        }
-    }
-
-    public static Optional<Zone> findZone(final String name, final Directory father) {
-        try {
-            return of(find(gatherAllZones(father), zone -> zone.getName().equals(name)));
         } catch (Exception ignored) {
             return empty();
         }

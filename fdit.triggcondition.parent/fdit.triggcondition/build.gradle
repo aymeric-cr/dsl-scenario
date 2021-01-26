@@ -2,7 +2,9 @@ dependencies {
     testCompile "junit:junit:4.12"
     testCompile "org.eclipse.xtext:org.eclipse.xtext.testing:${xtextVersion}"
     testCompile "org.eclipse.xtext:org.eclipse.xtext.xbase.testing:${xtextVersion}"
-//    testCompile project(':fdit.testMetamodel').sourceSets.test.output
+    testCompile "org.mockito:mockito-all:$mockitoVersion"
+    testCompile "org.powermock:powermock-module-junit4:$powermockitoVersion"
+    testCompile "org.powermock:powermock-api-mockito:$powermockitoVersion"
     compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
     compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
     compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.10.0'
@@ -37,10 +39,11 @@ clean.dependsOn(cleanGenerateXtextLanguage)
 
 buildscript {
     repositories {
+        mavenLocal()
         jcenter()
     }
     dependencies {
-        classpath 'org.xtext:xtext-gradle-plugin:2.0.4'
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.8'
     }
 }
 apply plugin: 'org.xtext.xtend'

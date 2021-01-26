@@ -10,7 +10,7 @@ import java.io.File;
 import static fdit.gui.application.FditManager.FDIT_MANAGER;
 import static fdit.metamodel.FditElementHelper.aRoot;
 import static fdit.metamodel.element.DirectoryUtils.findDirectory;
-import static fdit.metamodel.scenario.ScenarioHelper.*;
+import static fdit.metamodel.schema.SchemaHelper.*;
 import static fdit.testTools.PredicateAssert.assertThat;
 import static fdit.testTools.Saver.create;
 import static fdit.testTools.predicate.FilePredicate.aFile;
@@ -46,7 +46,7 @@ public class RenameFditElementCommandTest extends FditTestCase {
                         folder("subDir1",
                                 bstRecording("record", recording))),
                 folder("dir2",
-                        scenario("scenario",
+                        schema("scenario",
                                 content("alter all planes"),
                                 description(""),
                                 withRecording(recording))));

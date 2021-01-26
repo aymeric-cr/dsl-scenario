@@ -2,7 +2,7 @@ package fdit.gui.schemaEditor.schemaInterpretation;
 
 import fdit.dsl.attackScenario.*;
 import fdit.dsl.attackScenario.util.AttackScenarioSwitch;
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
+import fdit.dsl.ide.AttackScenarioFacade;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.Constant;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.ListConstant;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.Memory;
@@ -45,7 +45,7 @@ import static java.lang.String.valueOf;
 public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
 
     private static final MessageTranslator TRANSLATOR = createMessageTranslator(SchemaSwitchSemanticAnalyse.class);
-    private final AttackScenarioDslFacade attackScenarioDslFacade;
+    private final AttackScenarioFacade attackScenarioDslFacade;
     private final LTLConditionFacade filterFacade = LTLConditionFacade.get();
     private final TriggeringConditionFacade triggerFacade = TriggeringConditionFacade.get();
     private Schema schema;
@@ -53,7 +53,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     private final BooleanProperty convertible = new ThreadSafeBooleanProperty(true);
 
 
-    SchemaSwitchSemanticAnalyse(final AttackScenarioDslFacade attackScenarioDslFacade)
+    SchemaSwitchSemanticAnalyse(final AttackScenarioFacade attackScenarioDslFacade)
             throws NoSuchAlgorithmException {
         this.attackScenarioDslFacade = attackScenarioDslFacade;
         filterFacade.initialize(FDIT_MANAGER.getRoot());
@@ -112,19 +112,30 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     @Override
     public Object caseASTCreationParameter(final ASTCreationParameter object) {
         try {
+            final StringBuilder errors = new StringBuilder();
             final String characteristicName = object.getName().getLiteral().toUpperCase();
             final Characteristic characteristic = getCharacteristicByString(characteristicName);
-
-            if (characteristic.canBeAList()) {
-                return computeListError(object.getValue(), getValidationFunction(characteristic), characteristicName);
+            final ASTValue value = object.getValue();
+            final Predicate<String> predicate = getValidationFunction(characteristic);
+            if (isAnOffset(value)) {
+                return TRANSLATOR.getMessage("error.offset") + '\n';
             }
-            if (characteristic.canBeARange()) {
-                return computeRangeError(object.getValue(), getValidationFunction(characteristic), characteristicName);
+            if (value instanceof ASTConstantValue) {
+                final boolean canBeList = characteristic.canBeAList();
+                final boolean canBeRange = characteristic.canBeARange();
+                if (canBeList) {
+                    errors.append(computeListError(value, predicate, characteristicName, canBeRange));
+                }
+                if (canBeRange) {
+                    errors.append(computeRangeError(value, predicate, characteristicName, canBeList));
+                }
+            } else {
+                errors.append(computeValueError(value, predicate, characteristicName));
             }
+            return errors.toString();
         } catch (final RuntimeException ex) {
             return TRANSLATOR.getMessage("error.unknownCharacteristic", object.getName()) + '\n';
         }
-        return "";
     }
 
     @Override
@@ -155,7 +166,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
-    public Object caseASTReplay(ASTReplay object) {
+    public Object caseASTReplay(final ASTReplay object) {
         final StringBuilder errors = new StringBuilder();
         errors.append(doSwitch(object.getTarget()));
         errors.append(doSwitch(object.getTimeScope()));
@@ -166,7 +177,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
-    public Object caseASTPlaneFrom(ASTPlaneFrom object) {
+    public Object caseASTPlaneFrom(final ASTPlaneFrom object) {
         final StringBuilder errors = new StringBuilder();
         if (object.getFilters() != null) {
             errors.append(doSwitch(object.getFilters()));
@@ -176,7 +187,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
-    public Object caseASTAllPlaneFrom(ASTAllPlaneFrom object) {
+    public Object caseASTAllPlaneFrom(final ASTAllPlaneFrom object) {
         final StringBuilder errors = new StringBuilder();
         if (object.getFilters() != null) {
             errors.append(doSwitch(object.getFilters()));
@@ -247,6 +258,9 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
             return computeIntError(object.getValue(), PARAMETER_NUMBER);
         } else {
             try {
+                if (isAnOffset(object.getValue())) {
+                    return TRANSLATOR.getMessage("error.offset") + '\n';
+                }
                 final Characteristic characteristic = getCharacteristicByString(object.getName().getLiteral());
                 switch (characteristic) {
                     case ICAO:
@@ -269,35 +283,54 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
                         return computeEmergencyError(object.getValue());
                     case SPI:
                         return computeSpiError(object.getValue());
+                    default:
+                        return "";
                 }
             } catch (final RuntimeException ex) {
                 return TRANSLATOR.getMessage("error.unknownCharacteristic", object.getName()) + '\n';
             }
         }
-        return "";
     }
 
     @Override
     public Object caseASTHideParameter(final ASTHideParameter object) {
+        if (isAnOffset(object.getValue())) {
+            return TRANSLATOR.getMessage("error.offset") + '\n';
+        }
         return computeIntError(object.getValue(), PARAMETER_FREQUENCY);
     }
 
     @Override
     public Object caseASTParameter(final ASTParameter object) {
         try {
+            final StringBuilder errors = new StringBuilder();
             final String characteristicName = object.getName().getLiteral().toUpperCase();
             final Characteristic characteristic = getCharacteristicByString(characteristicName);
-
-            if (characteristic.canBeAList()) {
-                return computeListError(object.getValue(), getValidationFunction(characteristic), characteristicName);
+            final ASTValue value = object.getValue();
+            final Predicate<String> predicate = getValidationFunction(characteristic);
+            if (isAnOffset(value)) {
+                return TRANSLATOR.getMessage("error.offset") + '\n';
             }
-            if (characteristic.canBeARange()) {
-                return computeRangeError(object.getValue(), getValidationFunction(characteristic), characteristicName);
+            if (value instanceof ASTConstantValue) {
+                final boolean canBeList = characteristic.canBeAList();
+                final boolean canBeRange = characteristic.canBeARange();
+                if (canBeList) {
+                    errors.append(computeListError(value, predicate, characteristicName, canBeRange));
+                }
+                if (canBeRange) {
+                    errors.append(computeRangeError(value, predicate, characteristicName, canBeList));
+                }
+            } else {
+                errors.append(computeValueError(value, predicate, characteristicName));
             }
+            return errors.toString();
         } catch (final RuntimeException ex) {
             return TRANSLATOR.getMessage("error.unknownCharacteristic", object.getName()) + '\n';
         }
-        return "";
+    }
+
+    private boolean isAnOffset(ASTValue value) {
+        return value instanceof ASTLeftShift || value instanceof ASTRightShift;
     }
 
     @Override
@@ -306,8 +339,23 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
+    public Object caseASTWayPoints(final ASTWayPoints object) {
+        final StringBuilder errors = new StringBuilder();
+        for (final ASTWayPoint wayPoint : object.getWaypoints()) {
+            errors.append(doSwitch(wayPoint));
+        }
+        return errors.toString();
+    }
+
+    @Override
     public Object caseASTWayPoint(final ASTWayPoint object) {
-        return "";
+        return doSwitch(object.getTime()) +
+                computeListError(object.getLatitude(), getValidationFunction(LATITUDE), "latitude", LATITUDE.canBeARange()) +
+                computeListError(object.getLongitude(), getValidationFunction(LONGITUDE), "longitude", LONGITUDE.canBeARange()) +
+                computeListError(object.getAltitude(), getValidationFunction(ALTITUDE), "altitude", ALTITUDE.canBeARange()) +
+                computeRangeError(object.getLatitude(), getValidationFunction(LATITUDE), "latitude", LATITUDE.canBeAList()) +
+                computeRangeError(object.getLongitude(), getValidationFunction(LONGITUDE), "longitude", LONGITUDE.canBeAList()) +
+                computeRangeError(object.getAltitude(), getValidationFunction(ALTITUDE), "altitude", ALTITUDE.canBeAList());
     }
 
     @Override
@@ -321,10 +369,17 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
             final Object start = doSwitch(object.getStart());
             final Object end = doSwitch(object.getEnd());
             if (start instanceof Integer && end instanceof Integer && ((int) end) <= ((int) start)) {
-                errors.append(TRANSLATOR.getMessage("error.invalidTimeWindow", start, end));
-                errors.append('\n');
+                errors.append(TRANSLATOR.getMessage("error.invalidTimeWindow", start, end)).append('\n');
             }
         }
+        return errors;
+    }
+
+    @Override
+    public Object caseASTAtFor(final ASTAtFor object) {
+        final StringBuilder errors = new StringBuilder();
+        errors.append(doSwitch(object.getTime()));
+        errors.append(doSwitch(object.getFor()));
         return errors;
     }
 
@@ -333,7 +388,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
         return valueOf(doSwitch(object.getTime()));
     }
 
-    private StringBuilder computeTimeError(int time) {
+    private String computeTimeError(long time) {
         final StringBuilder errors = new StringBuilder();
         if (time < 0) {
             errors.append(TRANSLATOR.getMessage("error.negativetime", time)).append('\n');
@@ -344,7 +399,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
                 errors.append(TRANSLATOR.getMessage("error.timetoolong", time, maxTime / 1000)).append('\n');
             }
         }
-        return errors;
+        return errors.toString();
     }
 
     @Override
@@ -353,6 +408,17 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
         if (time instanceof ASTIntegerValue) {
             return computeTimeError(((ASTIntegerValue) time).getContent());
         }
+        if (isAnOffset(time)) {
+            return TRANSLATOR.getMessage("error.offset") + '\n';
+        }
+        if (time instanceof ASTRecordingValue) {
+            final ASTRecordingValue recordingValue = (ASTRecordingValue) time;
+            if (recordingValue.getRatio() < 0 || recordingValue.getRatio() > 1) {
+                return TRANSLATOR.getMessage("error.invalidRatioTimeValue", recordingValue.getRatio());
+            } else {
+                return "";
+            }
+        }
         if (time instanceof ASTConstantValue) {
             final StringBuilder errors = new StringBuilder();
             convertible.setValue(false);
@@ -360,10 +426,25 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
             if (constant instanceof ListConstant) {
                 final ListConstant<?> values = (ListConstant<?>) constant;
                 for (final Object value : values.getValues()) {
-                    if (!(value instanceof Integer)) {
+                    if (!(value instanceof Integer
+                            || value instanceof ASTIntegerValue
+                            || value instanceof ASTRecordingValue)) {
                         errors.append(TRANSLATOR.getMessage("error.invalidConstantTimeValue", value)).append('\n');
                     } else {
-                        errors.append(computeTimeError((int) value));
+                        int res = 0;
+                        if (value instanceof ASTIntegerValue) {
+                            res = ((ASTIntegerValue) value).getContent();
+                        } else if (value instanceof ASTRecordingValue) {
+                            Object val = doSwitch((ASTRecordingValue) value);
+                            if (val instanceof String) {
+                                errors.append((String) val);
+                            } else {
+                                res = (int) val;
+                            }
+                        } else {
+                            res = (int) value;
+                        }
+                        errors.append(computeTimeError(res));
                     }
                 }
             } else if (constant instanceof RangeConstant) {
@@ -381,14 +462,9 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
                     errors.append(computeTimeError((Integer) rangeConstant.getStart()));
                 }
             }
-            return errors;
+            return errors.toString();
         }
         return TRANSLATOR.getMessage("error.timetype");
-    }
-
-    @Override
-    public Object caseASTBinaryOp(final ASTBinaryOp object) {
-        throw new RuntimeException();
     }
 
     @Override
@@ -409,15 +485,8 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
-    public Object caseASTIntegerList(final ASTIntegerList object) {
-        final List<Integer> values = newArrayList();
-        values.addAll(object.getItems());
-        return values;
-    }
-
-    @Override
-    public Object caseASTDoubleList(final ASTDoubleList object) {
-        final List<Double> values = newArrayList();
+    public Object caseASTOffsetList(final ASTOffsetList object) {
+        final List<ASTNumberOffset> values = newArrayList();
         values.addAll(object.getItems());
         return values;
     }
@@ -492,7 +561,7 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
-    public Object caseASTDelay(ASTDelay object) {
+    public Object caseASTDelay(final ASTDelay object) {
         final StringBuilder errors = new StringBuilder();
         errors.append(doSwitch(object.getTarget()));
         errors.append(doSwitch(object.getTimeScope()));
@@ -514,6 +583,9 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
         errors.append(doSwitch(object.getTimeScope()));
         if (object.getTrigger() != null) {
             errors.append(doSwitch(object.getTrigger()));
+        }
+        if (object.getTrajectory() != null) {
+            errors.append(doSwitch(object.getTrajectory()));
         }
         return errors;
     }
@@ -549,83 +621,13 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
     }
 
     @Override
-    public Object caseASTEqual(final ASTEqual object) {
-        return "";
-    }
-
-    @Override
-    public Object caseASTDifferent(final ASTDifferent object) {
-        return "";
-    }
-
-    @Override
-    public Object caseASTLt(final ASTLt object) {
-        if (object.getValue() instanceof ASTConstantValue) {
-            final Constant constant = memory.getConstant(((ASTConstantValue) object.getValue()).getContent());
-            if (constant instanceof ListConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", '<', "data list");
-            }
-            if (constant instanceof RangeConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", '<', "data range");
-            }
+    public Object caseASTRecordingValue(final ASTRecordingValue object) {
+        if (object.getRatio() < 0 || object.getRatio() > 1) {
+            return TRANSLATOR.getMessage("error.invalidRatioTimeValue", object.getRatio()) + '\n';
+        } else {
+            final long maxRelativeDate = schema.getRecording().getMaxRelativeDate();
+            return (int) (object.getRatio() * maxRelativeDate) / 1000;
         }
-        return "";
-    }
-
-    @Override
-    public Object caseASTGt(final ASTGt object) {
-        if (object.getValue() instanceof ASTConstantValue) {
-            final Constant constant = memory.getConstant(((ASTConstantValue) object.getValue()).getContent());
-            if (constant instanceof ListConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", '>', "data list");
-            }
-            if (constant instanceof RangeConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", '>', "data range");
-            }
-        }
-        return "";
-    }
-
-    @Override
-    public Object caseASTLte(final ASTLte object) {
-        if (object.getValue() instanceof ASTConstantValue) {
-            final Constant constant = memory.getConstant(((ASTConstantValue) object.getValue()).getContent());
-            if (constant instanceof ListConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", "<=", "data list");
-            }
-            if (constant instanceof RangeConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", "<=", "data range");
-            }
-        }
-        return "";
-    }
-
-    @Override
-    public Object caseASTGte(final ASTGte object) {
-        if (object.getValue() instanceof ASTConstantValue) {
-            final Constant constant = memory.getConstant(((ASTConstantValue) object.getValue()).getContent());
-            if (constant instanceof ListConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", ">=", "data list");
-            }
-            if (constant instanceof RangeConstant) {
-                return TRANSLATOR.getMessage("error.badTypeOperator", ">=", "data range");
-            }
-        }
-        return "";
-    }
-
-    @Override
-    public Object caseASTIn(final ASTIn object) {
-        if (object.getValue() instanceof ASTStringValue) {
-            return TRANSLATOR.getMessage("error.badTypeOperator", "in", "String");
-        }
-        if (object.getValue() instanceof ASTDoubleValue) {
-            return TRANSLATOR.getMessage("error.badTypeOperator", "in", "Double");
-        }
-        if (object.getValue() instanceof ASTIntegerValue) {
-            return TRANSLATOR.getMessage("error.badTypeOperator", "in", "Integer");
-        }
-        return "";
     }
 
     @Override
@@ -639,7 +641,8 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
 
     private String computeRangeError(final ASTValue value,
                                      final Predicate<String> predicate,
-                                     final String strType) {
+                                     final String strType,
+                                     final boolean canBeList) {
         final StringBuilder errors = new StringBuilder();
         if (value instanceof ASTConstantValue) {
             final String constantError = (String) doSwitch(value);
@@ -657,11 +660,9 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
                     errors.append(TRANSLATOR.getMessage("error.badvalue", strType, end)).append("\n");
                 }
             }
-            if (constant instanceof ListConstant) {
+            if (!canBeList && constant instanceof ListConstant) {
                 errors.append(TRANSLATOR.getMessage("error.badMassiveType", strType, "list")).append("\n");
             }
-        } else {
-            errors.append(computeValueError(value, predicate, strType));
         }
         return errors.toString();
     }
@@ -746,7 +747,8 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
 
     private String computeListError(final ASTValue value,
                                     final Predicate<String> predicate,
-                                    final String strType) {
+                                    final String strType,
+                                    final boolean canBeRange) {
         final StringBuilder errors = new StringBuilder();
         if (value instanceof ASTConstantValue) {
             final String constantError = (String) doSwitch(value);
@@ -754,20 +756,39 @@ public class SchemaSwitchSemanticAnalyse extends AttackScenarioSwitch<Object> {
                 return constantError + "\n";
             }
             final Constant constant = memory.getConstant(((ASTConstantValue) value).getContent());
-            if (constant instanceof RangeConstant) {
+            if (!canBeRange && constant instanceof RangeConstant) {
                 errors.append(TRANSLATOR.getMessage("error.badMassiveType", strType, "range")).append('\n');
             }
             if (constant instanceof ListConstant) {
-                for (final Object item : ((ListConstant<?>) constant).getValues()) {
+                for (Object item : ((ListConstant<?>) constant).getValues()) {
+                    if (item instanceof ASTNumberOffset) {
+                        item = getOffsetValue((ASTNumberOffset) item);
+                    }
                     if (!predicate.test(item.toString())) {
                         errors.append(TRANSLATOR.getMessage("error.badvalue", strType, item)).append('\n');
                     }
                 }
             }
-        } else {
-            errors.append(computeValueError(value, predicate, strType));
         }
         return errors.toString();
+    }
+
+    private String getOffsetValue(final ASTNumberOffset offset) {
+        final ASTNumber number;
+        if (offset instanceof ASTRightShift) {
+            number = ((ASTRightShift) offset).getContent();
+        } else if (offset instanceof ASTLeftShift) {
+            number = ((ASTLeftShift) offset).getContent();
+        } else {
+            number = (ASTNumber) offset;
+        }
+        if (number instanceof ASTDoubleValue) {
+            return valueOf(((ASTDoubleValue) number).getContent());
+        }
+        if (number instanceof ASTIntegerValue) {
+            return valueOf(((ASTIntegerValue) number).getContent());
+        }
+        return "";
     }
 
     private String computeValueError(final ASTValue value, final Predicate<String> predicate, final String strType) {

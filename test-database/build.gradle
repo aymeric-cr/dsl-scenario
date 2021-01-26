@@ -1,5 +1,9 @@
-configurations {
-    compile.extendsFrom database, testMetamodel
+group = group + ".database"
+
+dependencies {
+    compile "junit:junit:$junitVersion"
+    compile project(':database')
+    compile project(':testMetamodel')
 }
 
 sourceSets {
@@ -9,5 +13,11 @@ sourceSets {
     test {
         java.srcDir file('src/test/java')
         resources.srcDir file('src/test/resources')
+    }
+}
+
+sonarqube {
+    properties {
+        property "skip", true
     }
 }

@@ -6,7 +6,7 @@ import fdit.metamodel.element.FditElement;
 import fdit.metamodel.element.Root;
 import fdit.metamodel.filter.LTLFilter;
 import fdit.metamodel.recording.Recording;
-import fdit.metamodel.scenario.Scenario;
+import fdit.metamodel.schema.Schema;
 import fdit.metamodel.trigger.ActionTrigger;
 import fdit.metamodel.zone.FditPolygon;
 import fdit.metamodel.zone.Zone;
@@ -174,26 +174,26 @@ public final class FditElementHelper {
     }
 
     @SafeVarargs
-    public static Predicate<? super FditElement> aScenario(final String name,
-                                                           final String content,
-                                                           final String description,
-                                                           final Predicate<Scenario>... constraints) {
+    public static Predicate<? super FditElement> aSchema(final String name,
+                                                         final String content,
+                                                         final String description,
+                                                         final Predicate<Schema>... constraints) {
         return fditElement -> {
             if (!fditElement.getName().equals(name)) {
                 System.err.println("Expected scenario name: " + name + ". Got: " + fditElement.getName());
                 return false;
             }
-            if (!((Scenario) fditElement).getDescription().equals(description)) {
+            if (!((Schema) fditElement).getDescription().equals(description)) {
                 System.err.println("Expected scenario description: " + description +
-                        ". Got: " + ((Scenario) fditElement).getDescription());
+                        ". Got: " + ((Schema) fditElement).getDescription());
                 return false;
             }
-            if (!((Scenario) fditElement).getContent().equals(content)) {
+            if (!((Schema) fditElement).getContent().equals(content)) {
                 System.err.println("Expected scenario content: " + content +
-                        ". Got: " + ((Scenario) fditElement).getContent());
+                        ". Got: " + ((Schema) fditElement).getContent());
                 return false;
             }
-            return and(constraints).test((Scenario) fditElement);
+            return and(constraints).test((Schema) fditElement);
         };
     }
 

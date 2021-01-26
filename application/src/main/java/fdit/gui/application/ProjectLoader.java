@@ -25,7 +25,7 @@ import static fdit.storage.FditStorageUtils.buildFditElementName;
 import static fdit.storage.execution.ExecutionLoader.loadExecution;
 import static fdit.storage.filter.LTLFilterStorage.loadLTLFilter;
 import static fdit.storage.recording.RecordingStorage.loadRecording;
-import static fdit.storage.scenario.SchemaStorage.loadTextualScenario;
+import static fdit.storage.schema.SchemaStorage.loadSchema;
 import static fdit.storage.trigger.ActionTriggerStorage.loadAlterationTrigger;
 import static fdit.storage.zone.ZoneLoader.loadZone;
 import static fdit.tools.io.FileUtils.listFiles;
@@ -156,7 +156,7 @@ public final class ProjectLoader {
             @Override
             public Collection<FditElement> visitScenario() {
                 try {
-                    return singleton(loadTextualScenario(elementFile,
+                    return singleton(loadSchema(elementFile,
                             rootFile,
                             gatherAllRecordings(root)));
                 } catch (final Exception e) {

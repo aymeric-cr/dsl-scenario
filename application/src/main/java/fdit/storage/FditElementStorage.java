@@ -21,7 +21,7 @@ import static fdit.metamodel.recording.Recording.EMPTY_RECORDING;
 import static fdit.storage.alteration.AlterationSpecificationSaver.saveAlterationSpecification;
 import static fdit.storage.execution.ExecutionSaver.saveExecution;
 import static fdit.storage.filter.LTLFilterStorage.saveFilter;
-import static fdit.storage.scenario.SchemaStorage.saveTextualScenario;
+import static fdit.storage.schema.SchemaStorage.saveTextualScenario;
 import static fdit.storage.trigger.ActionTriggerStorage.saveAlterationTrigger;
 import static fdit.storage.zone.ZoneSaver.saveZone;
 import static fdit.tools.stream.StreamUtils.filter;

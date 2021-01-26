@@ -1,5 +1,6 @@
-buildscript {
+ buildscript {
     repositories {
+        mavenLocal()
         jcenter()
     }
     dependencies {
@@ -15,6 +16,7 @@ subprojects {
     apply plugin: 'java'
     ext.xtextVersion = '2.20.0'
     repositories {
+        mavenLocal()
         jcenter()
     }
 

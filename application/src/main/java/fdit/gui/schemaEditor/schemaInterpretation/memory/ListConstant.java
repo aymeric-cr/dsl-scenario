@@ -1,5 +1,8 @@
 package fdit.gui.schemaEditor.schemaInterpretation.memory;
 
+import fdit.dsl.attackScenario.ASTNumberOffset;
+import fdit.dsl.attackScenario.ASTRecordingValue;
+
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -16,6 +19,8 @@ public class ListConstant<T> extends Constant {
         if (values.stream().allMatch(t -> t instanceof String) ||
                 values.stream().allMatch(t -> t instanceof Integer) ||
                 values.stream().allMatch(t -> t instanceof Double) ||
+                values.stream().allMatch(t -> t instanceof ASTNumberOffset) ||
+                values.stream().allMatch(t -> t instanceof ASTRecordingValue) ||
                 values.stream().allMatch(t -> t instanceof Float)) {
             this.values.addAll(values);
         } else {
@@ -29,13 +34,17 @@ public class ListConstant<T> extends Constant {
 
     public interface ListConstantTypeSwitch<T> {
 
-        T visitInteger(final ListConstant<?> listConstant);
+        T visitInteger(final ListConstant<Integer> listConstant);
 
-        T visitDouble(final ListConstant<?> listConstant);
+        T visitDouble(final ListConstant<Double> listConstant);
 
-        T visitFloat(final ListConstant<?> listConstant);
+        T visitFloat(final ListConstant<Float> listConstant);
 
-        T visitString(final ListConstant<?> listConstant);
+        T visitString(final ListConstant<String> listConstant);
+
+        T visitOffset(final ListConstant<ASTNumberOffset> listConstant);
+
+        T visitRecordingValue(final ListConstant<ASTRecordingValue> listConstant);
 
         default T visitDefault() {
             throw new RuntimeException("Empty list or unknown type");
@@ -43,16 +52,22 @@ public class ListConstant<T> extends Constant {
 
         default T doSwitch(final ListConstant<?> listConstant) {
             if (!listConstant.getValues().isEmpty() && listConstant.getValues().get(0) instanceof Integer) {
-                return visitInteger(listConstant);
+                return visitInteger((ListConstant<Integer>) listConstant);
             }
             if (!listConstant.getValues().isEmpty() && listConstant.getValues().get(0) instanceof Double) {
-                return visitDouble(listConstant);
+                return visitDouble((ListConstant<Double>) listConstant);
             }
             if (!listConstant.getValues().isEmpty() && listConstant.getValues().get(0) instanceof Float) {
-                return visitFloat(listConstant);
+                return visitFloat((ListConstant<Float>) listConstant);
             }
             if (!listConstant.getValues().isEmpty() && listConstant.getValues().get(0) instanceof String) {
-                return visitString(listConstant);
+                return visitString((ListConstant<String>) listConstant);
+            }
+            if (!listConstant.getValues().isEmpty() && listConstant.getValues().get(0) instanceof ASTNumberOffset) {
+                return visitOffset((ListConstant<ASTNumberOffset>) listConstant);
+            }
+            if (!listConstant.getValues().isEmpty() && listConstant.getValues().get(0) instanceof ASTRecordingValue) {
+                return visitRecordingValue((ListConstant<ASTRecordingValue>) listConstant);
             }
             return visitDefault();
         }

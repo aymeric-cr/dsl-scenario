@@ -5,17 +5,6 @@ dependencies {
     compile "org.gavaghan:geodesy:$geodesyVersion"
     compile "com.google.guava:guava:$guavaVersion"
     compile "com.google.code.findbugs:annotations:$findBugsVersion"
+    compile "com.google.inject:guice:$guiceVersion"
     compile project(':tools')
-}
-
-publishing.publications {
-    metamodel(MavenPublication) {
-        groupId = group
-        artifactId = 'metamodel'
-        version = fditVersion
-        artifact source: fditLibLocation + metamodelJarName, extension: 'jar'
-        pom.withXml {
-            asString().replace(0, asString().length() - 1, new File(metamodelPom).text)
-        }
-    }
 }

@@ -1,6 +1,6 @@
 package fdit.gui.executionEditor;
 
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
+import fdit.dsl.ide.AttackScenarioFacade;
 import fdit.gui.application.FditManagerListener;
 import fdit.gui.schemaEditor.schemaInterpretation.SchemaInterpreter;
 import fdit.gui.utils.ThreadSafeBooleanProperty;
@@ -280,7 +280,7 @@ public final class ExecutionEditorModel {
 
     private CheckResult extractAlterationSpecifications(final Execution execution) {
         specifications.clear();
-        final SchemaInterpreter interpreter = new SchemaInterpreter(new AttackScenarioDslFacade());
+        final SchemaInterpreter interpreter = new SchemaInterpreter(new AttackScenarioFacade());
         interpreter.initialize();
         final Collection<Vector<AlterationSpecification>> data = newArrayList();
         for (final Schema schema : execution.getSchemas()) {

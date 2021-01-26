@@ -1,10 +1,9 @@
 package fdit.metamodel.alteration;
 
-import fdit.metamodel.alteration.action.ScenarioAction;
-import fdit.metamodel.alteration.action.ScenarioAction.ActionType;
+import fdit.metamodel.alteration.action.Action;
+import fdit.metamodel.alteration.action.Action.ActionType;
 import fdit.metamodel.alteration.action.TrajectoryModification;
 import fdit.metamodel.alteration.parameters.*;
-import fdit.metamodel.alteration.scope.GeoTimeWindow;
 import fdit.metamodel.alteration.scope.TimeWindow;
 import fdit.metamodel.coordinates.Coordinates;
 import fdit.metamodel.element.FditElement;
@@ -85,16 +84,16 @@ public final class AlterationSpecificationHelper {
     }
 
     @SafeVarargs
-    public static Predicate<AlterationSchema> actions(final Predicate<ScenarioAction>... contraints) {
+    public static Predicate<AlterationSchema> actions(final Predicate<Action>... contraints) {
         return scenario -> containsOnly(contraints).test(scenario.getActions());
     }
 
     @SafeVarargs
-    public static Predicate<ScenarioAction> anAction(final Predicate<ScenarioAction>... constraints) {
+    public static Predicate<Action> anAction(final Predicate<Action>... constraints) {
         return and(constraints);
     }
 
-    public static Predicate<ScenarioAction> withType(final ActionType actionType) {
+    public static Predicate<Action> withType(final ActionType actionType) {
         return action -> {
             if (action.getActionType() == actionType) {
                 return true;
@@ -105,7 +104,7 @@ public final class AlterationSpecificationHelper {
         };
     }
 
-    public static Predicate<ScenarioAction> withScenarioActionName(final String name) {
+    public static Predicate<Action> withActionName(final String name) {
         return action -> {
             if (action.getName().equals(name)) {
                 return true;
@@ -116,7 +115,7 @@ public final class AlterationSpecificationHelper {
         };
     }
 
-    public static Predicate<ScenarioAction> withActionDescription(final String description) {
+    public static Predicate<Action> withActionDescription(final String description) {
         return action -> {
             if (action.getDescription().equals(description)) {
                 return true;
@@ -130,7 +129,7 @@ public final class AlterationSpecificationHelper {
         };
     }
 
-    public static Predicate<ScenarioAction> onTarget(final String target) {
+    public static Predicate<Action> onTarget(final String target) {
         return action -> {
             final List<String> received_targets = asList(target.split(","));
             final List<String> action_targets = asList(action.getTarget().split(","));
@@ -147,7 +146,7 @@ public final class AlterationSpecificationHelper {
         };
     }
 
-    public static Predicate<ScenarioAction> onTimeWindow(final long lowerBound, final long upperBound) {
+    public static Predicate<Action> onTimeWindow(final long lowerBound, final long upperBound) {
         return action -> {
             final TimeWindow timeWindow = (TimeWindow) action.getScope();
             if (timeWindow.getLowerBoundMillis() == lowerBound && timeWindow.getUpperBoundMillis() == upperBound) {
@@ -168,38 +167,13 @@ public final class AlterationSpecificationHelper {
         };
     }
 
-    public static Predicate<ScenarioAction> onGeoTimeWindow(final Predicate<? super Zone> zone,
-                                                            final long lowerBound,
-                                                            final long upperBound) {
-        return action -> {
-            final GeoTimeWindow geoTimeWindow = (GeoTimeWindow) action.getScope();
-            if (geoTimeWindow.getLowerBoundMillis() == lowerBound &&
-                    geoTimeWindow.getUpperBoundMillis() == upperBound) {
-                return zone.test(geoTimeWindow.getZone());
-            } else {
-                System.err.println("GeoTime: [" +
-                        geoTimeWindow.getLowerBoundMillis() +
-                        ';' +
-                        geoTimeWindow.getUpperBoundMillis() +
-                        ']' +
-                        " different from: " +
-                        '[' +
-                        lowerBound +
-                        ';' +
-                        upperBound +
-                        ']');
-                return false;
-            }
-        };
-    }
-
     @SafeVarargs
-    public static Predicate<ScenarioAction> withParameters(final Predicate<ActionParameter>... parameters) {
+    public static Predicate<Action> withParameters(final Predicate<ActionParameter>... parameters) {
         return action -> containsOnly(parameters).test(action.getParameters());
     }
 
     @SafeVarargs
-    public static Predicate<ScenarioAction> withTrajectory(final Predicate<AircraftWayPoint>... waypoints) {
+    public static Predicate<Action> withTrajectory(final Predicate<AircraftWayPoint>... waypoints) {
         return action -> {
             if (action instanceof TrajectoryModification) {
                 return containsOnly(waypoints).test(((TrajectoryModification) action).getTrajectory().getWayPoints());
@@ -255,23 +229,6 @@ public final class AlterationSpecificationHelper {
                 }
             } else {
                 System.err.println("Parameter is not an instance of Timestamp");
-                return false;
-            }
-        };
-    }
-
-    public static Predicate<ActionParameter> withInterrogator(final String value) {
-        return parameter -> {
-            if (parameter instanceof Interrogator) {
-                if (((Interrogator) parameter).getValue().equals(value)) {
-                    return true;
-                } else {
-                    System.err.println("Interrogator: " + ((Interrogator) parameter).getValue() +
-                            " not equals to " + value);
-                    return false;
-                }
-            } else {
-                System.err.println("Parameter is not an instance of Interrogator");
                 return false;
             }
         };
@@ -367,13 +324,6 @@ public final class AlterationSpecificationHelper {
         };
     }
 
-    public static Predicate<ActionParameter> withCustomValue(final String key,
-                                                             final String value) {
-        return parameter -> parameter instanceof CustomValue &&
-                ((CustomValue) parameter).getKey().equals(key) &&
-                ((CustomValue) parameter).getValue().equals(value);
-    }
-
     public static Predicate<ActionParameter> withRangeValue(final Characteristic characteristic,
                                                             final String rangeMin,
                                                             final String rangeMax) {
@@ -408,13 +358,13 @@ public final class AlterationSpecificationHelper {
     }
 
     @SafeVarargs
-    public static Consumer<AlterationSchema> action(final Saver<ScenarioAction> saver,
-                                                    final Consumer<ScenarioActionBuilder>... consumers) {
+    public static Consumer<AlterationSchema> action(final Saver<Action> saver,
+                                                    final Consumer<ActionBuilder>... consumers) {
         return scenario -> saver.save(createAction(scenario, consumers));
     }
 
     @SafeVarargs
-    public static Consumer<AlterationSchema> action(final Consumer<ScenarioActionBuilder>... consumers) {
+    public static Consumer<AlterationSchema> action(final Consumer<ActionBuilder>... consumers) {
         return scenarioBuilder -> createAction(scenarioBuilder, consumers);
     }
 
@@ -426,90 +376,78 @@ public final class AlterationSpecificationHelper {
         return new AlterationSpecification(name, alterationSchema);
     }
 
-    public static ThrowableConsumer<AlterationSchema> actions(final ScenarioAction... actions) {
+    public static ThrowableConsumer<AlterationSchema> actions(final Action... actions) {
         return alterationScenario -> {
-            for (ScenarioAction action : actions) {
+            for (Action action : actions) {
                 alterationScenario.addAction(action);
             }
         };
     }
 
-    private static ScenarioAction createAction(final AlterationSchema scenario,
-                                               final Consumer<ScenarioActionBuilder>[] consumers) {
-        final ScenarioActionBuilder builder = new ScenarioActionBuilder();
+    private static Action createAction(final AlterationSchema scenario,
+                                               final Consumer<ActionBuilder>[] consumers) {
+        final ActionBuilder builder = new ActionBuilder();
         acceptAll(builder, consumers);
-        final ScenarioAction scenarioAction = builder.build();
+        final Action scenarioAction = builder.build();
         scenario.addAction(scenarioAction);
         return scenarioAction;
     }
 
     @SafeVarargs
-    public static ScenarioAction createAction(final Consumer<ScenarioActionBuilder>... consumers) {
-        final ScenarioActionBuilder builder = new ScenarioActionBuilder();
+    public static Action createAction(final Consumer<ActionBuilder>... consumers) {
+        final ActionBuilder builder = new ActionBuilder();
         acceptAll(builder, consumers);
         return builder.build();
     }
 
-    public static Consumer<ScenarioActionBuilder> type(final ActionType actionType) {
+    public static Consumer<ActionBuilder> type(final ActionType actionType) {
         return builder -> builder.withActionType(actionType);
     }
 
-    public static Consumer<ScenarioActionBuilder> name(final String name) {
+    public static Consumer<ActionBuilder> name(final String name) {
         return builder -> builder.withName(name);
     }
 
-    public static Consumer<ScenarioActionBuilder> description(final String description) {
+    public static Consumer<ActionBuilder> description(final String description) {
         return builder -> builder.withDescription(description);
     }
 
-    public static Consumer<ScenarioActionBuilder> timestamp(final long value) {
+    public static Consumer<ActionBuilder> timestamp(final long value) {
         return builder -> builder.withTimestamp(new Timestamp(value));
     }
 
-    public static Consumer<ScenarioActionBuilder> timestamp(final long value, final boolean offset) {
+    public static Consumer<ActionBuilder> timestamp(final long value, final boolean offset) {
         return builder -> builder.withTimestamp(new Timestamp(value, offset));
     }
 
-    public static Consumer<ScenarioActionBuilder> recordName(final String value) {
+    public static Consumer<ActionBuilder> recordName(final String value) {
         return builder -> builder.withRecordName(new RecordName(value));
     }
 
-    public static Consumer<ScenarioActionBuilder> icaoParameter(final String value) {
+    public static Consumer<ActionBuilder> icaoParameter(final String value) {
         return builder -> builder.withIcaoParameter(new Value(ICAO, value));
     }
 
-    public static Consumer<ScenarioActionBuilder> aircraftNumber(final int value) {
+    public static Consumer<ActionBuilder> aircraftNumber(final int value) {
         return builder -> builder.withAircraftNumber(new AircraftNumber(value));
     }
 
 
-    public static Consumer<ScenarioActionBuilder> target(final String target) {
+    public static Consumer<ActionBuilder> target(final String target) {
         return builder -> builder.withTarget(target);
     }
 
-    public static Consumer<ScenarioActionBuilder> parameters(final ActionParameter... parameters) {
+    public static Consumer<ActionBuilder> parameters(final ActionParameter... parameters) {
         return builder -> builder.addParameters(parameters);
     }
 
-    public static Consumer<ScenarioActionBuilder> trajectory(final AircraftWayPoint... waypoints) {
+    public static Consumer<ActionBuilder> trajectory(final AircraftWayPoint... waypoints) {
         return builder -> builder.addWaypoints(waypoints);
     }
 
 
-    public static Consumer<ScenarioActionBuilder> timeWindow(final long lowerBound, final long upperBound) {
+    public static Consumer<ActionBuilder> timeWindow(final long lowerBound, final long upperBound) {
         return builder -> builder.withScope(new TimeWindow(lowerBound, upperBound));
-    }
-
-    public static Consumer<ScenarioActionBuilder> geoTimeWindow(final Saver<Zone> zoneSaver,
-                                                                final long lowerBound,
-                                                                final long upperBound) {
-        return builder -> builder.withScope(new GeoTimeWindow(zoneSaver.get(), lowerBound, upperBound));
-    }
-
-    public static Consumer<ScenarioActionBuilder> geoTimeWindow(final Zone zone,
-                                                                final long lowerBound,
-                                                                final long upperBound) {
-        return builder -> builder.withScope(new GeoTimeWindow(zone, lowerBound, upperBound));
     }
 
     public static AircraftWayPoint waypoint(final Coordinates coordinates,
@@ -526,11 +464,6 @@ public final class AlterationSpecificationHelper {
     public static ActionParameter valueWithOffset(final Characteristic characteristic,
                                                   final String value) {
         return new Value(characteristic, value, true);
-    }
-
-    public static ActionParameter customValue(final String key,
-                                              final String value) {
-        return new CustomValue(key, value);
     }
 
     public static ActionParameter rangeValue(final Characteristic characteristic,

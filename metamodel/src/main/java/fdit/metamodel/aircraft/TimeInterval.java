@@ -2,15 +2,28 @@ package fdit.metamodel.aircraft;
 
 public class TimeInterval {
 
-    private static long TIME_INTERVAL_MINIMUM_SIZE = 1000;
+    public enum IntervalType {
+        UNSET,
+        TRUE,
+        FALSE,
+        NULL
+    }
+
+    public static final long TIME_INTERVAL_MINIMUM_SIZE = 1000;
 
     private long start;
     private long end;
+    private IntervalType type = IntervalType.UNSET;
 
     public TimeInterval(final long start, final long end) {
-        assert (end - start >= TIME_INTERVAL_MINIMUM_SIZE);
         this.start = start;
         this.end = end;
+    }
+
+    public TimeInterval(final long start, final long end, final IntervalType type) {
+        this.start = start;
+        this.end = end;
+        this.type = type;
     }
 
     public TimeInterval(final long start) {
@@ -18,8 +31,18 @@ public class TimeInterval {
         this.end = start + TIME_INTERVAL_MINIMUM_SIZE;
     }
 
-    public static void setMinimumSize(long size) {
-        TIME_INTERVAL_MINIMUM_SIZE = size;
+    public TimeInterval(final long start, final IntervalType type) {
+        this.start = start;
+        this.end = start + TIME_INTERVAL_MINIMUM_SIZE;
+        this.type = type;
+    }
+
+    public IntervalType getType() {
+        return type;
+    }
+
+    public void setType(IntervalType type) {
+        this.type = type;
     }
 
     public long getEnd() {
@@ -27,7 +50,6 @@ public class TimeInterval {
     }
 
     public void setEnd(final long end) {
-        assert (end - start >= TIME_INTERVAL_MINIMUM_SIZE);
         this.end = end;
     }
 
@@ -36,8 +58,11 @@ public class TimeInterval {
     }
 
     public void setStart(final long start) {
-        assert (end - start >= TIME_INTERVAL_MINIMUM_SIZE);
         this.start = start;
+    }
+
+    public long getDuration() {
+        return end - start;
     }
 
     public boolean equals(Object timeint) {

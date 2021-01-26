@@ -1,17 +1,26 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenLocal()
+        /*maven {
+            url "http://172.20.65.83:8081/repository/maven-public/"
+        }*/
+        mavenCentral()
     }
     dependencies {
-        classpath 'org.xtext:xtext-gradle-plugin:2.0.4'
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.8'
+        classpath: 'org.eclipse.xtext:org.eclipse.xtext.smap:2.15.0'
     }
 }
-
 subprojects {
     apply plugin: 'org.xtext.xtend'
-
+    apply plugin: 'java'
+    ext.xtextVersion = '2.20.0'
     repositories {
-        jcenter()
+        mavenLocal()
+        /*maven {
+            url "http://172.20.65.83:8081/repository/maven-public/"
+        }*/
+        mavenCentral()
     }
 
     sourceSets {
@@ -20,16 +29,27 @@ subprojects {
             resources.srcDirs = ['src/main/resources', 'src/main/xtext-gen']
             xtendOutputDir = 'src/main/xtend-gen'
         }
+        test {
+            java.srcDirs = ['src/test/java', 'src/test/xtext-gen']
+            resources.srcDirs = ['src/test/resources', 'src/test/xtext-gen']
+            xtendOutputDir = 'src/test/xtend-gen'
+        }
     }
 
     jar {
         from('model') {
             into('model')
         }
+        from(sourceSets.main.allSource) {
+            include '**/*.xtext'
+        }
+        manifest {
+            attributes 'Bundle-SymbolicName': project.name
+        }
     }
 
     ext {
-        grammarName = 'AttackScenarioGrammar'
+        grammarName = 'AttackScenario'
     }
 
     configurations.all {

@@ -8,7 +8,7 @@ import fdit.metamodel.element.Directory;
 import fdit.metamodel.element.Root;
 import fdit.metamodel.filter.LTLFilter;
 import fdit.metamodel.recording.*;
-import fdit.metamodel.scenario.Scenario;
+import fdit.metamodel.schema.Schema;
 import fdit.metamodel.trigger.ActionTrigger;
 import fdit.metamodel.zone.FditPolygon;
 import fdit.metamodel.zone.Zone;
@@ -119,39 +119,39 @@ public abstract class FditTestCase {
         };
     }
 
-    protected static ThrowableConsumer<Directory> scenario(final String name) {
-        return scenario(name, EMPTY_RECORDING);
+    protected static ThrowableConsumer<Directory> schema(final String name) {
+        return schema(name, EMPTY_RECORDING);
     }
 
-    protected static ThrowableConsumer<Directory> scenario(final String name,
-                                                           final Consumer<Scenario>... consumers) {
-        return scenario(name, EMPTY_RECORDING, consumers);
+    protected static ThrowableConsumer<Directory> schema(final String name,
+                                                         final Consumer<Schema>... consumers) {
+        return schema(name, EMPTY_RECORDING, consumers);
     }
 
-    protected static ThrowableConsumer<Directory> scenario(final String name,
-                                                           final Recording recording,
-                                                           final Consumer<Scenario>... consumers) {
+    protected static ThrowableConsumer<Directory> schema(final String name,
+                                                         final Recording recording,
+                                                         final Consumer<Schema>... consumers) {
         return father -> {
-            final ScenarioCreationCommand command = new ScenarioCreationCommand(father, name, "", recording);
+            final SchemaCreationCommand command = new SchemaCreationCommand(father, name, "", recording);
             FDIT_MANAGER.getCommandExecutor().execute(command);
-            final Scenario scenario = command.getSubject();
+            final Schema scenario = command.getSubject();
             acceptAll(scenario, consumers);
             save(scenario, FDIT_MANAGER.getRootFile());
         };
     }
 
-    public static ThrowableConsumer<Directory> scenario(final String name,
-                                                        final Saver<Recording> recording,
-                                                        final Consumer<Scenario>... consumers) {
-        return father -> scenario(name, recording.get(), consumers).accept(father);
+    public static ThrowableConsumer<Directory> schema(final String name,
+                                                      final Saver<Recording> recording,
+                                                      final Consumer<Schema>... consumers) {
+        return father -> schema(name, recording.get(), consumers).accept(father);
     }
 
-    public static ThrowableConsumer<Directory> scenario(final String name,
-                                                        final Saver<Recording> recording,
-                                                        final Saver<Scenario> saver,
-                                                        final Consumer<Scenario>... consumers) {
+    public static ThrowableConsumer<Directory> schema(final String name,
+                                                      final Saver<Recording> recording,
+                                                      final Saver<Schema> saver,
+                                                      final Consumer<Schema>... consumers) {
         return father -> {
-            final Scenario scenario = createScenario(
+            final Schema scenario = createSchema(
                     name,
                     "",
                     recording.get(),
@@ -161,14 +161,14 @@ public abstract class FditTestCase {
         };
     }
 
-    private static Scenario createScenario(final String name,
+    private static Schema createSchema(final String name,
                                            final String content,
                                            final Recording recording,
                                            final Directory father,
-                                           final Consumer<Scenario>... consumers) {
-        final ScenarioCreationCommand command = new ScenarioCreationCommand(father, name, content, recording);
+                                           final Consumer<Schema>... consumers) {
+        final SchemaCreationCommand command = new SchemaCreationCommand(father, name, content, recording);
         FDIT_MANAGER.getCommandExecutor().execute(command);
-        final Scenario scenario = command.getSubject();
+        final Schema scenario = command.getSubject();
         acceptAll(scenario, consumers);
         save(scenario, FDIT_MANAGER.getRootFile());
         return scenario;
@@ -292,52 +292,6 @@ public abstract class FditTestCase {
             recording.load();
             saver.save(recording);
         };
-    }
-
-    protected static ThrowableConsumer<Directory> polygon(final String name,
-                                                          final Saver<Zone> zoneSaver,
-                                                          final ThrowableConsumer<? super FditPolygon>... consumers) {
-        return father -> {
-            final Zone polygon = createPolygon(name, randomUUID(), father, consumers);
-            zoneSaver.save(polygon);
-        };
-    }
-
-    protected static ThrowableConsumer<Directory> polygon(final String name) {
-        return father -> createPolygon(name, randomUUID(), father);
-    }
-
-    protected static ThrowableConsumer<Directory> polygon(final String name,
-                                                          final ThrowableConsumer<? super FditPolygon>... consumers) {
-        return father -> createPolygon(name, randomUUID(), father, consumers);
-    }
-
-    protected static ThrowableConsumer<Directory> polygon(final String name,
-                                                          final UUID uuid,
-                                                          final Saver<Zone> zoneSaver,
-                                                          final ThrowableConsumer<? super FditPolygon>... consumers) {
-        return father -> {
-            final Zone polygon = createPolygon(name, uuid, father, consumers);
-            zoneSaver.save(polygon);
-        };
-    }
-
-    protected static ThrowableConsumer<Directory> polygon(final String name,
-                                                          final UUID uuid,
-                                                          final ThrowableConsumer<? super FditPolygon>... consumers) {
-        return father -> createPolygon(name, uuid, father, consumers);
-    }
-
-    private static Zone createPolygon(final String name,
-                                      final UUID uuid,
-                                      final Directory father,
-                                      final ThrowableConsumer<? super FditPolygon>... consumers) {
-        final ZoneCreationCommand command = new ZoneCreationCommand(father, name, uuid);
-        FDIT_MANAGER.getCommandExecutor().execute(command);
-        final FditPolygon polygon = (FditPolygon) command.getSubject();
-        acceptAll(polygon, consumers);
-        save(polygon, FDIT_MANAGER.getRootFile());
-        return polygon;
     }
 
     protected static ThrowableConsumer<Directory> ltlFilter(final String name) {

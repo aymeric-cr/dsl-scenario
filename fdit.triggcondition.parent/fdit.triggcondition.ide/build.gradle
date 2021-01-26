@@ -10,10 +10,11 @@ dependencies {
 
 buildscript {
     repositories {
+        mavenLocal()
         jcenter()
     }
     dependencies {
-        classpath 'org.xtext:xtext-gradle-plugin:1.0.2'
+        classpath 'org.xtext:xtext-gradle-plugin:2.0.8'
     }
 }
 apply plugin: 'org.xtext.xtend'

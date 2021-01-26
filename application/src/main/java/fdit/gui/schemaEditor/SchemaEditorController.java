@@ -1,7 +1,7 @@
 package fdit.gui.schemaEditor;
 
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
-import fdit.dsl.xtext.standalone.CompletionProposal;
+import fdit.dsl.ide.AttackScenarioFacade;
+import fdit.dsl.ide.CompletionProposal;
 import fdit.gui.EditorController;
 import fdit.gui.utils.CustomCompletionPopupSkin;
 import fdit.gui.utils.UpdateableComboBox;
@@ -89,7 +89,7 @@ public class SchemaEditorController implements EditorController {
 
     public SchemaEditorController(final Schema schema) {
         this.schema = schema;
-        model = new SchemaEditorModel(schema, new AttackScenarioDslFacade());
+        model = new SchemaEditorModel(schema, new AttackScenarioFacade());
         LANGUAGES_MANAGER.addListener(observable -> initializeTexts());
     }
 

@@ -1,3 +1,10 @@
-configurations {
-    compile.extendsFrom guava, commonsIo, configuration2, commonsMath, commonsLang, reflections, jdom2
+group = group + ".tools"
+
+dependencies {
+    compile "com.google.guava:guava:$guavaVersion"
+    compile "commons-lang:commons-lang:$commonsLangVersion"
+    compile "commons-io:commons-io:$commonsIoVersion"
+    compile "org.jdom:jdom2:$jdom2Version"
+    compile "com.google.code.findbugs:annotations:$findBugsVersion"
+    compile "com.google.inject:guice:$guiceVersion"
 }

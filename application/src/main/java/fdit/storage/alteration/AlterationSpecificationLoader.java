@@ -5,7 +5,6 @@ import fdit.metamodel.alteration.AlterationSpecification;
 import fdit.metamodel.alteration.action.*;
 import fdit.metamodel.alteration.action.Action.ActionType;
 import fdit.metamodel.alteration.parameters.*;
-import fdit.metamodel.alteration.scope.GeoTimeWindow;
 import fdit.metamodel.alteration.scope.Scope;
 import fdit.metamodel.alteration.scope.TimeWindow;
 import fdit.metamodel.alteration.scope.Trigger;
@@ -290,31 +289,6 @@ public final class AlterationSpecificationLoader {
             case SCOPE_TYPE_GEO_TIME:
             case SCOPE_TYPE_GEO_THRESHOLD:
                 throw new IllegalArgumentException("Not yet implemented");
-            case SCOPE_TYPE_GEO_TIME_WINDOW:
-                final Element polygonChild = scopeElement.getChild(POLYGON);
-                if (polygonChild != null) {
-                    final Zone zone = findZone(polygonChild, loadedZones);
-                    final long geoTimeLowerBound = parseLong(scopeElement.getChildText(LOWER_BOUND));
-                    final long geoTimeUpperBound = parseLong(scopeElement.getChildText(UPPER_BOUND));
-                    if (zone == null) {
-                        final String zoneName = polygonChild.getChildText(ZONE_NAME);
-                        return warn(new TimeWindow(geoTimeLowerBound, geoTimeUpperBound),
-                                TRANSLATOR.getMessage("warn.noZoneFound", zoneName));
-                    }
-                    return succeeded(new GeoTimeWindow(zone, geoTimeLowerBound, geoTimeUpperBound));
-                }
-                final Element circleChild = scopeElement.getChild(CIRCLE);
-                if (circleChild != null) {
-                    final Zone zone = findZone(circleChild, loadedZones);
-                    final long geoTimeLowerBound = parseLong(scopeElement.getChildText(LOWER_BOUND));
-                    final long geoTimeUpperBound = parseLong(scopeElement.getChildText(UPPER_BOUND));
-                    if (zone == null) {
-                        final String zoneName = circleChild.getChildText(ZONE_NAME);
-                        return warn(new TimeWindow(geoTimeLowerBound, geoTimeUpperBound),
-                                TRANSLATOR.getMessage("warn.noZoneFound", zoneName));
-                    }
-                    return succeeded(new GeoTimeWindow(zone, geoTimeLowerBound, geoTimeUpperBound));
-                }
             case SCOPE_TYPE_TIME_WINDOW:
                 final long lowerBound = parseLong(scopeElement.getChildText(LOWER_BOUND));
                 final long upperBound = parseLong(scopeElement.getChildText(UPPER_BOUND));

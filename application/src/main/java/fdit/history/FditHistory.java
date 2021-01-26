@@ -4,7 +4,6 @@ import fdit.gui.application.commands.load.LoadAlterationTriggerCommand;
 import fdit.gui.application.commands.load.LoadExecutionCommand;
 import fdit.gui.application.commands.load.LoadScenarioCommand;
 import fdit.gui.filterEditor.OpenFilterEditorCommand;
-import fdit.gui.zoneEditor.OpenZoneEditorCommand;
 import fdit.history.Command.CommandType;
 
 import java.util.Collection;
@@ -87,7 +86,6 @@ public class FditHistory {
 
     private boolean canBeUndo(final Command command) {
         return !(command instanceof OpenFilterEditorCommand) &&
-                !(command instanceof OpenZoneEditorCommand) &&
                 !(command instanceof LoadScenarioCommand) &&
                 !(command instanceof LoadAlterationTriggerCommand) &&
                 !(command instanceof LoadExecutionCommand);

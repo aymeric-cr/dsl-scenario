@@ -5,7 +5,6 @@ import fdit.gui.application.commands.rename.RenameFditElementCommand;
 import fdit.gui.filterEditor.OpenFilterEditorCommand;
 import fdit.gui.utils.dialog.BasicFditElementCreationDialog;
 import fdit.gui.utils.dialog.FditElementRenameDialog;
-import fdit.gui.zoneEditor.OpenZoneEditorCommand;
 import fdit.metamodel.element.Directory;
 import fdit.metamodel.element.FditElement;
 import fdit.metamodel.element.Root;
@@ -13,7 +12,6 @@ import fdit.metamodel.execution.Execution;
 import fdit.metamodel.filter.LTLFilter;
 import fdit.metamodel.schema.Schema;
 import fdit.metamodel.trigger.ActionTrigger;
-import fdit.metamodel.zone.FditPolygon;
 import fdit.tools.i18n.MessageTranslator;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,7 +30,6 @@ import static fdit.gui.application.FditManager.FDIT_MANAGER;
 import static fdit.gui.application.commands.delete.DeletionUtils.delete;
 import static fdit.gui.utils.FXUtils.createSimpleAsyncExecution;
 import static fdit.gui.utils.dialog.DeletionConfirmationUtils.confirmDeletion;
-import static fdit.gui.zoneEditor.tabs.zone.ZoneEditionUtils.generateZoneId;
 import static fdit.metamodel.aircraft.AircraftUtils.randomUUID;
 import static fdit.metamodel.recording.Recording.EMPTY_RECORDING;
 import static fdit.tools.i18n.MessageTranslator.createMessageTranslator;
@@ -77,7 +74,6 @@ public class FditTreeItem extends MenuableTreeItem<FditElement> {
         createMenu.getItems().add(createDirectoryMenu());
         createMenu.getItems().add(createExecutionMenu());
         createMenu.getItems().add(createScenarioMenu());
-        createMenu.getItems().add(createZoneMenu());
         createMenu.getItems().add(createFilterMenu());
         createMenu.getItems().add(createTriggerMenu());
         return createMenu;
@@ -159,30 +155,6 @@ public class FditTreeItem extends MenuableTreeItem<FditElement> {
             newName.ifPresent(name ->
                     FDIT_MANAGER.getCommandExecutor().execute(new SchemaCreationCommand(
                             father, name, "", EMPTY_RECORDING)));
-        };
-    }
-
-    private MenuItem createZoneMenu() {
-        final MenuItem createZoneMenu = new MenuItem(TRANSLATOR.getMessage("menu.create.zone"));
-        createZoneMenu.setGraphic(new ImageView(ZONES_ICON));
-        createZoneMenu.setOnAction(createZoneAction());
-        return createZoneMenu;
-    }
-
-    private EventHandler<ActionEvent> createZoneAction() {
-        return event -> {
-            final Directory father = (Directory) getValue();
-            final Dialog nameDialog = new BasicFditElementCreationDialog(father,
-                    FDIT_MANAGER.getRootFile(),
-                    FditPolygon.class);
-            nameDialog.setTitle(TRANSLATOR.getMessage("menu.create.zone.dialog.title"));
-            nameDialog.setHeaderText(TRANSLATOR.getMessage("menu.create.zone.dialog.header"));
-            final Optional<String> newName = nameDialog.showAndWait();
-            newName.ifPresent(name -> {
-                final ZoneCreationCommand createZoneCommand = new ZoneCreationCommand(father, name, generateZoneId());
-                FDIT_MANAGER.getCommandExecutor().executePreCommand(createZoneCommand);
-                FDIT_MANAGER.getCommandExecutor().execute(new OpenZoneEditorCommand(createZoneCommand.getCreatedZone()));
-            });
         };
     }
 

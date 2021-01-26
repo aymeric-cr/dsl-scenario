@@ -2,7 +2,7 @@ package fdit.gui.schemaEditor.schemaInterpretation;
 
 import fdit.dsl.attackScenario.*;
 import fdit.dsl.attackScenario.util.AttackScenarioSwitch;
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
+import fdit.dsl.ide.AttackScenarioFacade;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.Constant;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.ListConstant;
 import fdit.gui.schemaEditor.schemaInterpretation.memory.Memory;
@@ -16,21 +16,28 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static com.google.common.collect.Maps.newHashMap;
 import static java.lang.String.valueOf;
 import static org.apache.commons.collections4.IterableUtils.get;
 
 public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<Object> {
 
+    private static final String DOLLARS_REGEX = "\\$";
+
     private final Memory memory;
     private Schema schema;
-    private final AttackScenarioDslFacade attackScenarioDslFacade;
+    private final AttackScenarioFacade attackScenarioFacade;
+    private final Map<Constant, Integer> occurences = newHashMap();
 
-    SchemaCombinationSwitchInterpretation(final AttackScenarioDslFacade attackScenarioDslFacade)
+    public SchemaCombinationSwitchInterpretation(final AttackScenarioFacade attackScenarioFacade)
             throws NoSuchAlgorithmException {
-        this.attackScenarioDslFacade = attackScenarioDslFacade;
+        this.attackScenarioFacade = attackScenarioFacade;
         memory = new Memory();
     }
 
@@ -38,11 +45,11 @@ public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<
         memory.clear();
         this.schema = schema;
         try {
-            attackScenarioDslFacade.parse(schema.getContent());
+            attackScenarioFacade.parse(schema.getContent());
         } catch (IOException e) {
             return newArrayList();
         }
-        return (List<Schema>) doSwitch(get(attackScenarioDslFacade.getAST(), 0));
+        return (List<Schema>) doSwitch(get(attackScenarioFacade.getAST(), 0));
     }
 
     private static String[][] allUniqueCombinations(final LinkedHashMap<String, Vector<String>> dataStructure) {
@@ -65,15 +72,15 @@ public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<
             }
             allCombinations[i + 1] = combination.toArray(new String[n]);
         }
-
         return allCombinations;
     }
 
     @Override
     public Object caseASTScenario(final ASTScenario object) {
         object.getDeclarations().forEach(astDeclaration -> memory.addConstant((Constant) doSwitch(astDeclaration)));
+        object.getInstructions().forEach(this::doSwitch);
         final String[][] result = allUniqueCombinations(formatMemoryToCombination());
-        if (result.length > 0 && result[0].length == memory.getConstants().size()) {
+        if (result.length > 0 && result[0].length == occurences.values().stream().reduce(0, Integer::sum)) {
             final List<Schema> schemas = newArrayList();
             final String[] names = result[0];
             for (int i = 1; i < result.length; i++) {
@@ -82,14 +89,270 @@ public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<
                     content = content.replace(names[j], result[i][j]);
                 }
                 final Schema generatedSchema
-                        = new Schema(schema.getName(), schema.getDescription(), content.trim());
-                generatedSchema.setRecording(schema.getRecording());
-                generatedSchema.setFather(schema.getFather());
+                        = new Schema(this.schema.getName(), this.schema.getDescription(), content.trim());
+                generatedSchema.setRecording(this.schema.getRecording());
+                generatedSchema.setFather(this.schema.getFather());
                 schemas.add(generatedSchema);
             }
             return schemas;
         }
         throw new RuntimeException("Error occurred during parameters combination");
+    }
+
+    @Override
+    public Object caseASTTarget(final ASTTarget target) {
+        if (target.getFilters() != null) {
+            doSwitch(target.getFilters());
+        }
+        return null;
+    }
+
+    @Override
+    public Object caseASTReplayTarget(final ASTReplayTarget replayTarget) {
+        if (replayTarget.getFilters() != null) {
+            doSwitch(replayTarget.getFilters());
+        }
+        doSwitch(replayTarget.getRecording());
+        return null;
+    }
+
+    @Override
+    public Object caseASTWayPoints(final ASTWayPoints wayPoints) {
+        wayPoints.getWaypoints().forEach(this::doSwitch);
+        return null;
+    }
+
+    @Override
+    public Object caseASTWayPoint(final ASTWayPoint wayPoint) {
+        doSwitch(wayPoint.getTime());
+        doSwitch(wayPoint.getLatitude());
+        doSwitch(wayPoint.getLongitude());
+        doSwitch(wayPoint.getAltitude());
+        return null;
+    }
+
+    @Override
+    public Object caseASTParameters(final ASTParameters parameters) {
+        parameters.getItems().forEach(this::doSwitch);
+        return null;
+    }
+
+    @Override
+    public Object caseASTDelayParameter(final ASTDelayParameter delayParameter) {
+        doSwitch(delayParameter.getDelay());
+        return null;
+    }
+
+    @Override
+    public Object caseASTParameter(final ASTParameter parameter) {
+        doSwitch(parameter.getValue());
+        return null;
+    }
+
+    @Override
+    public Object caseASTSaturationParameters(final ASTSaturationParameters saturationParameters) {
+        saturationParameters.getItems().forEach(this::doSwitch);
+        return null;
+    }
+
+    @Override
+    public Object caseASTSaturationParameter(final ASTSaturationParameter saturationParameter) {
+        doSwitch(saturationParameter.getValue());
+        return null;
+    }
+
+    @Override
+    public Object caseASTCreationParameters(final ASTCreationParameters creationParameters) {
+        creationParameters.getItems().forEach(this::doSwitch);
+        return null;
+    }
+
+    @Override
+    public Object caseASTCreationParameter(final ASTCreationParameter creationParameter) {
+        doSwitch(creationParameter.getValue());
+        return null;
+    }
+
+    @Override
+    public Object caseASTHideParameters(final ASTHideParameters hideParameters) {
+        hideParameters.getItems().forEach(this::doSwitch);
+        return null;
+    }
+
+    @Override
+    public Object caseASTHideParameter(final ASTHideParameter hideParameter) {
+        doSwitch(hideParameter.getValue());
+        return null;
+    }
+
+    @Override
+    public Object caseASTTrigger(final ASTTrigger trigger) {
+        doSwitch(trigger.getTriggername());
+        return null;
+    }
+
+    @Override
+    public Object caseASTTime(final ASTTime time) {
+        doSwitch(time.getRealTime());
+        return null;
+    }
+
+    @Override
+    public Object caseASTFilters(final ASTFilters filters) {
+        filters.getFilters().forEach(this::doSwitch);
+        return null;
+    }
+
+    @Override
+    public Object caseASTHide(final ASTHide hide) {
+        if (hide.getParameters() != null) {
+            doSwitch(hide.getParameters());
+        }
+        doSwitch(hide.getTimeScope());
+        if (hide.getTrigger() != null) {
+            doSwitch(hide.getTrigger());
+        }
+        doSwitch(hide.getTarget());
+        return null;
+    }
+
+    @Override
+    public Object caseASTCreate(final ASTCreate create) {
+        doSwitch(create.getParameters());
+        doSwitch(create.getTimeScope());
+        doSwitch(create.getTrajectory());
+        return null;
+    }
+
+    @Override
+    public Object caseASTAlter(final ASTAlter alter) {
+        doSwitch(alter.getParameters());
+        doSwitch(alter.getTimeScope());
+        if (alter.getTrigger() != null) {
+            doSwitch(alter.getTrigger());
+        }
+        doSwitch(alter.getTarget());
+        return null;
+    }
+
+    @Override
+    public Object caseASTTrajectory(final ASTTrajectory trajectory) {
+        doSwitch(trajectory.getTimeScope());
+        if (trajectory.getTrigger() != null) {
+            doSwitch(trajectory.getTrigger());
+        }
+        doSwitch(trajectory.getTarget());
+        doSwitch(trajectory.getTrajectory());
+        return null;
+    }
+
+    @Override
+    public Object caseASTSaturate(final ASTSaturate saturate) {
+        doSwitch(saturate.getParameters());
+        doSwitch(saturate.getTimeScope());
+        if (saturate.getTrigger() != null) {
+            doSwitch(saturate.getTrigger());
+        }
+        doSwitch(saturate.getTarget());
+        return null;
+    }
+
+    @Override
+    public Object caseASTReplay(final ASTReplay replay) {
+        doSwitch(replay.getParameters());
+        doSwitch(replay.getTimeScope());
+        doSwitch(replay.getTarget());
+        return null;
+    }
+
+    @Override
+    public Object caseASTDelay(final ASTDelay delay) {
+        doSwitch(delay.getTimeScope());
+        doSwitch(delay.getTarget());
+        doSwitch(delay.getDelay());
+        return null;
+    }
+
+    @Override
+    public Object caseASTPlane(final ASTPlane plane) {
+        if (plane.getFilters() != null) {
+            doSwitch(plane.getFilters());
+        }
+        return null;
+    }
+
+    @Override
+    public Object caseASTAllPlanes(final ASTAllPlanes allPlanes) {
+        if (allPlanes.getFilters() != null) {
+            doSwitch(allPlanes.getFilters());
+        }
+        return null;
+    }
+
+    @Override
+    public Object caseASTPlaneFrom(final ASTPlaneFrom planeFrom) {
+        if (planeFrom.getFilters() != null) {
+            doSwitch(planeFrom.getFilters());
+        }
+        doSwitch(planeFrom.getRecording());
+        return null;
+    }
+
+    @Override
+    public Object caseASTAllPlaneFrom(final ASTAllPlaneFrom allPlaneFrom) {
+        if (allPlaneFrom.getFilters() != null) {
+            doSwitch(allPlaneFrom.getFilters());
+        }
+        doSwitch(allPlaneFrom.getRecording());
+        return null;
+    }
+
+    @Override
+    public Object caseASTParamNoise(final ASTParamNoise paramNoise) {
+        doSwitch(paramNoise.getValue());
+        return null;
+    }
+
+    @Override
+    public Object caseASTParamDrift(final ASTParamDrift paramDrift) {
+        doSwitch(paramDrift.getValue());
+        return null;
+    }
+
+    @Override
+    public Object caseASTAt(final ASTAt at) {
+        doSwitch(at.getTime());
+        return null;
+    }
+
+    @Override
+    public Object caseASTWindow(final ASTWindow window) {
+        doSwitch(window.getStart());
+        doSwitch(window.getEnd());
+        return null;
+    }
+
+    @Override
+    public Object caseASTConstantValue(final ASTConstantValue constantValue) {
+        final Constant constant = memory.getConstant(constantValue.getContent());
+        if (occurences.containsKey(constant)) {
+            occurences.put(constant, occurences.get(constant) + 1);
+        } else {
+            occurences.put(constant, 1);
+        }
+        constantValue.setContent(constantValue.getContent() + "_" + occurences.get(constant));
+        return memory.getConstant(constantValue.getContent());
+    }
+
+    @Override
+    public Object caseASTVariableValue(final ASTVariableValue variableValue) {
+        final Constant constant = memory.getConstant(variableValue.getContent());
+        if (occurences.containsKey(constant)) {
+            occurences.put(constant, occurences.get(constant) + 1);
+        } else {
+            occurences.put(constant, 1);
+        }
+        return null;
     }
 
     private LinkedHashMap<String, Vector<String>> formatMemoryToCombination() {
@@ -130,42 +393,62 @@ public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<
                 }.doSwitch(rangeConstant);
             }
             if (constant instanceof ListConstant) {
-                final ListConstant listConstant = (ListConstant) constant;
+                final ListConstant<?> listConstant = (ListConstant<?>) constant;
                 new ListConstant.ListConstantTypeSwitch<Void>() {
                     @Override
-                    public Void visitInteger(ListConstant listConstant) {
-                        for (final Object value : listConstant.getValues()) {
+                    public Void visitInteger(final ListConstant<Integer> listConstant) {
+                        for (final Integer value : listConstant.getValues()) {
                             vector.add(valueOf(value));
                         }
                         return null;
                     }
 
                     @Override
-                    public Void visitDouble(ListConstant listConstant) {
-                        for (final Object value : listConstant.getValues()) {
+                    public Void visitDouble(final ListConstant<Double> listConstant) {
+                        for (final Double value : listConstant.getValues()) {
                             vector.add(valueOf(value));
                         }
                         return null;
                     }
 
                     @Override
-                    public Void visitFloat(ListConstant listConstant) {
-                        for (final Object value : listConstant.getValues()) {
+                    public Void visitFloat(final ListConstant<Float> listConstant) {
+                        for (final Float value : listConstant.getValues()) {
                             vector.add(valueOf(value));
                         }
                         return null;
                     }
 
                     @Override
-                    public Void visitString(ListConstant listConstant) {
-                        for (final Object value : listConstant.getValues()) {
+                    public Void visitString(final ListConstant<String> listConstant) {
+                        for (final String value : listConstant.getValues()) {
                             vector.add('\"' + valueOf(value) + '\"');
+                        }
+                        return null;
+                    }
+
+                    @Override
+                    public Void visitOffset(ListConstant<ASTNumberOffset> listConstant) {
+                        for (final ASTNumberOffset offset : listConstant.getValues()) {
+                            vector.add(numberOffsetToString(offset));
+                        }
+                        return null;
+                    }
+
+                    @Override
+                    public Void visitRecordingValue(ListConstant<ASTRecordingValue> listConstant) {
+                        for (final ASTRecordingValue recval : listConstant.getValues()) {
+                            vector.add(recvalToString(recval));
                         }
                         return null;
                     }
                 }.doSwitch(listConstant);
             }
-            data.put(name, vector);
+            if (occurences.containsKey(constant)) {
+                for (int i = 1; i <= occurences.get(constant); i++) {
+                    data.put(name.replaceAll(DOLLARS_REGEX, DOLLARS_REGEX + "_") + "_" + i, vector);
+                }
+            }
         }
         return data;
     }
@@ -188,15 +471,8 @@ public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<
     }
 
     @Override
-    public Object caseASTIntegerList(final ASTIntegerList object) {
-        final List<Integer> values = newArrayList();
-        values.addAll(object.getItems());
-        return values;
-    }
-
-    @Override
-    public Object caseASTDoubleList(final ASTDoubleList object) {
-        final List<Double> values = newArrayList();
+    public Object caseASTOffsetList(final ASTOffsetList object) {
+        final List<ASTNumberOffset> values = newArrayList();
         values.addAll(object.getItems());
         return values;
     }
@@ -228,15 +504,44 @@ public class SchemaCombinationSwitchInterpretation extends AttackScenarioSwitch<
     }
 
     @Override
-    public Object caseASTConstantValue(final ASTConstantValue object) {
-        return memory.getConstant(object.getContent());
+    public Object caseASTLeftShift(final ASTLeftShift object) {
+        return "<<" + doSwitch(object.getContent());
     }
 
-    private String getInstructionsText(final ASTScenario asscenario) {
+    @Override
+    public Object caseASTRightShift(final ASTRightShift object) {
+        return ">>" + doSwitch(object.getContent());
+    }
+
+    @Override
+    public Object caseASTRecordingValue(final ASTRecordingValue object) {
+        return object.getRatio() + " * " + object.getContent();
+    }
+
+    private String numberOffsetToString(final ASTNumberOffset number) {
+        return valueOf(doSwitch(number));
+    }
+
+    private String recvalToString(final ASTRecordingValue recval) {
+        return valueOf(doSwitch(recval));
+    }
+
+    private String getInstructionsText(final ASTScenario astScenario) {
         final StringBuilder contentBuilder = new StringBuilder();
-        for (final EObject dring : asscenario.getInstructions()) {
+        for (final EObject dring : astScenario.getInstructions()) {
             contentBuilder.append(NodeModelUtils.findActualNodeFor(dring).getText()).append('\n');
         }
-        return contentBuilder.toString();
+        String content = contentBuilder.toString();
+        for (final Constant constant : memory.getConstants()) {
+            if (occurences.containsKey(constant)) {
+                int cpt = 0;
+                final String replacement = constant.getName().replaceFirst(DOLLARS_REGEX, DOLLARS_REGEX + "_");
+                final Matcher matcher = Pattern.compile(("\\") + constant.getName()).matcher(content);
+                while (matcher.find()) {
+                    content = content.replaceFirst(("\\") + constant.getName(), ("\\") + replacement + "_" + ++cpt);
+                }
+            }
+        }
+        return content;
     }
 }

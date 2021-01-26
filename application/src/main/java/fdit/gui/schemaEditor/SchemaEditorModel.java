@@ -1,9 +1,9 @@
 package fdit.gui.schemaEditor;
 
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
-import fdit.dsl.xtext.standalone.CompletionProposal;
-import fdit.dsl.xtext.standalone.StylesPosition;
-import fdit.dsl.xtext.standalone.SyntaxFault;
+import fdit.dsl.ide.AttackScenarioFacade;
+import fdit.dsl.ide.CompletionProposal;
+import fdit.dsl.ide.StylesPosition;
+import fdit.dsl.ide.SyntaxFault;
 import fdit.gui.application.FditManager;
 import fdit.gui.application.FditManagerListener;
 import fdit.gui.schemaEditor.schemaInterpretation.SchemaInterpreter;
@@ -34,7 +34,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static fdit.dsl.xtext.standalone.HighlightingStyles.*;
+import static fdit.dsl.ide.HighlightingStyles.*;
 import static fdit.gui.application.FditManager.FDIT_MANAGER;
 import static fdit.gui.utils.FXUtils.startRunnableInBackground;
 import static fdit.metamodel.element.DirectoryUtils.gatherAllRecordings;
@@ -58,7 +58,7 @@ public class SchemaEditorModel {
 
     private final SchemaInterpreter interpreter;
     private final Schema schema;
-    private final AttackScenarioDslFacade dslFacade;
+    private final AttackScenarioFacade dslFacade;
     private final ObservableList<Recording> selectableRecordings = observableArrayList();
     private final ObjectProperty<Recording> selectedRecording = new ThreadSafeObjectProperty<>(EMPTY_RECORDING);
     private final StringProperty text = new ThreadSafeStringProperty("");
@@ -77,8 +77,8 @@ public class SchemaEditorModel {
     private ListenerHandle fditManagerListenerHandle;
     private Collection<ListenerHandle> listenerHandles = newArrayList();
 
-    SchemaEditorModel(final Schema schema,
-                      final AttackScenarioDslFacade dslFacade) {
+    public SchemaEditorModel(final Schema schema,
+                             final AttackScenarioFacade dslFacade) {
         this.schema = schema;
         this.dslFacade = dslFacade;
         FDIT_MANAGER.getCommandExecutor().getHistory().addListener(codeCommandsListener());
@@ -100,7 +100,7 @@ public class SchemaEditorModel {
         return contentChange.getPosition() + contentChange.getInserted().length();
     }
 
-    void initialize() {
+    public void initialize() {
         editedText = schema.getContent();
         text.set(schema.getContent());
         initializeListenersProperties();
@@ -294,7 +294,7 @@ public class SchemaEditorModel {
         };
     }
 
-    void requestTextChange(final PlainTextChange change) {
+    public void requestTextChange(final PlainTextChange change) {
         this.change = change;
         registerChange();
         onTextChanged(change);

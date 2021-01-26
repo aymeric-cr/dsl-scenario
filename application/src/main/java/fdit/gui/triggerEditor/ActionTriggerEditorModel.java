@@ -39,7 +39,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static fdit.dsl.xtext.standalone.HighlightingStyles.*;
 import static fdit.gui.application.FditManager.FDIT_MANAGER;
 import static fdit.gui.triggerEditor.ActionTriggerEditorController.EMPTY_FILTER;
 import static fdit.gui.utils.FXUtils.startRunnableInBackground;
@@ -47,6 +46,7 @@ import static fdit.ltlcondition.ide.LTLFilterUtils.filterAircrafts;
 import static fdit.metamodel.element.DirectoryUtils.*;
 import static fdit.metamodel.recording.Recording.EMPTY_RECORDING;
 import static fdit.tools.i18n.MessageTranslator.createMessageTranslator;
+import static fdit.triggcondition.ide.TriggeringConditionHighlightingCalculator.*;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Double.parseDouble;
 import static java.util.Collections.EMPTY_LIST;

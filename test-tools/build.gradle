@@ -1,10 +1,28 @@
-configurations {
-    compile.extendsFrom junit, mockito, powermockito, guava, commonsIo, commonsMath, commonsLang, reflections, jimfs, xmlunit
+group = group + ".tools"
+
+dependencies {
+    compile "com.google.jimfs:jimfs:$jimfsVersion"
+    compile "org.xmlunit:xmlunit-core:$xmlunitVersion"
+    compile "org.xmlunit:xmlunit-matchers:$xmlunitVersion"
+    compile "junit:junit:$junitVersion"
+    compile "org.mockito:mockito-all:$mockitoVersion"
+    compile "org.powermock:powermock-module-junit4:$powermockitoVersion"
+    compile "org.powermock:powermock-api-mockito:$powermockitoVersion"
+    compile "commons-io:commons-io:$commonsIoVersion"
+    compile "commons-lang:commons-lang:$commonsLangVersion"
+    compile "com.google.inject:guice:$guiceVersion"
 }
 
 sourceSets {
     main {
         java.srcDir file('src/main/java')
         resources.srcDir file('src/main/resources')
+    }
+}
+
+sonarqube {
+    properties {
+        property "skip", true
+        property "exclusions", "src/*"
     }
 }

@@ -89,7 +89,7 @@ public enum Characteristic {
 
     public static boolean isAltitudeValid(final String content) {
         try {
-            int altitude = parseInt(content);
+            double altitude = parseDouble(content);
             return -1000 <= altitude && altitude <= 50175;
         } catch (final NumberFormatException ignored) {
             return false;
@@ -464,47 +464,47 @@ public enum Characteristic {
 
             @Override
             public Boolean visitAltitude() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitGroundSpeed() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitLatitude() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitLongitude() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitTrack() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitTimestampNano() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitEastWestVelocity() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitNorthSouthVelocity() {
-                return false;
+                return true;
             }
 
             @Override
             public Boolean visitVerticalRate() {
-                return false;
+                return true;
             }
 
             @Override

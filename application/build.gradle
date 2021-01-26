@@ -6,6 +6,9 @@ buildscript {
     dependencies {
         repositories {
             mavenLocal()
+            /*maven {
+                url "http://172.20.65.83:8081/repository/maven-public/"
+            }*/
             mavenCentral()
         }
         classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.0'
@@ -31,14 +34,19 @@ dependencies {
     compile "io.netty:netty-all:$nettyVersion"
     compile "org.jfxtras:jmetro:$jmetroVersion"
     compile "com.sothawo:mapjfx:$mapjfxVersion"
+    compile "com.smartesting:license:$licenseVersion"
+    compile "com.smartesting:tools:$toolsLicenseVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinstdlibVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlinstdlibcommonVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlinstdlibcommonVersion"
+    compile "com.google.inject:guice:$guiceVersion"
+    compile "commons-cli:commons-cli:$commonsCliVersion"
 
     // modules dependencies
     compile project(':metamodel')
     compile project(':database')
     compile project(':tools')
-    compile project(':fdit.dsl:fdit.dsl.xtext.standalone')
+    compile project(':dsl:fdit.dsl.ide')
     compile project(':fdit.ltlcondition.parent:fdit.ltlcondition.ide')
     compile project(':fdit.triggcondition.parent:fdit.triggcondition.ide')
 }
@@ -49,6 +57,7 @@ jfx {
     jfxMainAppJarName = "${fditJarName}"
 }
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 dependencies {

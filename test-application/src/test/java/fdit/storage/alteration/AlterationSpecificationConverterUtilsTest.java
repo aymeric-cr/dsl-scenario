@@ -2,12 +2,13 @@ package fdit.storage.alteration;
 
 import fdit.gui.application.FditTestCase;
 import fdit.metamodel.alteration.AlterationSpecification;
+import fdit.metamodel.alteration.AlterationSpecificationHelper;
 import org.junit.Test;
 
 import static com.google.inject.internal.util.$Lists.newArrayList;
 import static fdit.metamodel.alteration.AlterationSpecificationHelper.*;
-import static fdit.metamodel.alteration.action.ScenarioAction.ActionType.ALTERATION;
-import static fdit.metamodel.alteration.action.ScenarioAction.ActionType.SATURATION;
+import static fdit.metamodel.alteration.action.Action.ActionType.ALTERATION;
+import static fdit.metamodel.alteration.action.Action.ActionType.SATURATION;
 import static fdit.metamodel.alteration.parameters.Characteristic.ICAO;
 import static fdit.metamodel.alteration.parameters.Characteristic.SQUAWK;
 import static fdit.storage.alteration.AlterationSpecificationConverterUtils.mergeAlterationSpecification;
@@ -46,13 +47,13 @@ public class AlterationSpecificationConverterUtilsTest extends FditTestCase {
                 anAlterationSpecification(anAlterationScenario("", "",
                         actions(
                                 anAction(
-                                        withScenarioActionName("alteration"),
+                                        withActionName("alteration"),
                                         withType(ALTERATION),
                                         onTarget("1111,3333"),
                                         onTimeWindow(100, 200),
                                         withParameters(withValue(ICAO, "AF1234", false))),
                                 anAction(
-                                        withScenarioActionName("saturation"),
+                                        withActionName("saturation"),
                                         withType(SATURATION),
                                         onTarget("1111,2222"),
                                         onTimeWindow(200, 300),
@@ -60,7 +61,7 @@ public class AlterationSpecificationConverterUtilsTest extends FditTestCase {
                                                 withValue(ICAO, "RANDOM", false),
                                                 withAircraftNumber(10))),
                                 anAction(
-                                        withScenarioActionName("alteration"),
+                                        withActionName("alteration"),
                                         withType(ALTERATION),
                                         onTarget("2222,3333"),
                                         onTimeWindow(100, 400),

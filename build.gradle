@@ -1,14 +1,15 @@
 buildscript {
-
     repositories {
+        mavenLocal()
+        mavenCentral()
         maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
-
     dependencies {
         classpath 'gradle.plugin.com.github.jlouns:gradle-cross-platform-exec-plugin:0.5.0'
         classpath 'org.xtext:xtext-gradle-plugin:2.0.8'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7.1'
     }
 }
 
@@ -17,9 +18,11 @@ apply plugin: 'com.github.jlouns.cpe'
 apply plugin: 'maven-publish'
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'org.sonarqube'
 
 allprojects {
     repositories {
+        mavenLocal()
         mavenCentral()
     }
 
@@ -30,24 +33,44 @@ allprojects {
     }
 
     group project.groupId
-    version project.getProperties().get("VERSION") + "-" + project.getProperties().get("BUILD_TYPE")
+    version project.FDIT_VERSION + project.BUILD_NUMBER + project.MODE + "-" + project.BUILD_TYPE
 }
 
 ext {
     productZipName = 'fdit.zip'
     productRootDir = 'fdit'
     productLocation = "${buildDir}"
-    fditVersion = project.getProperties().get("VERSION") + "-" + project.getProperties().get("BUILD_TYPE")
+    fditVersion = project.FDIT_VERSION + project.BUILD_NUMBER + project.MODE + "-" + project.BUILD_TYPE
     launcherShName = 'fdit.sh'
     launcherBatName = 'fdit.bat'
     jvmMemoryAllocationPool = '6g'
-    fditJarLocation = "${project(':fdit.application').buildDir}/jfx/"
-    fditJarName = 'fdit.' + fditVersion + '.jar'
+    fditJarLocation = "${project(':fdit-application').buildDir}/jfx/"
+    pomName = 'pom-default.xml'
+    fditLibLocation = fditJarLocation + "lib/"
+
+    applicationPom = "${project(':fdit-application').buildDir}/poms/$pomName"
+    fditJarName = 'fdit.research.' + fditVersion + '.jar'
+
     launcherShContent = "java -Xms$jvmMemoryAllocationPool -Xmx$jvmMemoryAllocationPool -Dprism.order=sw -jar $fditJarName"
     launcherBatContent = "start javaw -Xms$jvmMemoryAllocationPool -Xmx$jvmMemoryAllocationPool -Dprism.order=sw -jar $fditJarName"
 }
 
-task product(type: Zip, dependsOn: [':fdit.application:jfxJar']) {
+task product(type: Zip, dependsOn: [
+        'installSharedCommonsArtifact',
+        ':fdit-application:jfxJar',
+        ':fdit-application:install',
+        ':database-atc:install',
+        ':metamodel-atc:install',
+        ':tools-atc:install',
+        ':fdit.ltlcondition.parent:fdit.ltlcondition.ide:install',
+        ':fdit.triggcondition.parent:fdit.triggcondition.ide:install',
+        ':dsl:fdit.dsl.ide:install',
+        ':dsl:fdit.dsl:install',
+        ':fdit.ltlcondition.parent:fdit.ltlcondition:install',
+        ':fdit.triggcondition.parent:fdit.triggcondition:install',
+        ':testMetamodel-atc:install',
+        ':testDatabase-atc:install',
+        ':testTools-atc:install']) {
     final def launcherShFile = file("$productLocation/$launcherShName")
     final def launcherBatFile = file("$productLocation/$launcherBatName")
 
@@ -90,20 +113,24 @@ jacocoTestReport {
                                                                                                 '**/test-metamodel/**'])
 }
 
-task jacocoMergeTest(type: JacocoMerge) {
-    destinationFile = file(allTestCoverageFile)
-    executionData = project.fileTree(dir: '.', include: '**/build/jacoco/test.exec')
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'jacoco'
+    apply plugin: 'maven'
 
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
 
+    task allDeps(type: DependencyReportTask) {}
+
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.jacoco.reportPaths", allTestCoverageFile
+        }
     }
 
     test {
@@ -111,20 +138,16 @@ subprojects {
         testLogging.showStandardStreams = true
     }
 
-    repositories {
-        mavenCentral()
-    }
-
     ext {
         // external libraries
         configuration2Version = '2.0'
-        commonsMathVersion = '3.0'
+        commonsMathVersion = '3.4'
         commonsIoVersion = '2.5'
         commonsLangVersion = '2.6'
         controlsFXVersion = '8.40.12'
-        emfMwe2LauncherVersion = '2.8.3'
         gsonVersion = '2.8.5'
-        guavaVersion = '21.0'
+        findBugsVersion = '3.0.1'
+        guavaVersion = '27.1-jre'
         h2Version = '1.4.197'
         ikonliVersion = '1.9.0'
         jdom2Version = '2.0.6'
@@ -137,8 +160,15 @@ subprojects {
         vecmathVersion = '1.5.2'
         xtextVersion = '2.20.0'
         nettyVersion = '4.1.44.Final'
-        jmetroVersion = '8.6.9'
+        jmetroVersion = '8.6.10'
         mapjfxVersion = '1.31.0'
+        licenseVersion = "1.0-SNAPSHOT"
+        toolsLicenseVersion = "1.0-SNAPSHOT"
+        geodesyVersion = "1.1.3"
+        kotlinstdlibVersion = '1.3.72'
+        kotlinstdlibcommonVersion = '1.3.72'
+        guiceVersion = '3.0'
+        commonsCliVersion = '1.4'
 
         // external test libraries
         junitVersion = '4.12'
@@ -150,38 +180,12 @@ subprojects {
     // force version of dependencies in case of version conflict
     configurations.all {
         resolutionStrategy {
+            cacheChangingModulesFor 0, 'seconds'
             force 'org.eclipse.platform:org.eclipse.equinox.common:3.10.0'
         }
     }
 
     configurations {
-        // external libraries
-        configuration2
-        commonsMath
-        commonsIo
-        commonsLang
-        controlsFX
-        gson
-        guava
-        h2
-        ikonli
-        libFX
-        jdom2
-        jdom
-        jaxen
-        jimfs
-        reflections
-        richTextFX
-        vecmath
-        netty
-        jmetro
-        mapjfx
-
-        // external test libraries
-        junit
-        mockito
-        powermockito
-
         // FDI-T modules
         application
         database
@@ -190,67 +194,28 @@ subprojects {
         metamodel
         triggcondition
         tools
-        worldfx
-        leafletmap
 
         // FDI-T test modules
         testDatabase
         testMetamodel
         testTools
-
-        testCompile.extendsFrom hamcrest, junit, mockito, powermockito, xmlunit
     }
 
     configurations.compile { transitive = false }
 
     dependencies {
-        // external libraries
-        configuration2 "org.apache.commons:commons-configuration2:$configuration2Version"
-        commonsMath "org.apache.commons:commons-math3:$commonsMathVersion"
-        commonsIo "commons-io:commons-io:$commonsIoVersion"
-        commonsLang "commons-lang:commons-lang:$commonsLangVersion"
-        controlsFX "org.controlsfx:controlsfx:$controlsFXVersion"
-        gson "com.google.code.gson:gson:$gsonVersion"
-        guava "com.google.guava:guava:$guavaVersion"
-        h2 "com.h2database:h2:$h2Version"
-        ikonli "org.kordamp.ikonli:ikonli-core:$ikonliVersion"
-        ikonli "org.kordamp.ikonli:ikonli-javafx:$ikonliVersion"
-        ikonli "org.kordamp.ikonli:ikonli-materialdesign-pack:$ikonliVersion"
-        jdom2 "org.jdom:jdom2:$jdom2Version"
-        jdom "jdom:jdom:$jdomVersion"
-        jaxen "jaxen:jaxen:$jaxenVersion"
-        jimfs "com.google.jimfs:jimfs:$jimfsVersion"
-        libFX "org.codefx.libfx:LibFX:$libFXVersion"
-        reflections "org.reflections:reflections:$reflectionsVersion"
-        richTextFX "org.fxmisc.richtext:richtextfx:$richTextFXVersion"
-        vecmath "javax.vecmath:vecmath:$vecmathVersion"
-        netty "io.netty:netty-all:$nettyVersion"
-        jmetro "org.jfxtras:jmetro:$jmetroVersion"
-        mapjfx "com.sothawo:mapjfx:$mapjfxVersion"
-
-        // test external libraries
-        hamcrest "org.hamcrest:hamcrest-all:1.3"
-        junit "junit:junit:$junitVersion"
-        xmlunit "org.xmlunit:xmlunit-core:$xmlunitVersion"
-        xmlunit "org.xmlunit:xmlunit-matchers:$xmlunitVersion"
-        mockito "org.mockito:mockito-all:$mockitoVersion"
-        powermockito "org.powermock:powermock-module-junit4:$powermockitoVersion"
-        powermockito "org.powermock:powermock-api-mockito:$powermockitoVersion"
-
         // FDI-T modules
-        application project(':fdit.application')
-        metamodel project(':fdit.metamodel')
-        database project(':fdit.database')
-        dsl project(':fdit.dsl:fdit.dsl.xtext.standalone')
+        application project(':fdit-application')
+        metamodel project(':metamodel')
+        database project(':database')
+        dsl project(':dsl:fdit.dsl.ide')
         ltlcondition project(':fdit.ltlcondition.parent:fdit.ltlcondition.ide')
         triggcondition project(':fdit.triggcondition.parent:fdit.triggcondition.ide')
-        tools project(':fdit.tools')
-        worldfx project(':worldfx')
-        worldfx project(':leafletmap')
+        tools project(':tools')
 
         // FDI-T test modules
-        testDatabase project(':fdit.testDatabase')
-        testMetamodel project(':fdit.testMetamodel')
-        testTools project(':fdit.testTools')
+        testDatabase project(':testDatabase')
+        testMetamodel project(':testMetamodel')
+        testTools project(':testTools')
     }
 }

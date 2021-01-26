@@ -79,31 +79,10 @@ public final class AlterationSpecificationSaver {
 
     private static Content createScopeElement(final Scope scope) {
         return new ScopeVisitor<Content>() {
-            @Override
-            public Content visitGeoArea(final GeoArea geoArea) {
-                throw new NotImplementedException();
-            }
 
             @Override
             public Content visitGeoThreshold(final GeoThreshold geoThreshold) {
                 throw new NotImplementedException();
-            }
-
-            @Override
-            public Content visitGeoTime(final GeoTime geoTime) {
-                throw new NotImplementedException();
-            }
-
-            @Override
-            public Content visitGeoTimeWindow(final GeoTimeWindow geoTimeWindow) {
-                return createElement(SCOPE,
-                        attribute(SCOPE_TYPE,
-                                SCOPE_TYPE_GEO_TIME_WINDOW),
-                        child(createZoneChild(geoTimeWindow.getZone())),
-                        child(LOWER_BOUND,
-                                text(valueOf(geoTimeWindow.getLowerBoundMillis()))),
-                        child(UPPER_BOUND,
-                                text(valueOf(geoTimeWindow.getUpperBoundMillis()))));
             }
 
             @Override

@@ -49,26 +49,11 @@ class LTLConditionContentProposalProvider extends IdeContentProposalProvider  {
 
     override dispatch void createProposals(RuleCall ruleCall, ContentAssistContext context, IIdeContentProposalAcceptor acceptor) {
         val rule = ruleCall.rule
-        if(context.currentModel instanceof ReferencedArea && rule.name.equals("T_STRING_LITERAL")) {
-            for(Zone zone : DirectoryUtils.gatherAllZones(LTLConditionFacade.get.root)) {
-                val proposal = '"' + zone.name + "\"";
-                var entry = proposalCreator.createProposal(proposal,context)
-                if(entry !== null) {
-                    entry.label = zone.name
-                    //                    entry.prefix = "zone: "
-                    entry.kind = ContentAssistEntry.KIND_REFERENCE
-                    acceptor.accept(entry, proposalPriorities.getKeywordPriority(proposal, entry))
-                }
-            }
-
-        }
-        else if(rule instanceof TerminalRule) {
+        if(rule instanceof TerminalRule) {
             val alternatives = rule.getAlternatives()
             if(alternatives instanceof Keyword) {
                 createProposals(alternatives, context, acceptor)
             }
-        } /*else if (rule ) {
-
-        } */
+        }
     }
 }

@@ -1,59 +1,58 @@
 package fdit.gui.schemaEditor.schemaInterpretation;
 
-import fdit.dsl.xtext.standalone.AttackScenarioDslFacade;
-import fdit.dsl.xtext.standalone.CompletionProposal;
+import fdit.dsl.ide.AttackScenarioFacade;
+import fdit.dsl.ide.CompletionProposal;
 import fdit.metamodel.alteration.AlterationSpecification;
 import fdit.metamodel.schema.Schema;
-import javafx.beans.property.BooleanProperty;
+import fdit.tools.functional.ThrowableSupplier;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-import static com.google.common.base.Throwables.throwIfUnchecked;
-import static com.google.inject.internal.util.$Lists.newArrayList;
+import static com.google.common.collect.Lists.newArrayList;
 
 public class SchemaInterpreter {
 
-    private final AttackScenarioDslFacade attackScenarioDslFacade;
+    private final AttackScenarioFacade attackScenarioFacade;
     private final SchemaSwitchCompletion syntaxicCompleter;
     private final SchemaSwitchSemanticAnalyse semanticAnalyser;
     private final SchemaCombinationSwitchInterpretation combinationInterpreter;
     private final SchemaSwitchInterpretation scenarioInterpreter;
 
-    public SchemaInterpreter(final AttackScenarioDslFacade attackScenarioDslFacade) {
+    public SchemaInterpreter(final AttackScenarioFacade attackScenarioFacade) {
         try {
-            this.attackScenarioDslFacade = attackScenarioDslFacade;
+            this.attackScenarioFacade = attackScenarioFacade;
             initialize();
-            semanticAnalyser = new SchemaSwitchSemanticAnalyse(attackScenarioDslFacade);
-            combinationInterpreter = new SchemaCombinationSwitchInterpretation(attackScenarioDslFacade);
-            scenarioInterpreter = new SchemaSwitchInterpretation(attackScenarioDslFacade);
-            syntaxicCompleter = new SchemaSwitchCompletion(attackScenarioDslFacade);
+            semanticAnalyser = new SchemaSwitchSemanticAnalyse(attackScenarioFacade);
+            combinationInterpreter = new SchemaCombinationSwitchInterpretation(attackScenarioFacade);
+            scenarioInterpreter = new SchemaSwitchInterpretation(attackScenarioFacade);
+            syntaxicCompleter = new SchemaSwitchCompletion(attackScenarioFacade);
         } catch (final Exception e) {
-            throwIfUnchecked(e);
+            ThrowableSupplier.throwIfUnchecked(e);
             throw new RuntimeException(e);
         }
     }
 
     public final void initialize() {
-        attackScenarioDslFacade.initialize();
+        attackScenarioFacade.initialize();
     }
 
     public void shutdown() {
-        attackScenarioDslFacade.shutdown();
+        attackScenarioFacade.shutdown();
     }
 
     public void parseScenario(final Schema schema) {
         try {
-            attackScenarioDslFacade.parse(schema.getContent());
+            attackScenarioFacade.parse(schema.getContent());
         } catch (final IOException e) {
-            throwIfUnchecked(e);
+            ThrowableSupplier.throwIfUnchecked(e);
             throw new RuntimeException(e);
         }
     }
 
     public void clear() {
-        attackScenarioDslFacade.getAST().clear();
+        attackScenarioFacade.getAST().clear();
     }
 
     public Collection<CompletionProposal> getProposals(final Schema schema,
@@ -62,7 +61,7 @@ public class SchemaInterpreter {
         try {
             semanticAnalyser.processAnalysis(schema);
             return syntaxicCompleter.processCompletion(schema, semanticAnalyser.getMemory(), offset, selectedTextLength);
-        } catch (final Exception ignored) {
+        } catch (final Exception ex) {
             return newArrayList();
         }
     }
@@ -85,13 +84,5 @@ public class SchemaInterpreter {
 
     public String getSemanticErrors(final Schema schema) {
         return semanticAnalyser.processAnalysis(schema);
-    }
-
-    public boolean isScenarioConvertible() {
-        return semanticAnalyser.convertibleProperty().get();
-    }
-
-    public BooleanProperty scenarioConvertibleProperty() {
-        return semanticAnalyser.convertibleProperty();
     }
 }

@@ -40,7 +40,7 @@ class SchemaEditionCommand implements FditElementCommand<Schema> {
 
     @Override
     public String getContent() {
-        return TRANSLATOR.getMessage("command.editScenario.content", schema.getName());
+        return TRANSLATOR.getMessage("command.editSchema.content", schema.getName());
     }
 
     @Override

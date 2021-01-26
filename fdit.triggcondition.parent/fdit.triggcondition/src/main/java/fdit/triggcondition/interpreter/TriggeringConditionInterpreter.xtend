@@ -60,6 +60,8 @@ import fdit.triggcondition.triggeringCondition.BooleanLiteral
 import java.io.Serializable
 import fdit.triggcondition.triggeringCondition.DoubleLiteral
 import fdit.triggcondition.triggeringCondition.CommonStaticProperty
+import static fdit.metamodel.aircraft.TimeInterval.TIME_INTERVAL_MINIMUM_SIZE
+import fdit.metamodel.aircraft.TimeInterval.IntervalType
 
 class TriggeringConditionInterpreter {
 
@@ -76,7 +78,7 @@ class TriggeringConditionInterpreter {
     var end_time = 0L
     var time_count = 0L
     var last_aircraft_appearance = 0L
-    public var long beacon_interval = 1000
+    public var long beacon_interval = TIME_INTERVAL_MINIMUM_SIZE
 
     def setBeaconInterval (long beacon_interval) {
         this.beacon_interval = beacon_interval
@@ -105,7 +107,6 @@ class TriggeringConditionInterpreter {
         LTLConditionFacade.get.initialize(root)
         start_time = interval.getStart
         end_time = interval.getEnd
-        TimeInterval.setMinimumSize(beacon_interval)
         var total_intervals = 0
 
         for(ac: targets) {
@@ -116,81 +117,61 @@ class TriggeringConditionInterpreter {
             last_aircraft_appearance =
                     if(current_aircraft.timeOfLastAppearance <= end_time) current_aircraft.timeOfLastAppearance else end_time
             var List<TimeInterval> time_intervals = new LinkedList<TimeInterval>
-            var long last_success = -1L
             var TimeInterval current_interval = null
             while(time_count <= last_aircraft_appearance) {
-                var boolean result = e.interpret
-                if(result) {
-                    last_success = time_count
-                    if(current_interval === null) {
-                        current_interval = new TimeInterval(time_count)
-                    }
-                    if(time_count === last_aircraft_appearance) {
-                        //TODO what if the interval starts at the very last known aircraft's state?
-                        if(current_interval.start < time_count) current_interval.setEnd(time_count)
-                        time_intervals.add(current_interval)
-                        current_interval = null
-                    }
+                var Boolean result = e.interpret
+                if(current_interval === null) {
+                    current_interval = new TimeInterval(time_count)
                 }
-                else if(!result && current_interval !== null && last_success === (time_count - beacon_interval)) {
-                    current_interval.end = time_count
-                    time_intervals.add(current_interval)
-                    current_interval = null
+
+                if(result === null) {
+                    current_interval = current_interval.processInterval(time_intervals, time_count, IntervalType.NULL)
+                } else if(result) {
+                    current_interval = current_interval.processInterval(time_intervals, time_count, IntervalType.TRUE)
+                } else {
+                    current_interval = current_interval.processInterval(time_intervals, time_count, IntervalType.FALSE)
                 }
                 time_count += beacon_interval
-                if(time_count > last_aircraft_appearance && time_count < (last_aircraft_appearance + beacon_interval))
-                    time_count = last_aircraft_appearance
+                if(time_count > last_aircraft_appearance) {
+                    current_interval.closeInterval(time_intervals, last_aircraft_appearance, IntervalType.UNSET)
+                }
             }
             alteration_intervals.put(current_aircraft, time_intervals)
-            println(current_aircraft.callSign+": "+time_intervals.size+" intervals")
             total_intervals += time_intervals.size
         }
-        println("Result: "+total_intervals+" intervals")
         return alteration_intervals
     }
 
- /*   def Object preprocessArithm(Expression e) {
-        switch (e) {
-            ASAPTimeWindow: e.expr.preprocessArithm
-            UntilTimeWindow: e.expr.preprocessArithm
-            WhenTimeWindow: e.expr.preprocessArithm
-            NotWhenTimeWindow: e.expr.preprocessArithm
-            AndOrTimeWindow: {
-                e.left.preprocessArithm
-                e.right.preprocessArithm
+    def TimeInterval processInterval(TimeInterval interval, List<TimeInterval> intervals, long time, IntervalType type) {
+        if(interval.type == IntervalType.UNSET) {
+            interval.type = type
+        } else {
+            if(interval.type != type) {
+                return interval.closeInterval(intervals, time, type)
             }
         }
+        return interval
     }
 
-    def Object preprocessArithm(ContextExpr e) {
-        switch (e) {
-            AndOrExpression: {
-                e.left.preprocessArithm
-                e.right.preprocessArithm
-            }
-            BooleanNegation: e.expression.preprocessArithm
-            LowerThan:
-                e.expr.evaluateArithmExpr
-            GreaterThan:
-                e.expr.evaluateArithmExpr
-            Equals:
-                e.expr.evaluateArithmExpr
-            Different:
-                e.expr.evaluateArithmExpr
-            LowerThanOrEq:
-                e.expr.evaluateArithmExpr
-            GreaterThanOrEq:
-                e.expr.evaluateArithmExpr
+    def TimeInterval closeInterval(TimeInterval interval, List<TimeInterval> intervals, long time, IntervalType type) {
+        if(time - interval.start >= beacon_interval) {
+            interval.setEnd(time)
+            intervals.add(interval)
         }
-    }*/
+        var TimeInterval newInterval = new TimeInterval(time_count)
+        newInterval.setType(type)
+        return newInterval
+    }
 
-    def boolean interpret(Expression e) {
+    def Boolean interpret(Expression e) {
         switch (e) {
             ASAPTimeWindow: { // we need to find one air state where the expression is true, the rest is always true after that
                 if(prev_results.get(e) !== null && prev_results.get(e)) true
                 else {
                     val result = e.expr.interpret
-                    prev_results.put(e,result)
+                    if(result !== null) {
+                        prev_results.put(e,result)
+                    }
                     return result
                 }
             }
@@ -198,30 +179,48 @@ class TriggeringConditionInterpreter {
                 if(prev_results.get(e) !== null && prev_results.get(e)) false
                 else {
                     val result = e.expr.interpret
-                    prev_results.put(e,result)
+                    if(result !== null) {
+                        prev_results.put(e,result)
+                    } else {
+                        return null
+                    }
                     return !result // if the expression is false, then we perform the alteration.
                 }
             }
             WhenTimeWindow: e.expr.interpret
-            NotWhenTimeWindow: !(e.expr.interpret)
+            NotWhenTimeWindow: {
+                var Boolean res_not = e.expr.interpret
+                if(res_not !== null) {
+                    return !(e.expr.interpret)
+                } else {
+                    return null
+                }
+            }
             AndOrTimeWindow: e.interpretAndOrTW
-            default: false
+            default: null
         }
     }
 
-    def boolean interpret(ContextExpr e) {
+    def Boolean interpret(ContextExpr e) {
         switch (e) {
-            BooleanNegation: !(e.expression.interpret)
+            BooleanNegation: {
+                var Boolean result = e.expression.interpret
+                if(result !== null) {
+                    return !result
+                } else {
+                    return null
+                }
+            }
             AndOrExpression:
                 e.interpretAndOrExpr
             LowerThan,GreaterThan,Equals,Different,LowerThanOrEq,GreaterThanOrEq:
                 e.interpretSingleExpr
             Area: e.interpretArea
-            default: false
+            default: null
         }
     }
 
-    private def boolean interpretArea(Area area) {
+    private def Boolean interpretArea(Area area) {
         val position = area.eventType
         val context = area.context
         val Zone zone =
@@ -229,7 +228,7 @@ class TriggeringConditionInterpreter {
                 Prism: (area.area as Prism).createPrism
                 ReferencedArea: rap.getZone((area.area as ReferencedArea).name)
             }
-        var boolean result = false
+        var Boolean result = false
         if(context instanceof ReferencedFilter) {
             parseFilter(context.filtername)
             if(area_evaluation.get(area) === null) {
@@ -264,14 +263,16 @@ class TriggeringConditionInterpreter {
                     -> ac.getLastCriterionAppearance(AircraftCriterion.LONGITUDE))
         }
         for(var long t = start_time ; t <= end_time ; t = t + beacon_interval ) {
-            var boolean rap_holds = true
+            var Boolean rap_holds = true
             var iter = targets.iterator
-            while(rap_holds && iter.hasNext) {
+            while((rap_holds || rap_holds === null)  && iter.hasNext) {
                 var Aircraft target = iter.next
                 if(existences.get(target).key <= t && existences.get(target).value >= t)
                     rap_holds = target.evaluateAircraftOnZone(t,eventType, area)
             }
-            results.add(rap_holds)
+            if(rap_holds !== null) {
+                results.add(rap_holds)
+            }
         }
         return results
     }
@@ -286,7 +287,9 @@ class TriggeringConditionInterpreter {
             } else if(position === ASTAreaPositionType.INSIDE) {
                 ZoneUtils.positionInZone(zone,lat,lon,alt)
             } else false
-        } catch(OutOfDateException e) { false}
+        } catch(OutOfDateException e) {
+            return null;
+        }
     }
 
     def private dispatch getNumberValue(IntLiteral il) {
@@ -311,25 +314,30 @@ class TriggeringConditionInterpreter {
 
     private def interpretAndOrTW(AndOrTimeWindow andor) {
         switch (andor.op) {
-            case "and": {(andor.left.interpret as Boolean) && (andor.right.interpret as Boolean)}
-            case "or": {(andor.left.interpret as Boolean) || (andor.right.interpret as Boolean)}
+            case "and": {andor.left.interpret && andor.right.interpret}
+            case "or": {andor.left.interpret || andor.right.interpret}
         }
     }
 
-    private def interpretAndOrExpr(AndOrExpression andor) {
+    private def Boolean interpretAndOrExpr(AndOrExpression andor) {
+        var leftResult = andor.left.interpret
+        var rightResult = andor.right.interpret
+        if(leftResult === null || rightResult === null) {
+            return null
+        }
         switch (andor.op) {
-            case "and": {(andor.left.interpret as Boolean) && (andor.right.interpret as Boolean)}
-            case "or": {(andor.left.interpret as Boolean) || (andor.right.interpret as Boolean)}
+            case "and": return leftResult && rightResult
+            case "or": return leftResult || rightResult
         }
     }
 
-    private def boolean interpretSingleExpr(ContextExpr expr) {
+    private def Boolean interpretSingleExpr(ContextExpr expr) {
         val Pair<Object, Object> both_sides = expr.retrieveDataFromExpr
         val aircraft_property = (both_sides.getFirst as AircraftProperty)
         val compared_value = (both_sides.getSecond as ArithmExpr).evaluateArithmExpr
         val context = aircraft_property.context
+        var Boolean result = false
 
-        var boolean result = false
         if(aircraft_property instanceof AircraftStaticProperty) {
 
             if(context instanceof ReferencedFilter) {
@@ -401,9 +409,9 @@ class TriggeringConditionInterpreter {
     }
 
     private def evaluateTargetsonSingleExprStatic(Collection<Aircraft> targets, ContextExpr expr, AircraftProperty aircraft_prop, Object compared_value) {
-        var boolean rap_holds = true
+        var Boolean rap_holds = true
         var iter = targets.iterator
-        while(rap_holds && iter.hasNext) {
+        while((rap_holds || rap_holds === null) && iter.hasNext) {
             var Aircraft target = iter.next
             if(!target.evaluateAircraftOnSingleExprStatic(expr,aircraft_prop, compared_value)) {
                 rap_holds = false
@@ -419,7 +427,9 @@ class TriggeringConditionInterpreter {
     private def evaluateAircraftOnSingleExpr(Aircraft aircraft, ContextExpr expr, long time, AircraftCriterion aircraft_prop, Object compared_value) {
         var property_value = try {
             aircraft.query(time,aircraft_prop)
-        } catch(OutOfDateException e) { return false}
+        } catch(OutOfDateException e) {
+            return null
+        }
         return expr.evaluateSingleExpression(property_value, compared_value as Serializable)
     }
 
@@ -431,14 +441,16 @@ class TriggeringConditionInterpreter {
             existences.put(ac, ac.getFirstCriterionAppearance(prop_crit) -> ac.getLastCriterionAppearance(prop_crit))
         }
         for(var long t = start_time ; t <= end_time ; t = t + beacon_interval ) {
-            var boolean rap_holds = true
+            var Boolean rap_holds = true
             var iter = targets.iterator
-            while(rap_holds && iter.hasNext) {
+            while((rap_holds || rap_holds === null) && iter.hasNext) {
                 var Aircraft target = iter.next
                 if(existences.get(target).key <= t && existences.get(target).value >= t)
                     rap_holds = target.evaluateAircraftOnSingleExpr(expr, t, prop_crit, compared_value)
             }
-            results.add(rap_holds)
+            if(rap_holds !== null) {
+                results.add(rap_holds)
+            }
         }
         return results
     }
